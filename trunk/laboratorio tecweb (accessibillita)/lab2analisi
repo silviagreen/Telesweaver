@@ -1,0 +1,46 @@
+-layout si rompe
+-scritte si sovrappongono-->layout poco fluido
+-ti trovi in non indica tutto il percorso
+-ok validazione
+-link esterni devono aprire nuove tab
+-alt nel logo
+-accesskey non scritte
+-tabindex poco usabile
+-passa a un altra pagina se login e sbagliato
+-elenco di collegamenti esterni come testo ion paragrafi errato!!!!
+-in footer usato paragrafo non con testo ma x 3 img
+-no diff tra link visitati e nn visitati
+-content_right come id non va bene
+-----------------------------------------------------------------------------------------------------------------------------
+CORREZIONE:
+-troppi div in header (img e titolo pox essere senza titolo)
+-div x ricerca ok
+-div x navigaz ok, xo meglio fuori header
+-alt: uso non corretto, non danno info in piu 
+-header devono essere usati nell'ordine corretto
+-accesskey non sempre funzionano e non sono evidenti (x esempio sottolineare solo l'accesskey, x es la prima lettera)
+-se clicco su home continuo a andare in home, link circolare. => link di pagina attiva va disattivato senno disattivato
+-link esterni non in nuova tab
+-non so mai quale link ho gia visitato
+-usare link tipizzati ok
+-non usa navogaz correttamente
+-usa popup x login ma in questo caso e ok
+-seganlazione errori va sempre fatta senza perdere il contesto!!!! (dove possibile rimango in stessa pagina x segnalare errore)
+-x aggiungi evento mancano data, luogo
+-lyrics accessibile solo da discografy, ma non segnalato quindi non so dove sono
+OGNI VOLTA CHE USO UN BACK INDICA DISORIENTAMENTO DI UTENTE, E UN FALLIEMNTO DELL'INTERFACCIA
+-non tutte le parti in ingl e le abreviazioni sono segnalate.
+-controllare i dati in input alle form
+-nessun aiuto alla navigazione
+-no tabindex x accedere a usr e pwd
+-mancano i torna su sugli eventi
+-path dentro al contenuto
+-tabindex: 1 ricerca e ok, poi pero manca su username e pwd (se x amministratore va messo x ultimo e non mostrato)
+-GESTIONE TITOLI: titoli sulle tab non sempre corretti (sono sulla mappa ma mi indica home, oppure manca il particolare) 
+tutti i markup sono uguali, invece devono essere diverse a seconda delle pagine (lo stesso x le keyword)
+-in sito piccolo ricerca nn serve, aveva piu senso farla mirata  x disacografia x esempio
+RICERCA LA POSSO FAR FARE A GOOGLE O IMPLMENTARE MINI MOTORI DI RICERCA
+-LA VERSIONE STAMPABILE NON VA FATTA SEMPRE X TUTTE LE PAGINE (E NON TUTTE UGUALI)
+
+
+
