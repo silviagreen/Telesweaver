@@ -1,0 +1,73 @@
+-separare contenuto/presentazione/struttura
+-fornire sempre equivalente testuale testuale per ogni media diverso dal testo
+-fornire info anche attraverso diversi canali sensoriali alternativi =>equivalenti al contenuto audio visivo
+-pag con strumenti di navoigaz+orientamento (barre navigazione, mappa del sito,...)
+-non fare afiddamento sul colore
+-usare marcatori e fogli di stile
+-chiarire uso di linguaggi naturali (pronuncia/testi stranieri)
+-marcatura corretta x tabelle
+-pag accessibili anke su tecnologie nn recenti (non supportate o disabilitate)
+-elementi in movimento, scorrevoli,...devono poter essere disabilitate da utente
+-assicurare accessibilita direttadelle interfacce utente incorporate
+-garantire indipendenza da dispositivo
+-usare saoluzioni provvisorie
+-usare tecnologie e raccomandazioni w3c
+-info x aiutare utenti a comprendere pagine /elementi complessi
+-documenti chiari e semplici
+-usare esposizione x punti + interlinea
+-no testo scorrevole, font elaborati, sottolineature x non link, testo barrato
+-non variare colore link se nn necessario
+-non usare clica qui e prosegui
+-usare convenzioniu ben consolidate+-
+ -link facilmente ricopnoscibili + differenziare quelli interni dagli esterni
+-indicare dim download 
+-no popup
+-definiz corretta di tabulazione
+-usare accesskey
+-link vanno separati da almeno uno spazio
+-utente nn deve perdere tempo in lettura di tutto il menu
+-alt x ing significativi
+-alt x img che rioguardano sl layout
+-no mappe immagine
+-image replacement
+-associare summary a tabelle
+-associare intestazioni a tab
+-associare celle a intestaz
+-def abbr x intestaz
+-html semanticamente corretto
+-layout fluidi o elastici
+-----------------------------------------------------------------------------------------------------------------------
+CORREZIONE:
+-VALIDARE HTML E CSS
+-controllare makup semantico ==> menu a liste, titoli come h
+-no link adiacenti
+-tabelle:usare assi, scope.
+-vedere cosa succede se rimuovo multimedia
+-no tabelle x layout di siti web
+-xml:lang x indicare quando ho lingua diversa
+-accesskey corretti: verificare che almeno i browser piu comuni non vadano in crash con gli accesskey
+-accesskey vanno scritti e visualizzati!!!!
+-stabilire ordine dei tab coerente in tutto il sito + specifico per alcune pag (x form ordine e molto importante)
+-fornire ricerca
+-mettere label nei form sempre!!!!
+-accessibile anche senza colori
+-aiuti alla navigaz: muovermi tramite link
+-non ingrangere convenzion i esterne
+-evitare popup
+-ancore diversi x i link!!!!
+-nomi significativi x ancore dei link
+-evitare indicaz solo visive
+-uso di colori nei link
+-nomi id classi devono essere significativi
+-indip da dispositivi(=computer da min 800x600, smatphone cellulari, screen reader, emulatori x controllare navigaz con sola tastiera senza mouse, stampa)
+-contare numero di click (meno e meglio e)
+-abbreviaz->esplicitarle
+-caratteri che si ridimensionano in base alla preferenze utente
+-verificare cosa succedede con varie keyword
+-no testi scorrevoli o lampeggianti
+-usare fieldset x dividere sez di form (meglio se sezioni piccole)
+-non obbligare utente a riscrivere in form se ha sbagliato + dare errori che aiuti a capirlo
+-cercare di prevenire gli errori nei form
+------------------------------------------------------------------------------------------------------------------
+
+
