@@ -1,33 +1,44 @@
 html, body, ul, li{
 	padding:0;
 	margin:0;
-	
-	
-	
 }
 
-div#menu{
+/*#menu{
 	margin:auto;
 	height:6em;
 	weight:0;
-	padding-left:12em;
+	padding-left:15%;
+	position:relative;
 	
-}
+	z-index:2;
+	
+}*/
+
 #menuLista{
-	list-style-type:none;	
+	list-style-type:none;
+	margin:auto;
+	height:6em;
+	weight:0;
+	padding-left:15%;
+	position:relative;
+	margin-top:12%;
+	z-index:2;	
+	float:left;
 }
-.mainItem{
+
+#menuLista li{
+	display:block;
 	background-image:url(img/menu.jpg);
 	background-repeat:no-repeat;
-	position:relative;
-	margin:0 0 12px 12px;
-	/*top:0.1em;
-	left:12em;*/
+	
+	/*margin:0 0 12px 12px;*/
+	top:0.1em;
+	left:12em;
 	height:5em;
 	width:6.5em;	
 	/*padding:0;
 	margin-right:0;*/
-	z-index:2;
+	
 	
 	
 	top:10em;
@@ -38,7 +49,6 @@ div#menu{
 
 .mainItem a{
 	text-align:right;
-	display:block;
 	padding:0.6em 0.5em 0.2em 0/*6px 16px 2px 0*/;
 	font-size:1em;	
 	
@@ -50,10 +60,11 @@ margin:auto;
 	background-image:url(img/notepad-back.gif);
 
 	background-repeat:repeat-y;
-	width:48em/*764px*/;
-
+	width:60%/*764px*/;
+	margin-top:10%;
+	position:relative;
 	padding-right:4em;
-	margin-left:20em;
+	margin-left:21%;
 	z-index:1;
 }
 
