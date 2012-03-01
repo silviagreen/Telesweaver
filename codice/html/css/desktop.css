@@ -1,0 +1,74 @@
+html, body, ul, li{
+	padding:0;
+	margin:0;
+	
+	
+	
+}
+
+div#menu{
+	margin:auto;
+	height:6em;
+	weight:0;
+	padding-left:12em;
+	
+}
+#menuLista{
+	list-style-type:none;	
+}
+.mainItem{
+	background-image:url(img/menu.jpg);
+	background-repeat:no-repeat;
+	position:relative;
+	margin:0 0 12px 12px;
+	/*top:0.1em;
+	left:12em;*/
+	height:5em;
+	width:6.5em;	
+	/*padding:0;
+	margin-right:0;*/
+	z-index:2;
+	
+	
+	top:10em;
+	left:4em;
+	/*height:64px;
+	width:83px;*/
+}
+
+.mainItem a{
+	text-align:right;
+	display:block;
+	padding:0.6em 0.5em 0.2em 0/*6px 16px 2px 0*/;
+	font-size:1em;	
+	
+}
+
+
+.corpo{
+margin:auto;
+	background-image:url(img/notepad-back.gif);
+
+	background-repeat:repeat-y;
+	width:48em/*764px*/;
+
+	padding-right:4em;
+	margin-left:20em;
+	z-index:1;
+}
+
+.corpo p{
+	padding-left:5.4em;	
+}
+
+.corpo h2{
+
+	padding-left:3.5em;	
+
+}
+
+.corpo h3{
+
+	padding-left:4.7em;	
+
+}
