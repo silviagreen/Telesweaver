@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<utenti xmlns="http://www.utenti.com" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:schemaLocation="http://www.utenti.com utenti.xsd">
+	<utente ID="1">
+		<nome>Pallino</nome>
+		<password>sonoPallino</password>
+		<email>rossi@gmail.com</email>
+	</utente>
+	<utente ID="2">
+		<nome>Grande Guerriero</nome>
+		<password>Grande</password>
+		<email>verdi@yahoo.it</email>
+	</utente>
+	<utente ID="3">
+		<nome>Primo Esploratore</nome>
+		<password>thefirst</password>
+		<email>uno@alice.com</email>
+	</utente>
+	<utente ID="4">
+		<nome>Esperto Avventuriero</nome>
+		<password>chenoia</password>
+		<email>annoiato@gmail.com</email>
+	</utente>
+	<utente ID="5">
+		<nome>Sto Scrivendo</nome>
+		<password>chebello</password>
+		<email>uffa@libero.it</email>
+	</utente>
+	<utente ID="6">
+		<nome>Ho Finito</nome>
+		<password>finalmente</password>
+		<email>ciao@gmail.com</email>
+	</utente>
+</utenti>
