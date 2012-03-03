@@ -3,35 +3,36 @@ html, body, ul, li{
 	margin:0;
 }
 
-/*#menu{
+#menu{
+	border:double;
 	margin:auto;
-	height:6em;
-	weight:0;
-	padding-left:15%;
-	position:relative;
 	
-	z-index:2;
+	width:20%;
+	height:65%;
+	float:left;
 	
-}*/
+	
+}
 
+#container{
+	border:groove;
+}
 #menuLista{
 	list-style-type:none;
 	margin:auto;
-	height:6em;
-	weight:0;
-	padding-left:15%;
-	position:relative;
+	float:right;
+	padding-right:15%;
+	
 	margin-top:12%;
-	z-index:2;	
-	float:left;
+	
+	
 }
 
 #menuLista li{
 	display:block;
 	background-image:url(img/menu.jpg);
 	background-repeat:no-repeat;
-	
-	/*margin:0 0 12px 12px;*/
+
 	top:0.1em;
 	left:12em;
 	height:5em;
@@ -41,31 +42,25 @@ html, body, ul, li{
 	
 	
 	
-	top:10em;
-	left:4em;
-	/*height:64px;
-	width:83px;*/
+	
 }
 
 .mainItem a{
 	text-align:right;
-	padding:0.6em 0.5em 0.2em 0/*6px 16px 2px 0*/;
+	padding:1em 0.5em 0.2em 0/*6px 16px 2px 0*/;
 	font-size:1em;	
 	
 }
 
 
 .corpo{
-margin:auto;
-	background-image:url(img/notepad-back.gif);
+	border:dashed;
+	margin:auto;
+	background:url(img/notepad-back.gif) repeat-y top left, url(img/pageRight.png) repeat-y top right, url(img/center.png) repeat top center ;
 
-	background-repeat:repeat-y;
+	
 	width:60%/*764px*/;
-	margin-top:10%;
-	position:relative;
-	padding-right:4em;
-	margin-left:21%;
-	z-index:1;
+	
 }
 
 .corpo p{
