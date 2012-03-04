@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://www.w3.org/1999/XSL/Transform" 
+	xmlns=" http://www.w3.org/1999/XSL/Transform" 
+	elementFormDefault="qualified">
+	
+	<xs:element name="utente" type="Tutente"/>
+	<xs:complexType name="Tutente">
+		<xs:all>
+			<xs:element name="nomeUtente" type="xs:string"/>
+			<xs:element name="password" type="xs:string"/>
+			<xs:element name="email" type="Temail"/>
+			<xs:element name="storieScritte" type="xs:string" maxOccurs="unbounded" minOccurs="0"/>
+			<xs:element name="salvataggiStorie" type="TSalvataggi" maxOccurs="unbounded" minOccurs="0"/>
+		</xs:all>
+		<xs:attribute name="ID" type="xs:positiveInteger"/>
+	</xs:complexType>
+	
+	<xs:simpleType name="Temail">
+		<xs:restrction base="xs:string">
+			<xs:pattern value=""/></xs:pattern> <!--inserire espressione regolare x la mail gentilmente offerta da nutty-->
+		</xs:restrction>
+	</xs:simpleType>
+	
+	<xs:complexType name="TSalvataggi">
+		<xs:all>
+			<xs:element name="nome" type="xs:string"/>
+			<xs:element name="stanza" type="xs:string"/>
+			<xs:element name="oggettoPosseduto" type="xs:string" maxOccurs="unbounded" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	
