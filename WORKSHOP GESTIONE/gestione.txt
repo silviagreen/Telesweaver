@@ -1,0 +1,23 @@
+Idee gestione:
+
+
+
+1)applicazione x parrucchieri. L'applicazione fornira` un servizio alle clienti in attesa e rendera` piu` facile la vendita di prodotti ai parrucchieri. Le clienti avranno un'attesa piu` piacevole cosi` il parrucchiere potra` svolgere con piu` calma il proprio lavoro e le clienti saranno portate a frequentare di piu` la parrucchieria.
+L'applicazione consiste nello permettere di inserire la propria foto, modificarla provando i tagli di capelli preferiti, modificare il colore di capelli, salvare la propria foto e pubblicarla nei social network preferiti, in modo da poter sapere i pareri degli amici e poter richiedere quei trattamenti al parrucchiere. Inoltre, nel momento in cui il parrucchiere stara` eseguendo taglio o colore alla cliente, questa potra` utilizzare l'applicazione per scegliere prodotti adeguati ai propri capelli fra quelli venduti nella parruchieria.
+
+
+
+2)applicazione per profumerie e negozi di make-up. Vicino agli espositori di trucchi sara` disponibile un tablet in cui la cliente potra` inserire la propria foto e selezionare i trucchi, in modo che la cliente possa vedere come sarebbe utilizzando quei trucchi. L'applicazione farebbe risparmiare il numero di prodotti di prova che vengono offerti alle clienti e le clienti potrebbero pubblicare la foto nei social network ricevendo i consigli delle amiche.
+
+
+
+3)applicazione per negozi di vestiti. Le clienti troverebbero, vicino all'espositore di vestiti, un tablet in cui potrebbero cercare se e` presente il vestito della determinata taglia, inserire la propria foto e vedere come sta il vestito, in seguito, potrebbero comunque provarlo nel camerino. Spesso si perde tempo a cercare il vestito di quella taglia che magari non e` nemmeno presente nell'espositore. Inoltre l'applicazione potrebbe rilevare quante volte viene cercato il capo della determinata taglia, in modo che, se questo risulta carente e molto ricercato, il negozio possa riordinare il capo.
+
+
+
+4)applicazione da utilizzare prima di un consulto di chirurgia estetica. Chi e` interessato ad un intervento estetico potrebbe vedere che effetti avrebbe nel proprio corpo quell'intervento prima di fare un consulto dal medico che risulta molto dispendioso. L'applicazione sarebbe disponibile direttamente al cliente finale e questo potrebbe inserire la propria foto, frontale e laterale, selezionare l'intervento preferito e applicarlo, inoltre si potrebbero ridimensionare a piacimento le parti del corpo. Per ogni intervento sarebbero disponibili gli eventuali effetti collaterali, in modo che l'utente possa essere a conoscenza delle caratteristiche dell'intervento desiderato, compreso il prezzo medio.
+
+
+5)appliczione per satorie che fanno abiti su misura: sarà possibile far utilizzare questa applicazione alle clienti che vogliono un determinato abito, fatto con determinati tessuti e di colori a scelta. in base alle caratteristiche scelte sarà possibile visualizzare un preventivo dell'abito e vedere un anteprima del risultato immettendo le proprie misure pre creare un manichino che simuli l'aspetto del/della cliente con l'abito indossato. 
+
+6)applicazione per estetisti per permettere alle clienti di poter decidere cosa perfezionare con quali trattamenti e vedere i risultati "simulati" (in particolare gli effetti sulle unghie); potrà dare la possibilità di consultare un catalogo di tutti i trattamenti e prodotti in vendita e di fare preventivi e di pubblicare sui socialo network feedback positivi sul centro estico in cui si trova.
