@@ -1,0 +1,16 @@
+GLOBAL AVATAR
+Applicazione che permette di registrarsi online e di creare dal proprio smarthphone/tablet un proprio avatar simile a se stessi. Questo avatar può essere utilizzato contemporaneamente in qualunque social network/IM/chat/forum; qualunque modifica effettuata all'avatar dallo smartphone/tablet si ripercuote immediatamente su tutte le piattaforme su cui si è registrati e che sono state collegate all'avatar. Si fornisce la possibilità di personalizzare ampiamente le caratteristiche dell'avatar, aggiungere oggetti e accessori oltre alle caratteristiche fisiche.
+Bozza di BM:
+VP modificata leggermente e ampliata
+CS ampliato (mass market)
+C uguale
+CR uguale
+KA leggermente modificate e ampliate
+KR uguali
+KP notevolmente ampliate (necessita di supporto da tutte le piattaforme interessate)
+CS quasi del tutto simili
+RS uguali
+
+HAIRSTYLE COMMUNITY
+Aggiunta alla value proposition iniziale e al customer reletionship: aggiungere una comunità. Oltre all'applicazione, fornire un sito internet di community dedicato (stile forum) dove anche chi non appartiene alla propria cerchia di amici (FB, Twitter...) può commentare e dare consigli sul taglio. L'applicazione rimarrebbe comunque l'unico modo per gli utenti di creare il vero e proprio taglio.
+BOCCIATA PERCHè: Diventa quasi una guerra contro i social network; difficilmente riuscirebbe a suscitare interesse per lungo tempo.
