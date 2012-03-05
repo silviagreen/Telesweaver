@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+targetNamespace="http://www.w3.org/1999/XSL/Transform" xmlns="http://www.w3.org/1999/XSL/Transform" elementFormDefault="qualified">
+	<xs:element name="storia" type="Tstoria"/>
+	<xs:complexType name="Tstoria">
+		<xs:sequence>
+			<xs:element name="titolo" type="xs:string"/>
+			<xs:element name="autore" type="xs:string" nillable="true"/>
+			<xs:element name="descrizione" type="xs:string"/>
+			<xs:element name="incipit" type="xs:string"/>
+			<xs:element name="stanza" type="Tstanza"/>
+			<xs:element name="valutazione" type="Tvalutazione" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="recensione" type="Trecensione" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="ID" type="xs:positiveInteger"/>
+	</xs:complexType>
+	<xs:complexType name="Tstanza">
+		<xs:sequence>
+			<xs:element name="oggettiContenuti" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="direzioni" type="Tdirezioni"/>
+			<xs:element name="azioni" type="Tazioni"/>
+		</xs:sequence>
+		<xs:attribute name="inizio" type="xs:string" default="false"/>
+		<xs:attribute name="ID" type="xs:positiveInteger"/>
+		<xs:attribute name="fine" type="boolean" default="false"/>
+	</xs:complexType>
+	<xs:complexType name="Tdirezioni">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="nord" type="xs:positiveInteger"/>
+			<xs:element name="sud" type="xs:positiveInteger"/>
+			<xs:element name="ovest" type="xs:positiveInteger"/>
+			<xs:element name="est" type="xs:positiveInteger"/>
+			<xs:element name="alto" type="xs:positiveInteger"/>
+			<xs:element name="basso" type="xs:positiveInteger"/>
+		</xs:choice>
+		<xs:attribute name="oggettoNecessario" type="xs:string"/>
+		<xs:attribute name="stanzaDestinazione" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="Tvalutazione">
+		<xs:sequence>
+			<xs:element name="numero" type="xs:positiveInteger"/>
+			<xs:element name="utente" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Trecensione">
+		<xs:sequence>
+			<xs:element name="testo" type="xs:string"/>
+			<xs:element name="utente" type="xs:string"/>
+			<xs:element name="data" type="dateTime"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Tazione">
+		<xs:all>
+			<xs:element name="sbloccataDa" type="xs:positiveInteger" minOccurs="0" maxOccurs="1" />
+			<xs:element name="verbo" type="xs:string" minOccurs="1" maxOccurs="unbounded" />
+			<xs:element name="oggetto" type="xs:string" />
+			<xs:element name="secondoOggetto" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="testoRisposta" type="xs:string" />
+			<xs:element name="oggettoOttenuto" type="xs:string" minOccurs="0" maxOccurs="1" />
+			<xs:element name="sblocca" type="xs:positiveInteger" minOccurs="0" maxOccurs="unbounded" />
+		</xs:all>
+		<xs:attribute name="ID" type="xs:positiveInteger" />
+	</xs:complexType>
+</xs:schema>
