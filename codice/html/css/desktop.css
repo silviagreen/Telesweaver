@@ -1,13 +1,24 @@
-html, body, ul, li{
+html, body{
 	padding:0;
 	margin:0;
 }
+
+#head{
+	margin-left: 42%;
+	padding:0;
+	/*border:groove;*/
+}
+
+.log{
+	margin-left: 5%;
+}
+
 
 #menu{
 	border:double;
 	margin:auto;
 	
-	width:20%;
+	width:19%;
 	height:65%;
 	float:left;
 	
@@ -21,7 +32,7 @@ html, body, ul, li{
 	list-style-type:none;
 	margin:auto;
 	float:right;
-	padding-right:15%;
+	padding-right:14%;
 	
 	margin-top:12%;
 	
@@ -30,8 +41,8 @@ html, body, ul, li{
 
 #menuLista li{
 	display:block;
-	background-image:url(img/menu.jpg);
-	background-repeat:no-repeat;
+	/*background-image:url(img/);
+	background-repeat:no-repeat;*/
 
 	top:0.1em;
 	left:12em;
@@ -56,7 +67,7 @@ html, body, ul, li{
 .corpo{
 	border:dashed;
 	margin:auto;
-	background:url(img/notepad-back.gif) repeat-y top left, url(img/pageRight.png) repeat-y top right, url(img/center.png) repeat top center ;
+	/*background:url(img/notepad-back.gif) repeat-y top left, url(img/pageRight.png) repeat-y top right, url(img/center.png) repeat top center ;*/
 
 	
 	width:60%/*764px*/;
@@ -77,4 +88,10 @@ html, body, ul, li{
 
 	padding-left:4.7em;	
 
+}
+
+#piede{
+	padding-top:0.5%;
+	padding-left:19.8%;
+	border: dotted;
 }
