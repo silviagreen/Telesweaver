@@ -68,9 +68,9 @@ html, body{
 	border:dashed;
 	margin:auto;
 	/*background:url(img/notepad-back.gif) repeat-y top left, url(img/pageRight.png) repeat-y top right, url(img/center.png) repeat top center ;*/
-
 	
-	width:60%/*764px*/;
+	
+	width:60%;
 	
 }
 
@@ -91,7 +91,9 @@ html, body{
 }
 
 #piede{
-	padding-top:0.5%;
+
+	
+	/*margin-top:40%;*/
 	padding-left:19.8%;
 	border: dotted;
 }
