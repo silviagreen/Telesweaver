@@ -45,11 +45,9 @@ html, body {
 	padding: 1em 0.5em 0.2em 0/*6px 16px 2px 0*/;
 	font-size: 1em;
 }
-
 .corpo {
 	border: double;
 	margin: auto;
-
 	/*background:url(img/notepad-back.gif) repeat-y top left, url(img/pageRight.png) repeat-y top right, url(img/center.png) repeat top center ;*/
 
 	width: 60%;
@@ -74,21 +72,28 @@ html, body {
 	padding-left: 19.8%;
 	border: dotted;
 }
-
-#register label{
+#register label {
 	display: block;
 }
-
-.login{
+body > div#piede {
+	position: fixed;
+}
+* html body {
+	overflow: hidden;
+}
+* html div.corpo {
+	
+	height: 100%;
+	overflow: auto;
+}
+.login {
 	display: block;
 	width: 50%;
 	float: left;
 }
-
-.toRegister{
-		border : groove;
-
-	position:relative;
-	padding-top:1.2%;
-	float:left;
+.toRegister {
+	border: groove;
+	position: relative;
+	padding-top: 1.2%;
+	float: left;
 }
