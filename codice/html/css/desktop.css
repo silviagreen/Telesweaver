@@ -1,99 +1,94 @@
-html, body{
-	padding:0;
-	margin:0;
+html, body {
+	padding: 0;
+	margin: 0;
 }
-
-#head{
+#head {
 	margin-left: 42%;
-	padding:0;
+	padding: 0;
 	/*border:groove;*/
 }
-
-.log{
+.log {
 	margin-left: 5%;
 }
-
-
-#menu{
-	border:double;
-	margin:auto;
-	
-	width:19%;
-	height:65%;
-	float:left;
-	
-	
+#menu {
+	border: double;
+	margin: auto;
+	width: 19%;
+	height: 65%;
+	float: left;
 }
-
-#container{
-	border:groove;
+#container {
+	border: groove;
 }
-#menuLista{
-	list-style-type:none;
-	margin:auto;
-	float:right;
-	padding-right:14%;
-	
-	margin-top:12%;
-	
-	
+#menuLista {
+	list-style-type: none;
+	margin: auto;
+	float: right;
+	padding-right: 14%;
+	margin-top: 12%;
 }
-
-#menuLista li{
-	display:block;
+#menuLista li {
+	display: block;
 	/*background-image:url(img/);
-	background-repeat:no-repeat;*/
+	 background-repeat:no-repeat;*/
 
-	top:0.1em;
-	left:12em;
-	height:5em;
-	width:6.5em;	
+	top: 0.1em;
+	left: 12em;
+	height: 5em;
+	width: 6.5em;
 	/*padding:0;
-	margin-right:0;*/
-	
-	
-	
-	
+	 margin-right:0;*/
+
+}
+.mainItem a {
+	text-align: right;
+	padding: 1em 0.5em 0.2em 0/*6px 16px 2px 0*/;
+	font-size: 1em;
 }
 
-.mainItem a{
-	text-align:right;
-	padding:1em 0.5em 0.2em 0/*6px 16px 2px 0*/;
-	font-size:1em;	
-	
-}
+.corpo {
+	border: double;
+	margin: auto;
 
-
-.corpo{
-	border:dashed;
-	margin:auto;
 	/*background:url(img/notepad-back.gif) repeat-y top left, url(img/pageRight.png) repeat-y top right, url(img/center.png) repeat top center ;*/
-	
-	
-	width:60%;
-	
+
+	width: 60%;
 }
-
-.corpo p{
-	padding-left:5.4em;	
+.corpo p {
+	padding-left: 5.4em;
 }
+.corpo h2 {
 
-.corpo h2{
-
-	padding-left:3.5em;	
-
+	padding-left: 3.5em;
 }
-
-.corpo h3{
-
-	padding-left:4.7em;	
-
+.corpo h3 {
+	padding-left: 4.7em;
 }
+#piede {
 
-#piede{
-
-	
-	/*margin-top:40%;*/
-	padding-left:19.8%;
+	clear: both; /* così footer sta subito sotto il menu*/
+	position: absolute;/* cosi footer sta attaccato al bordo inferiore del browser*/
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding-left: 19.8%;
 	border: dotted;
+}
+
+#register label{
+	display: block;
+}
+
+.login{
+	display: block;
+	width: 50%;
+	float: left;
+}
+
+.toRegister{
+		border : groove;
+
+	position:relative;
+	padding-top:1.2%;
+	float:left;
 }
