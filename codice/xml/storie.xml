@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<storie xmlns="http://www.storie.com" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:schemaLocation="http://www.storie.com storie.xsd">
+	<storia id="1">
+		<titolo>L'anello</titolo>
+		<autore>Anonimo</autore>
+		<descrizione>Sei, ora, il detective dell'occulto Carnacky. Sei stato contattato dal sig. Anderson per un caso di 'infestazione'. Nella sua casa avvenivano strane cose: nel cuore di ogni notte la porta di una camera, da lui chiamata 'Camera Grigia', si apriva e sbatteva violentemente nonostante essa fosse chiusa a chiave e la chiave custodita in portineria.
+			Ti trovi ora a Cheyne Walk, di fronte a casa Anderson per risolvere il caso...</descrizione>
+		<incipit>Un'avventura ricca di mistero. Aiuta l'ispettore Carnacky a risolvere il mistero di villa Anderson...Circola voce che in quella villa accadano strane cose la notte. Nel villaggio si pensa che la casa sia infestata da qualche spirito oscuro. Da quando si è sparsa la voce nessuno vuole più far visita alla famiglia Anderson per paura di venire aggredita dallo spirito oscuro. Per questo motivo la famiglia ha convocato il detective Carnacky. Ce la farai assumendo le vesti dell'investigatore dell'occulto a liberare la famiglia da questo spirito e farle riavere una vita normale?</incipit>
+		<stanza id="1" inizio="true" fine="false">
+			<testoIniziale>Casa Anderson è una bella casa in stile vittoriano a due piani. Una torre ottogonale svetta al lato est della casa mentre una serie di tetti a spioventi a varie falde ricopre la casa. I muri in mattone sono ricoperti da edera rampicante. Puoi notare a Nord un vialetto di ingresso che conduce ad un portico in legno.
+</testoIniziale>
+			<direzioni stanzaDestinazione="1">
+				<nord>1</nord>
+			</direzioni>
+			<azioni id="1">
+				<verbo>nord</verbo>
+				<testoRisposta>Il portico di casa Anderson è realizzato completamente in legno ed è ricoperto da edera rampicante. A nord la porta che conduce in casa. A fianco della porta puoi vedere il campanello.
+</testoRisposta>
+			</azioni>
+		</stanza>
+	</storia>
+</storie>

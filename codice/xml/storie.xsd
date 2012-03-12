@@ -1,28 +1,36 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
 targetNamespace="http://www.w3.org/1999/XSL/Transform" xmlns="http://www.w3.org/1999/XSL/Transform" elementFormDefault="qualified">
-	<xs:element name="storia" type="Tstoria"/>
+<xs:element name="storie" type="Tstorie"/>
+<xs: complexType name="Tstorie">
+	<xs:sequence>
+		<xs:element name="storia" type="Tstoria"/>	
+	</xs:sequence>
+</xs:complexType>
+	
 	<xs:complexType name="Tstoria">
 		<xs:sequence>
 			<xs:element name="titolo" type="xs:string"/>
 			<xs:element name="autore" type="xs:string" nillable="true"/>
 			<xs:element name="descrizione" type="xs:string"/>
 			<xs:element name="incipit" type="xs:string"/>
-			<xs:element name="stanza" type="Tstanza"/>
+			<xs:element name="stanza" type="Tstanza" maxOccurs="unbounded"/>
 			<xs:element name="valutazione" type="Tvalutazione" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="recensione" type="Trecensione" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
-		<xs:attribute name="ID" type="xs:positiveInteger"/>
+		<xs:attribute name="ID" type="xs:positiveInteger" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="Tstanza">
 		<xs:sequence>
+			<xs:element name="testoIniziale" type="xs:string" minOccurs="0"/>
 			<xs:element name="oggettiContenuti" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="direzioni" type="Tdirezioni"/>
 			<xs:element name="azioni" type="Tazioni"/>
 		</xs:sequence>
 		<xs:attribute name="inizio" type="xs:string" default="false"/>
-		<xs:attribute name="ID" type="xs:positiveInteger"/>
+		<xs:attribute name="ID" type="xs:positiveInteger" use="required"/>
 		<xs:attribute name="fine" type="boolean" default="false"/>
+		<xs:attribute name="fine" type="xs:string" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="Tdirezioni">
 		<xs:choice minOccurs="0" maxOccurs="unbounded">
@@ -53,12 +61,12 @@ targetNamespace="http://www.w3.org/1999/XSL/Transform" xmlns="http://www.w3.org/
 		<xs:all>
 			<xs:element name="sbloccataDa" type="xs:positiveInteger" minOccurs="0" maxOccurs="1" />
 			<xs:element name="verbo" type="xs:string" minOccurs="1" maxOccurs="unbounded" />
-			<xs:element name="oggetto" type="xs:string" />
+			<xs:element name="oggetto" type="xs:string" minOccurs="0"/>
 			<xs:element name="secondoOggetto" type="xs:string" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="testoRisposta" type="xs:string" />
 			<xs:element name="oggettoOttenuto" type="xs:string" minOccurs="0" maxOccurs="1" />
 			<xs:element name="sblocca" type="xs:positiveInteger" minOccurs="0" maxOccurs="unbounded" />
 		</xs:all>
-		<xs:attribute name="ID" type="xs:positiveInteger" />
+		<xs:attribute name="ID" type="xs:positiveInteger" use="required"/>
 	</xs:complexType>
 </xs:schema>
