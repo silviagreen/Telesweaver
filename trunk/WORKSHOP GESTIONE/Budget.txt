@@ -1,0 +1,90 @@
+ANNO 1 - 176010€
+------
+RISORSE UMANE
+
+FONDATORI
+Casartelli Nicolas      Project Manager         28.922€
+Lapolla Margherita      Sales Manager           27.889€
+Segato Silvia           Programmatrice Fissa    27.889€
+Varagnolo Laura         General Manager         29.955€
+
+STAFF
+1                       Grafici                 3.972€ (sono 2 mesi)
+2			Programmatori TD	5.721€ (sono 3 mesi)
+1                       Segretaria              17.162€ (sono 11 mesi)
+RISORSE FISICHE
+LOCALI
+Ufficio                 6.000€
+
+STRUTTURE/MACCHINARI/SOFTWARE
+Niente.
+
+RISORSE INTELLETTUALI
+Niente.
+
+BUROCRAZIA
+Apertura SNC            3.500€
+
+COSTI VARIABILI
+Tablet                  150€			[x300]
+
+RICAVI: 100000€
+
+ANNO 2 - 187292€
+------
+RISORSE UMANE
+
+FONDATORI
+Casartelli Nicolas      Project Manager         28.922€
+Lapolla Margherita      Sales Manager           27.889€
+Segato Silvia           Programmatrice Fissa    27.889€
+Varagnolo Laura         General Manager         29.955€
+
+STAFF
+1                       Segretaria              18.592€
+
+RISORSE FISICHE
+LOCALI
+Ufficio                 6.000€
+
+STRUTTURE/MACCHINARI/SOFTWARE
+Niente.
+
+RISORSE INTELLETTUALI
+Niente.
+
+COSTI VARIABILI
+Tablet                  130€			[x600]
+
+
+ANNO 3 - 285063€
+------
+RISORSE UMANE
+
+FONDATORI
+Casartelli Nicolas      Project Manager         29.955€
+Lapolla Margherita      Sales Manager           28.922€
+Segato Silvia           Programmatrice Fissa    28.922€
+Varagnolo Laura         General Manager         30.987€
+
+STAFF
+1                       Segretaria              19.625€
+1			Commerciale		20.652€
+
+RISORSE FISICHE
+LOCALI
+Ufficio                 6.000€
+
+STRUTTURE/MACCHINARI/SOFTWARE
+Niente.
+
+RISORSE INTELLETTUALI
+Niente.
+
+COSTI VARIABILI
+Tablet                  100€			[x1200]
+
+
+
+COSTI TOTALI: 692360€
+
