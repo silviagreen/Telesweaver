@@ -1,25 +1,33 @@
 html, body {
 	padding: 0;
 	margin: 0;
+	background-color: rgb(5,6,71) ;
+	color: rgb(255,255,255);
+	height;100%
 }
-#head {
-	margin-left: 42%;
+h1 {
+	margin:auto;
+	background-image: url(img/Logo.jpg);
+	width:615px;
+	height:312px;
 	padding: 0;
-	/*border:groove;*/
+	
 }
-.log {
-	margin-left: 5%;
+
+h1 span {
+	display: block;
+	height: 0;
+	overflow: hidden;
 }
+
 #menu {
 	border: double;
 	margin: auto;
-	width: 19%;
-	height: 65%;
+	width: 20%;
+	height: 100%;
 	float: left;
 }
-#container {
-	border: groove;
-}
+
 #menuLista {
 	list-style-type: none;
 	margin: auto;
@@ -29,28 +37,43 @@ html, body {
 }
 #menuLista li {
 	display: block;
-	/*background-image:url(img/);
-	 background-repeat:no-repeat;*/
 
 	top: 0.1em;
 	left: 12em;
 	height: 5em;
 	width: 6.5em;
-	/*padding:0;
-	 margin-right:0;*/
-
 }
 .mainItem a {
 	text-align: right;
-	padding: 1em 0.5em 0.2em 0/*6px 16px 2px 0*/;
+	padding: 1em 0.5em 0.2em 0;
 	font-size: 1em;
 }
+
+
+.submenu ul{
+	list-style-type: none;
+}
+
+.submenu ul li{
+	display: inline;
+}
+
+.container{
+	position: relative;
+	min-height: 100%;
+ 
+    	
+}
+
+* html .container{
+	height: 100%;
+}
+
 .corpo {
 	border: double;
-	margin: auto;
-	/*background:url(img/notepad-back.gif) repeat-y top left, url(img/pageRight.png) repeat-y top right, url(img/center.png) repeat top center ;*/
-
-	width: 60%;
+	padding-bottom: 3em;
+	margin-left: 20%;
+	
 }
 .corpo p {
 	padding-left: 5.4em;
@@ -62,19 +85,26 @@ html, body {
 .corpo h3 {
 	padding-left: 4.7em;
 }
+
+
 #piede {
+
+
 
 	clear: both; /* così footer sta subito sotto il menu*/
 	position: absolute;/* cosi footer sta attaccato al bordo inferiore del browser*/
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	padding-left: 19.8%;
+	height: 5%;
+	
+	margin:  auto;
+	
 	border: dotted;
+	
+	background-color: green;
 }
-#register label {
-	display: block;
-}
+
 body > div#piede {
 	position: fixed;
 }
@@ -86,7 +116,9 @@ body > div#piede {
 	height: 100%;
 	overflow: auto;
 }
-.login {
+
+
+/*.login {
 	display: block;
 	width: 50%;
 	float: left;
@@ -96,4 +128,4 @@ body > div#piede {
 	position: relative;
 	padding-top: 1.2%;
 	float: left;
-}
+}*/
