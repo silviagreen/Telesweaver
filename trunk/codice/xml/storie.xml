@@ -9,33 +9,247 @@
 		<stanza id="1" inizio="true" fine="false" nome="giardino">
 			<testoIniziale>Casa Anderson è una bella casa in stile vittoriano a due piani. Una torre ottogonale svetta al lato est della casa mentre una serie di tetti a spioventi a varie falde ricopre la casa. I muri in mattone sono ricoperti da edera rampicante. Puoi notare a Nord un vialetto di ingresso che conduce ad un portico in legno.
 </testoIniziale>
-			<direzioni stanzaDestinazione="1">
-				<nord>1</nord>
-				<testoRisposta>Il portico di casa Anderson è realizzato completamente in legno ed è ricoperto da edera rampicante. A nord la porta che conduce in casa. A fianco della porta puoi vedere il campanello.
+			<direzioni>
+				<direzione>
+					<nome>nord</nome>
+					<testoRisposta>Il portico di casa Anderson è realizzato completamente in legno ed è ricoperto da edera rampicante. A nord la porta che conduce in casa. A fianco della porta puoi vedere il campanello.
 </testoRisposta>
+				</direzione>
 			</direzioni>
-			<direzioni stanzaDestinazione="2" nome="soggiorno">
-				<nord>2</nord>
+			<azione id="10">
+				<verbo>entra</verbo>
+				<oggetto>auto</oggetto>
+				<sbloccataDa>9</sbloccataDa>
+				<testoFallimento>Non ha senso prendere l'auto. &#200; piena notte e la porta della camera grigia sta sbattendo.Devi rientrare in casa e risolvere il mistero...</testoFallimento>
+				<testoRisposta>Sei entrato nella Bentley.</testoRisposta>
+				<sblocca>11</sblocca>
+			</azione>
+			<azione id="11">
+				<verbo>accendi</verbo>
+				<oggetto>auto</oggetto>
+				<sbloccataDa>10</sbloccataDa>
+				<testoFallimento>Non puoi mettere in moto l&#39;auto se devi ancora entrarci dentro!</testoFallimento>
+				<testoRisposta>La tua Bentley si mette in moto.</testoRisposta>
+			</azione>
+		</stanza>
+		<stanza id="2" nome="portico">
+			<testoIniziale>Il portico di casa Anderson è realizzato completamente in legno ed è ricoperto da edera rampicante. A nord la porta che conduce in casa. A fianco della porta puoi vedere il campanello.
+</testoIniziale>
+			<direzioni>
+				<direzione>
+					<nome>nord</nome>
+					<oggettoNecessario>apriporta</oggettoNecessario>
+					<testoFallimento>La porta &#232; chiusa a chiave.</testoFallimento>
+					<stanzaDestinazione>3</stanzaDestinazione>
+				</direzione>
+				<direzione>
+					<nome>sud</nome>
+					<oggettoNecessario>riposo</oggettoNecessario>
+					<testoFallimento>Hai proprio bisogno di riposare.</testoFallimento>
+					<stanzaDestinazione>1</stanzaDestinazione>
+				</direzione>
 			</direzioni>
-			<azione>
+			<azione id="1">
 				<verbo>suona</verbo>
 				<oggetto>campanello</oggetto>
+				<oggettoOttenuto>apriporta</oggettoOttenuto>
 				<testoRisposta>Il maggiordomo di casa Anderson ti viene ad aprire.
 &quot; Buonasera signor Carnacky, la stavo attendendo.&quot;
 </testoRisposta>
+				<sblocca>2</sblocca>
 			</azione>
 		</stanza>
-		<stanza id="2">
+		<stanza id="3" nome="soggiorno">
 			<testoIniziale>Soggiorno di casa Anderson. Ci sono un tavolo, delle sedie, una dispensa e una libreria a muro. Puoi notare una rampa di scale che sale verso l'alto, a est la porta della stanza del maggiordomo mentre a ovest passando sotto un architrave puoi entrare nello studio del signor Anderson.
 Il maggiordomo ti accompagna dentro.
 </testoIniziale>
-			<azione>
+			<azione id="2">
+				<sbloccataDa>1</sbloccataDa>
 				<verbo>chiedi</verbo>
 				<verbo>domanda</verbo>
 				<verbo>interroga</verbo>
 				<verbo>parla</verbo>
 				<oggetto>maggiordomo</oggetto>
 				<secondoOggetto>infestazione</secondoOggetto>
+				<testoRisposta>
+					&quot; Tutte le notti verso mezzanotte la porta della camera grigia inizia a sbattere anche se la porta è chiusa a chiave e la chiave si trova in portineria. Si dice che parecchi anni fa, quando già si l'infestazione avveniva, vi furono strangolate la moglie e la figlia di un avo del signor Anderson che malauguratamente decisero di trascorrere la notte nella stanza. 
+«Da allora nessuno ha più osato metter piede di notte nella stanza... Io stesso vi entro solo di giorno...
+«Comunque vista l'ora le consiglio di andare a dormire nella camera degli ospiti, potrà iniziare le indagini domani. &quot;
+				</testoRisposta>
+				<testoFallimento>Il maggiordomo non ti capisce.</testoFallimento>
+			</azione>
+			<direzioni>
+				<direzione>
+					<nome>sopra</nome>
+					<stanzaDestinazione>4</stanzaDestinazione>
+				</direzione>
+				<direzione>
+					<nome>sud</nome>
+					<stanzaDestinazione>2</stanzaDestinazione>
+				</direzione>
+			</direzioni>
+		</stanza>
+		<stanza id="4" nome="corridoio">
+			<testoIniziale>È il corridoio del piano superiore di casa Anderson. Ai muri sono appesi dei quadri che ritraggono avi della dinastia Anderson. A est puoi vedere la porta della camera grigia, a nord la porta della camera degli ospiti, a ovest la porta del bagno, verso il basso vi è una rampa di scale che porta nel soggiorno.
+</testoIniziale>
+			<direzioni>
+				<direzione>
+					<nome>sotto</nome>
+					<oggettoNecessario>riposo</oggettoNecessario>
+					<testoFallimento>Hai proprio bisogno di riposare.</testoFallimento>
+					<stanzaDestinazione>3</stanzaDestinazione>
+				</direzione>
+				<direzione>
+					<nome>nord</nome>
+					<oggettoNecessario>entraospiti</oggettoNecessario>
+					<testoFallimento>come puoi entrare nella stanza se non l&#39;hai aperta&#63;</testoFallimento>
+					<stanzaDestinazione>5</stanzaDestinazione>
+				</direzione>
+				<direzione>
+					<nome>ovest</nome>
+					<stanzaDestinazione>6</stanzaDestinazione>
+				</direzione>
+				<direzione>
+					<nome>est</nome>
+					<oggettoNecessario>aspetta</oggettoNecessario>
+					<testoFallimento>La porta &#232; chiusa a chiave!</testoFallimento>
+					<testoRisposta>Appena ti avvicini alla porta della camera grigia una forza oscura ti afferra per il braccio...
+</testoRisposta>
+				</direzione>
+			</direzioni>
+			<azione id="3">
+				<verbo>apri</verbo>
+				<oggetto>porta</oggetto>
+				<secondoOggetto>ospiti</secondoOggetto>
+				<testoRisposta>Entra pure.</testoRisposta>
+				<oggettoOttenuto>entraospiti</oggettoOttenuto>
+				<sbloccs>4</sbloccs>
+			</azione>
+			<azione id="8">
+				<verbo>aspetta</verbo>
+				<sbloccataDa>7</sbloccataDa>
+				<testoRisposta>Il tempo passa.
+Una forza oscura ti sta tirando per il braccio. Vuole trascinarti dentro la camera grigia. Stai cercando di resistere e di tirarti indietro ma la forza è troppo forte.
+Se non fai qualcosa nel giro di pochi secondi sarai morto. </testoRisposta>
+				<sblocca>9</sblocca>
+			</azione>
+			<azione id="9">
+				<verbo>urla</verbo>
+				<sbloccataDa>8</sbloccataDa>
+				<testoRisposta>Non appena sente le tue grida, il maggiordomo sale in corridoio e con un enorme sforzo ti tira indietro liberandoti dalla morsa della forza. In uno stato di semiincoscienza ti riporta nella camera degli ospiti.Oramai si &#232; fatta l&#39;alba e la porta ha smesso di sbattere. Non vi &#232; pi&#249; pericolo. Ora, per affrontare il mistero della camera grigia devi andare a casa tua a recuperare tutto il materiale necessario...
+</testoRisposta>
+				<sblocca>10</sblocca>
+			</azione>
+		</stanza>
+		<stanza id="6" nome="bagno">
+			<testoIniziale>&#200; il bagno di casa Anderson. Puoi vedere uno specchio, un lavandino, un bidet e una toilette.</testoIniziale>
+			<direzioni>
+				<direzione>
+					<nome>est</nome>
+					<stanzaDestinazione>4</stanzaDestinazione>
+				</direzione>
+			</direzioni>
+		</stanza>
+		<stanza id="7" nome="camera degli ospiti">
+			<testoIniziale>Sei nella camera degli ospiti della signora Anderson. La camera da letto degli ospiti della casa Anderson &#232; arredata con un letto, un comodino, un armadio e un quadro che raffigura uno degli avi del signor Anderson. A sud puoi vedere la porta che conduce nel corridoio.
+</testoIniziale>
+			<direzioni>
+				<direzione>
+					<nome>sud</nome>
+					<oggettoNecessario>riposo</oggettoNecessario>
+					<testoFallimento>Hai proprio bisogno di riposare.</testoFallimento>
+					<stanzaDestinazione>4</stanzaDestinazione>
+				</direzione>
+			</direzioni>
+			<azione id="4">
+				<verbo>entra</verbo>
+				<oggetto>letto</oggetto>
+				<testoRisposta>Ti trovi dentro il letto.</testoRisposta>
+				<sbloccataDa>3</sbloccataDa>
+				<sblocca>5</sblocca>
+			</azione>
+			<azione id="5">
+				<verbo>dormi</verbo>
+				<sbloccataDa>4</sbloccataDa>
+				<testoRisposta>Sei entrato nel letto e, a fatica, a causa di quello che ti ha detto il maggiordomo riesci a prendere sonno...
+Improvvisamente,sarà circa mezzanotte, inizi a sentire sbattere la porta della camera grigia... THUD... THUD... THUD......
+</testoRisposta>
+				<sblocca>6</sblocca>
+			</azione>
+			<azione id="6">
+				<verbo>dormi</verbo>
+				<sbloccataDa>5</sbloccataDa>
+				<testoRisposta>La porta continua a sbattere , non riesci a dormire.Forse sarebbe il caso di andare a controllare la situazione nel corridoio.
+</testoRisposta>
+				<oggettoOttenuto>aspetta</oggettoOttenuto>
+				<sblocca>7</sblocca>
+			</azione>
+			<azione id="7">
+				<verbo>esci</verbo>
+				<oggetto>letto</oggetto>
+				<sbloccataDa>6</sbloccataDa>
+				<testoFallimento>Sei troppo stanco per alzarti dal letto, hai bisogno di dormire.</testoFallimento>
+				<testoRisposta>Sei uscito dal letto.</testoRisposta>
+				<oggettoOttenuto>riposo</oggettoOttenuto>
+			</azione>
+		</stanza>
+		<stanza id="8" nome="Cheyne walk">
+			<testoIniziale>&#200; la strada che porta a casa Carnacky, da casa Anderson, e viceversa. Proseguendo verso est puoi raggiungere casa Carnacky.
+</testoIniziale>
+			<direzioni>
+				<direzione>
+					<nome>est</nome>
+					<stanzaDestinazione>9</stanzaDestinazione>
+				</direzione>
+			</direzioni>
+		</stanza>
+		<stanza id="9" nome="Branson street">
+			<testoIniziale>&#200; la strada che porta a casa Carnacky, da casa Anderson, e viceversa. Proseguendo verso est puoi raggiungere casa Carnacky.</testoIniziale>
+			<direzioni>
+				<direzione>
+					<nome>est</nome>
+					<stanzaDestinazione>10</stanzaDestinazione>
+				</direzione>
+			</direzioni>
+		</stanza>
+		<stanza id="10" nome="Oxford street ">
+			<testoIniziale>&#200; la strada che porta a casa Carnacky, da casa Anderson, e viceversa. Proseguendo verso est puoi raggiungere casa Carnacky.</testoIniziale>
+			<direzioni>
+				<direzione>
+					<nome>est</nome>
+					<testoRisposta>Ti trovi davanti a casa Carnacky.</testoRisposta>
+				</direzione>
+				<direzione>
+					<nome>nord</nome>
+					<oggettoNecessario>gambe</oggettoNecessario>
+					<stanzaDestinazione>11</stanzaDestinazione>
+				</direzione>
+			</direzioni>
+			<azione id="12">
+				<verbo>esci</verbo>
+				<oggetto>auto</oggetto>
+				<oggettoOttenuto>gambe</oggettoOttenuto>
+				<testoRisposta>Sei uscito dalla Bentley.</testoRisposta>
+				<sblocca>13</sblocca>
+			</azione>
+		</stanza>
+		<stanza id="11" nome="casa Carnacky">
+			<testoIniziale>È la tua dolce casa.  una bella casa a due piani con una terrazza e un giardino. A Nord puoi vedere la porta d'ingresso. 
+La tua Bentley rosso fiammante è parcheggiata qui di fronte.</testoIniziale>
+			<direzioni>
+				<direzione>
+					<nome>nord</nome>
+					<oggettoNecessario>apertura</oggettoNecessario>
+					<testoFallimento>La porta &#232; chiusa a chiave.</testoFallimento>
+					<stanzaDestinazione>12</stanzaDestinazione>
+				</direzione>
+			</direzioni>
+			<azione id="13">
+				<verbo>apri</verbo>
+				<oggetto>porta</oggetto>
+				<secondoOggetto>chiave</secondoOggetto>
+				<testoRisposta>Ora la porta di casa tua non è più chiusa a chiave.</testoRisposta>
+				<sbloccataDa>12</sbloccataDa>
 			</azione>
 		</stanza>
 	</storia>
