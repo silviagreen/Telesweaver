@@ -43,19 +43,20 @@ h1 span {
 	height: 5em;
 	width: 6.5em;
 }
-.mainItem a {
+#mainItem a {
 	text-align: right;
 	padding: 1em 0.5em 0.2em 0;
 	font-size: 1em;
 }
 
 
-.submenu ul{
+#submenu ul{
 	list-style-type: none;
 }
 
-.submenu ul li{
+#submenu ul li{
 	display: inline;
+	margin: 1%;
 }
 
 .container{
