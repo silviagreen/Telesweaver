@@ -24,23 +24,26 @@ targetNamespace="http://www.w3.org/1999/XSL/Transform" xmlns="http://www.w3.org/
 		<xs:sequence>
 			<xs:element name="testoIniziale" type="xs:string" minOccurs="0"/>
 			<xs:element name="oggettiContenuti" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element name="direzioni" type="Tdirezioni"/>
-			<xs:element name="azioni" type="Tazioni"/>
+			<xs:element name="direzione" type="Tdirezione"/>
+			<xs:element name="azione" type="Tazione"/>
 		</xs:sequence>
-		<xs:attribute name="inizio" type="xs:string" default="false"/>
+		<xs:attribute name="inizio" type="xs:boolean" default="false"/>
 		<xs:attribute name="ID" type="xs:positiveInteger" use="required"/>
-		<xs:attribute name="fine" type="boolean" default="false"/>
-		<xs:attribute name="fine" type="xs:string" use="required"/>
+		<xs:attribute name="fine" type="xs:boolean" default="false" use="required"/>
+		<xs:attribute name="nome" type="xs:string" use="required"/>
 	</xs:complexType>
-	<xs:complexType name="Tdirezioni">
+	<xs:complexType name="Tdirezione">
 		<xs:choice minOccurs="0" maxOccurs="unbounded">
 			<xs:element name="nord" type="xs:positiveInteger"/>
 			<xs:element name="sud" type="xs:positiveInteger"/>
 			<xs:element name="ovest" type="xs:positiveInteger"/>
 			<xs:element name="est" type="xs:positiveInteger"/>
-			<xs:element name="alto" type="xs:positiveInteger"/>
-			<xs:element name="basso" type="xs:positiveInteger"/>
+			<xs:element name="sopra" type="xs:positiveInteger"/>
+			<xs:element name="sotto" type="xs:positiveInteger"/>
 		</xs:choice>
+		<xs:sequence>
+			<xs:element name="testoRisposta" type="xsd:string" minOccurs="0"/>
+		</xs:sequence>
 		<xs:attribute name="oggettoNecessario" type="xs:string"/>
 		<xs:attribute name="stanzaDestinazione" type="xs:string"/>
 	</xs:complexType>
