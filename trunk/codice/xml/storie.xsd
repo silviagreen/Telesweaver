@@ -84,7 +84,7 @@ targetNamespace="http://www.w3.org/1999/XSL/Transform" xmlns="http://www.w3.org/
 	</xs:complexType>
 	<xs:complexType name="Tazione">
 		<xs:all>
-			<xs:element name="sbloccataDa" type="xs:positiveInteger" minOccurs="0" maxOccurs="1" />
+			<xs:element name="sbloccataDa" type="xs:positiveInteger" minOccurs="0" maxOccurs="unbounded" />
 			<xs:element name="verbo" type="xs:string" minOccurs="1" maxOccurs="unbounded" />
 			<xs:element name="oggetto" type="xs:string" minOccurs="0"/>
 			<xs:element name="secondoOggetto" type="xs:string" minOccurs="0" maxOccurs="1"/>
