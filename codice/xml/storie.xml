@@ -12,8 +12,7 @@
 			<direzioni>
 				<direzione>
 					<nome>nord</nome>
-					<testoRisposta>Il portico di casa Anderson è realizzato completamente in legno ed è ricoperto da edera rampicante. A nord la porta che conduce in casa. A fianco della porta puoi vedere il campanello.
-</testoRisposta>
+					<stanzaDestinazione>2</stanzaDestinazione>
 				</direzione>
 			</direzioni>
 			<azione id="10">
@@ -30,6 +29,11 @@
 				<sbloccataDa>10</sbloccataDa>
 				<testoFallimento>Non puoi mettere in moto l&#39;auto se devi ancora entrarci dentro!</testoFallimento>
 				<testoRisposta>La tua Bentley si mette in moto.</testoRisposta>
+			</azione>
+			<azione id="35">
+				<verbo>esci</verbo>
+				<oggetto>auto</oggetto>
+				<testoRisposta>Sei uscito dalla Bentley.</testoRisposta>
 			</azione>
 		</stanza>
 		<stanza id="2" nome="portico">
@@ -78,6 +82,17 @@ Il maggiordomo ti accompagna dentro.
 				</testoRisposta>
 				<testoFallimento>Il maggiordomo non ti capisce.</testoFallimento>
 			</azione>
+			<azione id="51">
+				<verbo>chiedi</verbo>
+				<verbo>domanda</verbo>
+				<verbo>interroga</verbo>
+				<verbo>parla</verbo>
+				<oggetto>maggiordomo</oggetto>
+				<secondoOggetto>teca</secondoOggetto>
+				<oggettoOttenuto>chiave</oggettoOttenuto>
+				<testoRisposta>La teca appartiene alla famiglia Anderson. Ma forse ho con me qualcosa con me per aprirla. Eccole la chiave per aprire la teca.</testoRisposta>
+				<sblocca>52</sblocca>
+			</azione>
 			<direzioni>
 				<direzione>
 					<nome>sopra</nome>
@@ -116,6 +131,11 @@ Il maggiordomo ti accompagna dentro.
 					<testoRisposta>Appena ti avvicini alla porta della camera grigia una forza oscura ti afferra per il braccio...
 </testoRisposta>
 				</direzione>
+				<direzione>
+					<nome>sopra</nome>
+					<oggettoNecessario>vialibera</oggettoNecessario>
+					<stanzaDestinazione>13</stanzaDestinazione>
+				</direzione>
 			</direzioni>
 			<azione id="3">
 				<verbo>apri</verbo>
@@ -139,6 +159,13 @@ Se non fai qualcosa nel giro di pochi secondi sarai morto. </testoRisposta>
 				<testoRisposta>Non appena sente le tue grida, il maggiordomo sale in corridoio e con un enorme sforzo ti tira indietro liberandoti dalla morsa della forza. In uno stato di semiincoscienza ti riporta nella camera degli ospiti.Oramai si &#232; fatta l&#39;alba e la porta ha smesso di sbattere. Non vi &#232; pi&#249; pericolo. Ora, per affrontare il mistero della camera grigia devi andare a casa tua a recuperare tutto il materiale necessario...
 </testoRisposta>
 				<sblocca>10</sblocca>
+			</azione>
+			<azione id="36">
+				<verbo>apri</verbo>
+				<oggetto>porta</oggetto>
+				<secondoOggetto>grigia</secondoOggetto>
+				<oggettoOttenuto>vialibera</oggettoOttenuto>
+				<testoRisposta>Hai aperto la porta. Ora, salendo le scale puoi accedere alla camera grigia.</testoRisposta>
 			</azione>
 		</stanza>
 		<stanza id="6" nome="bagno">
@@ -193,6 +220,222 @@ Improvvisamente,sarà circa mezzanotte, inizi a sentire sbattere la porta della 
 				<oggettoOttenuto>riposo</oggettoOttenuto>
 			</azione>
 		</stanza>
+		<stanza id="13" nome="camera grigia" fine="true">
+			<testoIniziale>All'apparenza la camera non ha nulla di anormale o di pauroso. &#200; arredata come una normale camera da letto con un letto matrimoniale, due comodini e un armadio. &#200; il momento di mettere in pratica l'esorcismo che hai imparato quando sei tornato nel tuo studio.</testoIniziale>
+			<direzioni>
+				<direzione>
+					<nome>sotto</nome>
+					<testoRisposta>Hai sceso le scale della camera grigia. Ad ovest vedi la porta per uscire dalla camera.</testoRisposta>
+				</direzione>
+				<direzione>
+					<nome>ovest</nome>
+					<stanzaDestinazione>4</stanzaDestinazione>
+				</direzione>
+			</direzioni>
+			<azione id="37">
+				<verbo>disegna</verbo>
+				<verbo>scrivi</verbo>
+				<oggetto>pentacolo</oggetto>
+				<testoRisposta>Disegni il pentacolo per terra.Ormai &#232; pomeriggio tardi.</testoRisposta>
+				<sblocca>38</sblocca>
+			</azione>
+			<azione id="38">
+				<verbo>metti</verbo>
+				<verbo>posa</verbo>
+				<verbo>appoggia</verbo>
+				<oggetto>boccetta</oggetto>
+				<secondoOggetto>pentacolo</secondoOggetto>
+				<sbloccataDa>37</sbloccataDa>
+				<sbloccataDa>38</sbloccataDa>
+				<testoFallimento>Devi essere in possesso della boccetta di acqua santa e devi aver disegnato il pentacolo&#33;</testoFallimento>
+				<testoRisposta>Hai messo la boccetta di acqua santa dentro il pentacolo. Stanno calando le tenebre. Perch&#232; l&#39;esorcismo abbia effetto devi essere al centro del pentacolo.</testoRisposta>
+				<sblocca>39</sblocca>
+			</azione>
+			<azione>
+				<verbo>entra</verbo>
+				<verbo>vai</verbo>
+				<oggetto>pentacolo</oggetto>
+				<sbloccataDa>38</sbloccataDa>
+				<testoFallimento>Sei sicuro di aver eseguito il rituale nel modo giusto&#63;</testoFallimento>
+				<testoRisposta>Ti trovi dentro il pentacolo. Dentro il pentacolo puoi vedere la boccetta di acqua santa. Ormai si &#232; fatta notte. Tra poco potrebbe essere pericoloso stare nella stanza. Non ti resta che aspettare...</testoRisposta>
+				<sblocca>40</sblocca>
+			</azione>
+			<azione id="40">
+				<verbo>aspetta</verbo>
+				<verbo>attendi</verbo>
+				<sbloccataDa>39</sbloccataDa>
+				<testoFallimento>Sei sicuro di aver eseguito il rituale nel modo giusto&#63;</testoFallimento>
+				<testoRisposta>Il tempo passa. Improvvisamente incomincia a spirare un vento gelido.</testoRisposta>
+				<sblocca>41</sblocca>
+			</azione>
+			<azione id="41">
+				<verbo>aspetta</verbo>
+				<verbo>attendi</verbo>
+				<sbloccataDa>40</sbloccataDa>
+				<testoFallimento>Sei sicuro di aver eseguito il rituale nel modo giusto&#63;</testoFallimento>
+				<testoRisposta>Il tempo passa. Dal nulla si incomincia a definire un&#39;ombra mostruosa. Sta prendendo la forma di una mano gigantesca.</testoRisposta>
+				<sblocca>42</sblocca>
+			</azione>
+			<azione id="42">
+				<verbo>aspetta</verbo>
+				<verbo>attendi</verbo>
+				<sbloccataDa>41</sbloccataDa>
+				<testoFallimento>Sei sicuro di aver eseguito il rituale nel modo giusto&#63;</testoFallimento>
+				<testoRisposta>Il tempo passa. L&#39;ombra a forma di mano gigantesca prova ad afferrarti ma viene respinta dal pentacolo.</testoRisposta>
+				<sblocca>43</sblocca>
+			</azione>
+			<azione id="43">
+				<verbo>aspetta</verbo>
+				<verbo>attendi</verbo>
+				<sbloccataDa>42</sbloccataDa>
+				<testoFallimento>Sei sicuro di aver eseguito il rituale nel modo giusto&#63;</testoFallimento>
+				<testoRisposta>Il tempo passa. L&#39;ombra ritenta di afferarti ma il potere del pentacolo la respinge.</testoRisposta>
+				<sblocca>44</sblocca>
+			</azione>
+			<azione id="44">
+				<verbo>aspetta</verbo>
+				<verbo>attendi</verbo>
+				<sbloccataDa>43</sbloccataDa>
+				<testoFallimento>Sei sicuro di aver eseguito il rituale nel modo giusto&#63;</testoFallimento>
+				<testoRisposta>Il tempo passa. Ormai si sta facendo giorno, l&#39;ombra gira intorno al pentacolo ma viene respinta ogni volta che si avvicina.</testoRisposta>
+				<sblocca>45</sblocca>
+			</azione>
+			<azione id="45">
+				<verbo>aspetta</verbo>
+				<verbo>attendi</verbo>
+				<sbloccataDa>44</sbloccataDa>
+				<testoFallimento>Sei sicuro di aver eseguito il rituale nel modo giusto&#63;</testoFallimento>
+				<testoRisposta>Il tempo passa. Non appena spuntano i primi raggi del sole l&#39;ombra a forma di mano gigantesca si ritira apparentemente svanendo nel muro a lato del letto. Forse ti conviene aspettare ancora un p&#242;</testoRisposta>
+				<sblocca>46</sblocca>
+			</azione>
+			<azione id="46">
+				<verbo>aspetta</verbo>
+				<verbo>attendi</verbo>
+				<sbloccataDa>45</sbloccataDa>
+				<testoFallimento>Sei sicuro di aver eseguito il rituale nel modo giusto&#63;</testoFallimento>
+				<testoRisposta>Il tempo passa.
+Oramai non c&#39;&#232; pi&#249; pericolo, puoi anche uscire dal pentacolo.
+</testoRisposta>
+				<sblocca>47</sblocca>
+			</azione>
+			<azione id="47">
+				<verbo>esci</verbo>
+				<oggetto>pentacolo</oggetto>
+				<sbloccataDa>46</sbloccataDa>
+				<testoFallimento>Devi aspettare ancora un p&#242;.</testoFallimento>
+				<testoRisposta>Sei uscito dal pentacolo. Per terra, puoi vedere disegnato un pentacolo. Al centro del pentacolo vedi una boccetta di acqua santa. Controlla bene la stanza. A volte i muri non vengono notati ma racchiudono qualcosa d&#39;interessante.</testoRisposta>
+				<sblocca>48</sblocca>
+			</azione>
+			<azione id="48">
+				<verbo>ispeziona</verbo>
+				<verbo>esamina</verbo>
+				<verbo>controlla</verbo>
+				<oggetto>muro</oggetto>
+				<sbloccataDa>47</sbloccataDa>
+				<testoRisposta>&#200; il muro della camera grigia. &#200; ricoperto da carta da parati. In corrispondenza della zona in cui &#232; sparita l&#39;ombra mostruosa noti un rigonfiamento della carta da parati.</testoRisposta>
+				<sblocca>49</sblocca>
+			</azione>
+			<azione id="49">
+				<verbo>strappa</verbo>
+				<verbo>togli</verbo>
+				<oggetto>carta</oggetto>
+				<sbloccataDa>48</sbloccataDa>
+				<testoRisposta>Strappi la carta da parati dietro il letto. Al di sotto della carta si rivela un&#39;antica teca.</testoRisposta>
+				<sblocca>50</sblocca>
+			</azione>
+			<azione id="50">
+				<verbo>apri</verbo>
+				<oggetto>teca</oggetto>
+				<sbloccataDa>49</sbloccataDa>
+				<testoRisposta>Sembra essere chiusa a chiave. Magari il maggiordomo ne sa qualcosa...</testoRisposta>
+			</azione>
+			<azione id="52">
+				<verbo>apri</verbo>
+				<oggetto>teca</oggetto>
+				<sbloccataDa>51</sbloccataDa>
+				<testoRisposta>Sei riuscito ad aprire la teca. Chiss&#225; cosa nasconde al suo interno...</testoRisposta>
+				<sblocca>53</sblocca>
+			</azione>
+			<azione id="53">
+				<verbo>guarda</verbo>
+				<oggetto>teca</oggetto>
+				<sbloccataDa>52</sbloccataDa>
+				<testoRisposta>Dentro la teca vedi un anello. Potrebbe centrare qualcosa con il pentacolo.</testoRisposta>
+				<sblocca>54</sblocca>
+			</azione>
+			<azione id="54">
+				<verbo>prendi</verbo>
+				<verbo>afferra</verbo>
+				<oggetto>anello</oggetto>
+				<sbloccataDa>53</sbloccataDa>
+				<oggettoOttenuto>anello</oggettoOttenuto>
+				<testoFallimento>Come puoi prendere qualcosa senza aver guardato nella teca&#63;</testoFallimento>
+				<testoRisposta>Preso.</testoRisposta>
+				<sblocca>55</sblocca>
+			</azione>
+			<azione id="55">
+				<verbo>posa</verbo>
+				<verbo>metti</verbo>
+				<verbo>appoggia</verbo>
+				<oggetto>anello</oggetto>
+				<sbloccataDa>54</sbloccataDa>
+				<testoFallimento>Prima devi prendere l&#39;anello dalla teca.</testoFallimento>
+				<testoRisposta>Hai messo l'anello dentro il pentacolo. Cosa succeder&#225; adesso&#63;</testoRisposta>
+				<sblocca>56</sblocca>
+			</azione>
+			<azione id="56">
+				<verbo>aspetta</verbo>
+				<verbo>attendi</verbo>
+				<sbloccataDa>55</sbloccataDa>
+				<testoFallimento>Forse non hai eseguito il rituale nel modo corretto.</testoFallimento>
+				<testoRisposta>Il tempo passa. Una volta deposto l&#39;anello nel pentacolo, attendi pazientemente che arrivi la notte.</testoRisposta>
+				<sblocca>57</sblocca>
+			</azione>
+			<azione id="57">
+				<verbo>aspetta</verbo>
+				<verbo>attendi</verbo>
+				<sbloccataDa>56</sbloccataDa>
+				<testoRisposta>Il tempo passa. Appena calano le tenebre un atmosfera sinistra avvolge la stanza.</testoRisposta>
+				<sblocca>58</sblocca>
+			</azione>
+			<azione id="58">
+				<verbo>aspetta</verbo>
+				<verbo>attendi</verbo>
+				<sbloccataDa>57</sbloccataDa>
+				<testoRisposta>Il tempo passa. Dall&#39;anello incomincia a spirare un vento gelido.</testoRisposta>
+				<sblocca>59</sblocca>
+			</azione>
+			<azione id="59">
+				<verbo>aspetta</verbo>
+				<verbo>attendi</verbo>
+				<sbloccataDa>58</sbloccataDa>
+				<testoRisposta>Il tempo passa. Dall&#39;anello si incomincia a definire un&#39;ombra mostruosa.</testoRisposta>
+				<sblocca>60</sblocca>
+			</azione>
+			<azione id="60">
+				<verbo>aspetta</verbo>
+				<verbo>attendi</verbo>
+				<sbloccataDa>59</sbloccataDa>
+				<testoRisposta>Il tempo passa. L&#39;ombra prende la forma di una mano gigantesca.</testoRisposta>
+				<sblocca>61</sblocca>
+			</azione>
+			<azione id="61">
+				<verbo>aspetta</verbo>
+				<verbo>attendi</verbo>
+				<sbloccataDa>60</sbloccataDa>
+				<testoRisposta>Il tempo passa. L&#39;ombra dalla forma di mano gigantesca vuole raggiungerti ma &#232; intrappolata all&#39;interno del pentacolo. Non sai cosa fare per eliminare lo spirito malvaglio...ora ricordi! Hai ancora con te la bottiglietta di acqua sulfurea...</testoRisposta>
+				<sblocca>62</sblocca>
+			</azione>
+			<azione id="62">
+				<verbo>versa</verbo>
+				<oggetto>acqua</oggetto>
+				<secondoOggetto>pentacolo</secondoOggetto>
+				<sbloccataDa>61</sbloccataDa>
+				<sbloccataDa>29</sbloccataDa>
+				<testoFallimento>Non hai ancora preso le bottiglietta di acqua sulfurea che era nel tuo studio&#63; Corri a casa a prenderla&#33;</testoFallimento>
+				<testoRisposta>Non appena versi l&#39;acqua sulfurea l&#39;ombra a forma di mano gigantesca svanisce nel nulla&#33; Sei riuscito a debellare l&#39;infestazione&#33; Grazie a te la famiglia Anderson &#232; salva&#33;</testoRisposta>
+			</azione>
+		</stanza>
 		<stanza id="8" nome="Cheyne walk">
 			<testoIniziale>&#200; la strada che porta a casa Carnacky, da casa Anderson, e viceversa. Proseguendo verso est puoi raggiungere casa Carnacky.
 </testoIniziale>
@@ -200,6 +443,10 @@ Improvvisamente,sarà circa mezzanotte, inizi a sentire sbattere la porta della 
 				<direzione>
 					<nome>est</nome>
 					<stanzaDestinazione>9</stanzaDestinazione>
+				</direzione>
+				<direzione>
+					<nome>ovest</nome>
+					<stanzDestinazione>1</stanzDestinazione>
 				</direzione>
 			</direzioni>
 		</stanza>
@@ -209,6 +456,10 @@ Improvvisamente,sarà circa mezzanotte, inizi a sentire sbattere la porta della 
 				<direzione>
 					<nome>est</nome>
 					<stanzaDestinazione>10</stanzaDestinazione>
+				</direzione>
+				<direzione>
+					<nome>ovest</nome>
+					<stanzDestinazione>8</stanzDestinazione>
 				</direzione>
 			</direzioni>
 		</stanza>
@@ -224,6 +475,10 @@ Improvvisamente,sarà circa mezzanotte, inizi a sentire sbattere la porta della 
 					<oggettoNecessario>gambe</oggettoNecessario>
 					<stanzaDestinazione>11</stanzaDestinazione>
 				</direzione>
+				<direzione>
+					<nome>ovest</nome>
+					<stanzDestinazione>9</stanzDestinazione>
+				</direzione>
 			</direzioni>
 			<azione id="12">
 				<verbo>esci</verbo>
@@ -234,7 +489,7 @@ Improvvisamente,sarà circa mezzanotte, inizi a sentire sbattere la porta della 
 			</azione>
 		</stanza>
 		<stanza id="11" nome="casa Carnacky">
-			<testoIniziale>È la tua dolce casa.  una bella casa a due piani con una terrazza e un giardino. A Nord puoi vedere la porta d'ingresso. 
+			<testoIniziale>Ti trovi davanti a casa Carnacky.&#200; la tua dolce casa.  una bella casa a due piani con una terrazza e un giardino. A Nord puoi vedere la porta d'ingresso. 
 La tua Bentley rosso fiammante è parcheggiata qui di fronte.</testoIniziale>
 			<direzioni>
 				<direzione>
@@ -243,6 +498,12 @@ La tua Bentley rosso fiammante è parcheggiata qui di fronte.</testoIniziale>
 					<testoFallimento>La porta &#232; chiusa a chiave.</testoFallimento>
 					<stanzaDestinazione>12</stanzaDestinazione>
 				</direzione>
+				<direzione>
+					<nome>ovest</nome>
+					<oggettoNecessario>ritorno</oggettoNecessario>
+					<testoFallimento>Non ti conviene andare da nessuna parte senza l'auto. La strada da fare &#232; lunga.</testoFallimento>
+					<stanzaDestinazione>10</stanzaDestinazione>
+				</direzione>
 			</direzioni>
 			<azione id="13">
 				<verbo>apri</verbo>
@@ -250,6 +511,11 @@ La tua Bentley rosso fiammante è parcheggiata qui di fronte.</testoIniziale>
 				<secondoOggetto>chiave</secondoOggetto>
 				<testoRisposta>Ora la porta di casa tua non è più chiusa a chiave.</testoRisposta>
 				<sbloccataDa>12</sbloccataDa>
+			</azione>
+			<azione id="34">
+				<verbo>entra</verbo>
+				<oggetto>auto</oggetto>
+				<oggettoOttenuto>ritorno</oggettoOttenuto>
 			</azione>
 		</stanza>
 		<stanza id="12" nome="ingresso">
@@ -262,6 +528,10 @@ Sopra l&#39;attaccapanni vi &#232; un cappotto.
 					<oggettoNecessario>gessetto</oggettoNecessario>
 					<testoFallimento>Senti che ti manca qualcosa...Prova a controllare meglio nella stanza.</testoFallimento>
 					<stanzaDestinazione>13</stanzaDestinazione>
+				</direzione>
+				<direzione>
+					<nome>sud</nome>
+					<stanzaDestinazione>11</stanzaDestinazione>
 				</direzione>
 			</direzioni>
 			<azione id="14">
@@ -284,6 +554,16 @@ Sopra l&#39;attaccapanni vi &#232; un cappotto.
 		</stanza>
 		<stanza id="13" nome="studio">
 			<testoIniziale>&#200; il tuo studio in cui hai trascorso tante ore di lavoro. &#200; arredato con una scrivania, una libreria, una curiosa statua maya e un vaso di piante esotiche.</testoIniziale>
+			<direzioni>
+				<direzione>
+					<nome>sud</nome>
+					<oggettoNecessario>libro</oggettoNecessario>
+					<oggettoNecessario>boccetta</oggettoNecessario>
+					<oggettoNecessario>bottiglia</oggettoNecessario>
+					<testoFallimento>Non hai ancora trovato quello che cercavi. Guarda meglio nello studio.</testoFallimento>
+					<stanzaDestinazione>12</stanzaDestinazione>
+				</direzione>
+			</direzioni>
 			<azione id="16">
 				<verbo>ispeziona</verbo>
 				<verbo>esamina</verbo>
@@ -382,6 +662,68 @@ Puoi leggere il numero della combinazione: 4667.
 				<testoRisposta>Non appena inserisci l'ultimo numero della combinazione, avverti un secco scatto e la cassaforte si apre.
 Dentro la cassaforte vedi il libro degli esorcismi, una boccetta di acqua santa e una bottiglia di acqua sulfurea.</testoRisposta>
 				<sblocca>27</sblocca>
+				<sblocca>28</sblocca>
+				<sblocca>29</sblocca>
+			</azione>
+			<azione id="27">
+				<sbloccataDa>26</sbloccataDa>
+				<verbo>prendi</verbo>
+				<verbo>afferra</verbo>
+				<oggetto>libro</oggetto>
+				<oggettoOttenuto>libro</oggettoOttenuto>
+				<testoRisposta>Preso.</testoRisposta>
+				<sblocca>30</sblocca>
+				<sblocca>31</sblocca>
+			</azione>
+			<azione id="28">
+				<sbloccataDa>26</sbloccataDa>
+				<verbo>prendi</verbo>
+				<verbo>afferra</verbo>
+				<oggetto>boccetta</oggetto>
+				<oggettoOttenuto>boccetta</oggettoOttenuto>
+				<testoRisposta>Presa.</testoRisposta>
+				<sblocca>38</sblocca>
+			</azione>
+			<azione id="29">
+				<sbloccataDa>26</sbloccataDa>
+				<verbo>prendi</verbo>
+				<verbo>afferra</verbo>
+				<oggetto>bottiglia</oggetto>
+				<oggettoOttenuto>bottiglia</oggettoOttenuto>
+				<testoRisposta>Presa.</testoRisposta>
+				<sblocca>62</sblocca>
+			</azione>
+			<azione id="30">
+				<verbo>leggi</verbo>
+				<verbo>guarda</verbo>
+				<oggetto>libro</oggetto>
+				<testoRisposta>&#200; il tuo libro degli esorcismi. Per consultare gli argomenti che ti interessano usa la seguente frase: cerca argomento libro.</testoRisposta>
+				<sbloccataDa>27</sbloccataDa>
+			</azione>
+			<azione id="31">
+				<verbo>cerca</verbo>
+				<oggetto>infestazione</oggetto>
+				<secondoOggetto>libro</secondoOggetto>
+				<sbloccataDa>27</sbloccataDa>
+				<testoRisposta>In posti in cui si ritiene vi siano delle forze o presenze innaturali o malefiche &#232; necessario proteggersi attraverso il rituale di Saamaa.</testoRisposta>
+				<sblocca>32</sblocca>
+				<sblocca>33</sblocca>
+			</azione>
+			<azione id="32">
+				<verbo>cerca</verbo>
+				<oggetto>saamaa</oggetto>
+				<secondoOggetto>libro</secondoOggetto>
+				<sbloccataDa>31</sbloccataDa>
+				<testoFallimento>Devi prima informarti sull&#39;infestazione.</testoFallimento>
+				<testoRisposta>Il rituale di Saamaa prevede una serie di accorgimenti per proteggersi da forze o presenze innaturali o malefiche. Alcuni di questi accorgimenti sono il pentacolo e una boccetta di acqua santa. Per proteggersi &#232; necessario disegnare per terra un pentacolo, una stella a cinque punte inscritta in un cerchio. Al centro di questo pentacolo bisogna disporre una boccetta di acqua santa. Entrando nello spazio definito da questo pentacolo si &#232; protetti da forze o presenze malvagie. Una volta individuata la causa dell&#39;infestazione occorre imprigionarla all&#39;interno del pentacolo e, quando la forza malvagia si &#232; manifestata, bisogna annientarla versandole addosso dell&#39;acqua sulfurea. Bisogna fare attenzione: una volta che l&#39;infestazione si &#232; manifestata all&#39;interno del pentacolo si ha a disposizione un solo tentativo per distruggerla, in quanto il pentacolo una seconda volta non sar&#225; in grado di trattenerla. Adesso sei pronto per ritornare a casa Anderson.</testoRisposta>
+			</azione>
+			<azione id="33">
+				<verbo>cerca</verbo>
+				<oggetto>pentacolo</oggetto>
+				<secondoOggetto>libro</secondoOggetto>
+				<sbloccataDa>31</sbloccataDa>
+				<testoFallimento>Devi prima informarti sull&#39;infestazione.</testoFallimento>
+				<testoRisposta>Il rituale di Saamaa prevede una serie di accorgimenti per proteggersi da forze o presenze innaturali o malefiche. Alcuni di questi accorgimenti sono il pentacolo e una boccetta di acqua santa. Per proteggersi &#232; necessario disegnare per terra un pentacolo, una stella a cinque punte inscritta in un cerchio. Al centro di questo pentacolo bisogna disporre una boccetta di acqua santa. Entrando nello spazio definito da questo pentacolo si &#232; protetti da forze o presenze malvagie. Una volta individuata la causa dell&#39;infestazione occorre imprigionarla all&#39;interno del pentacolo e, quando la forza malvagia si &#232; manifestata, bisogna annientarla versandole addosso dell&#39;acqua sulfurea. Bisogna fare attenzione: una volta che l&#39;infestazione si &#232; manifestata all&#39;interno del pentacolo si ha a disposizione un solo tentativo per distruggerla, in quanto il pentacolo una seconda volta non sar&#225; in grado di trattenerla. Adesso sei pronto per ritornare a casa Anderson.</testoRisposta>
 			</azione>
 		</stanza>
 	</storia>
