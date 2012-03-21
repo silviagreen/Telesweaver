@@ -252,5 +252,137 @@ La tua Bentley rosso fiammante è parcheggiata qui di fronte.</testoIniziale>
 				<sbloccataDa>12</sbloccataDa>
 			</azione>
 		</stanza>
+		<stanza id="12" nome="ingresso">
+			<testoIniziale>A lato della porta puoi notare un attaccapanni. A nord c&#39;&#232; il passaggio che conduce al tuo studio.
+Sopra l&#39;attaccapanni vi &#232; un cappotto.
+</testoIniziale>
+			<direzioni>
+				<direzione>
+					<nome>nord</nome>
+					<oggettoNecessario>gessetto</oggettoNecessario>
+					<testoFallimento>Senti che ti manca qualcosa...Prova a controllare meglio nella stanza.</testoFallimento>
+					<stanzaDestinazione>13</stanzaDestinazione>
+				</direzione>
+			</direzioni>
+			<azione id="14">
+				<verbo>guarda</verbo>
+				<verbo>esamina</verbo>
+				<verbo>ispeziona</verbo>
+				<verbo>controlla</verbo>
+				<oggetto>cappotto</oggetto>
+				<sblocca>15</sblocca>
+				<testoRisposta>Dentro il cappotto vedi un gessetto.</testoRisposta>
+			</azione>
+			<azione id="15">
+				<sbloccataDa>14</sbloccataDa>
+				<verbo>prendi</verbo>
+				<verbo>afferra</verbo>
+				<oggetto>gessetto</oggetto>
+				<oggettoOttenuto>gessetto</oggettoOttenuto>
+				<testoRisposta>Preso.</testoRisposta>
+			</azione>
+		</stanza>
+		<stanza id="13" nome="studio">
+			<testoIniziale>&#200; il tuo studio in cui hai trascorso tante ore di lavoro. &#200; arredato con una scrivania, una libreria, una curiosa statua maya e un vaso di piante esotiche.</testoIniziale>
+			<azione id="16">
+				<verbo>ispeziona</verbo>
+				<verbo>esamina</verbo>
+				<verbo>controlla</verbo>
+				<verbo>guarda</verbo>
+				<oggetto>scrivania</oggetto>
+				<testoRisposta>&#200; la tua scrivania in legno su cui usualmente lavori. La scrivania &#232; ricolma di carte e tuoi appunti. Puoi notare sulla sinistra della scrivania un cassetto.
+</testoRisposta>
+			</azione>
+			<azione id="17">
+				<sbloccataDa>16</sbloccataDa>
+				<verbo>ispeziona</verbo>
+				<verbo>esamina</verbo>
+				<verbo>controlla</verbo>
+				<verbo>guarda</verbo>
+				<oggetto>carte</oggetto>
+				<sblocca>18</sblocca>
+				<sblocca>19</sblocca>
+				<testoRisposta>Sono le tue carte e appunti. Tra di esse un foglio desta la tua attenzione.</testoRisposta>
+			</azione>
+			<azione id="18">
+				<sbloccataDa>17</sbloccataDa>
+				<verbo>prendi</verbo>
+				<verbo>afferra</verbo>
+				<oggetto>foglio</oggetto>
+				<oggettoOttenuto>foglio</oggettoOttenuto>
+				<testoRisposta>Preso.</testoRisposta>
+				<sblocca>22</sblocca>
+			</azione>
+			<azione id="19">
+				<sbloccataDa>17</sbloccataDa>
+				<verbo>apri</verbo>
+				<oggetto>cassetto</oggetto>
+				<testoRisposta>Hai aperto il cassetto, trovando una lampada a infrarossi.</testoRisposta>
+				<sblocca>20</sblocca>
+			</azione>
+			<azione id="20">
+				<sbloccataDa>19</sbloccataDa>
+				<verbo>prendi</verbo>
+				<oggetto>lampada</oggetto>
+				<oggettoOttenuto>lampada</oggettoOttenuto>
+				<testoRisposta>Presa.</testoRisposta>
+				<testoFallimento>Prima dovresti aprire il cassetto.</testoFallimento>
+				<sblocca>21</sblocca>
+			</azione>
+			<azione id="21">
+				<sbloccataDa>20</sbloccataDa>
+				<verbo>accendi</verbo>
+				<oggetto>lampada</oggetto>
+				<testoRisposta>&#200; gi&#224; accesa.</testoRisposta>
+				<sblocca>22</sblocca>
+			</azione>
+			<azione id="22">
+				<verbo>illumina</verbo>
+				<oggetto>foglio</oggetto>
+				<secondoOggetto>lampada</secondoOggetto>
+				<sbloccataDa>18</sbloccataDa>
+				<sbloccataDa>22</sbloccataDa>
+				<oggettoOttenuto>combinazione</oggettoOttenuto>
+				<testoFallimento>Senti che ti manca qualcosa...esplora meglio la scrivania o il cassetto.</testoFallimento>
+				<testoRisposta>Alla luce della tua lampada a infrarossi l&#39;alone che ricopre il numero della combinazione sparisce. 
+Puoi leggere il numero della combinazione: 4667.
+</testoRisposta>
+				<sblocca>26</sblocca>
+			</azione>
+			<azione id="23">
+				<verbo>ispeziona</verbo>
+				<verbo>esamina</verbo>
+				<verbo>controlla</verbo>
+				<oggetto>statua</oggetto>
+				<testoRisposta>&#200; una curiosa statua maya che hai portato da uno dei tanti viaggi che hai effettuato. Puoi notare tra la testa e il resto della statua una incavatura.</testoRisposta>
+				<sblocca>24</sblocca>
+			</azione>
+			<azione id="24">
+				<sbloccataDa>23</sbloccataDa>
+				<verbo>gira</verbo>
+				<verbo>ruota</verbo>
+				<oggetto>testa</oggetto>
+				<secondoOggetto>statua</secondoOggetto>
+				<testoRisposta>Improvvisamente la libreria inizia a muoversi rilevando dietro di s&#232; la tua cassaforte&#33;&#33;&#33;</testoRisposta>
+				<sblocca>25</sblocca>
+				<sblocca>26</sblocca>
+			</azione>
+			<azione id="25">
+				<verbo>apri</verbo>
+				<oggetto>cassaforte</oggetto>
+				<testoRisposta>Per aprire la cassaforte devi inserire la combinazione.</testoRisposta>
+			</azione>
+			<azione id="26">
+				<sbloccataDa>24</sbloccataDa>
+				<sbloccataDa>22</sbloccataDa>
+				<verbo>inserisci</verbo>
+				<verbo>scrivi</verbo>
+				<oggetto>4667</oggetto>
+				<testoFallimento>Devi scrivere il codice della combinazione&#33;</testoFallimento>
+				<testoRisposta>Non appena inserisci l'ultimo numero della combinazione, avverti un secco scatto e la cassaforte si apre.
+Dentro la cassaforte vedi il libro degli esorcismi, una boccetta di acqua santa e una bottiglia di acqua sulfurea.</testoRisposta>
+				<sblocca>27</sblocca>
+			</azione>
+		</stanza>
 	</storia>
 </storie>
