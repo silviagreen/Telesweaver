@@ -22,11 +22,12 @@ h1 span {
 
 #menu {
 	border: double;
-	margin: 0;
-	width: 20%;
+	margin-left: 3%;
+	width: 15%;
 	height: 100%;
 	min-width:70px;
 	float:left;
+	text-align:center;
 }
 
 #menuLista {
@@ -40,10 +41,7 @@ h1 span {
 #menuLista li {
 	margin:0;
 	display: block;
-	top: 0.1em;
-	left: 12em;
-	height: 5em;
-	width: 6.5em;
+	margin-top:10%;
 }
 #mainItem a {
 	/*text-align: right;
@@ -75,42 +73,51 @@ h1 span {
 .corpo {
 	border: double;
 	padding-bottom: 3em;
-	width:78%;
+	width:75%;
 	float:left;
+	margin:0;
 }
 .corpo p {
-	padding-left: 5.4em;
+	padding-left: 7%;
+	padding-right: 7%;
+}
+
+.corpo h2{
+	padding-left:5%;
 }
 
 .corpo h3 {
-	padding-left: 4.7em;
+	padding-left: 5%;
 }
 
-.storie dt ul{
-	margin:0;
-	padding-left:2%;
-		
-}
-
-.storie dt ul li{
-	
+/*.storie dt ul li{
 	display:inline;
 	list-style-type: none;
 	font-size:65%;
 	padding-right:1%;
+}*/
+
+.storie ul{
+	padding:0;
+	list-style-type: none;
+	font-size:65%;
+}
+
+.storie li{
+	display:inline;
+	padding-right:1.5%;
 }
 
 .storie dt{
-	padding:1%;
+	padding-left:6%;
 	font-size:150%;
-	text-transform:capitalize:
-	
+	text-transform:capitalize;
 }
 
 .storie dd{
-	
+	padding-left:2%;
+	padding-right:4%;
 }
-
 #piede {
 
 
