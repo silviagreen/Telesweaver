@@ -22,7 +22,7 @@ h1 span {
 
 #menu {
 	border: double;
-	margin: auto;
+	/*margin: auto;*/
 	width: 20%;
 	height: 100%;
 	float: left;
@@ -30,23 +30,25 @@ h1 span {
 
 #menuLista {
 	list-style-type: none;
-	margin: auto;
-	float: right;
-	padding-right: 14%;
+	/*margin: auto;*/
+
+	/*float: right;*/
+	padding: 0;
 	margin-top: 12%;
+	
 }
 #menuLista li {
+	margin:0;
 	display: block;
-
 	top: 0.1em;
 	left: 12em;
 	height: 5em;
 	width: 6.5em;
 }
 #mainItem a {
-	text-align: right;
+	/*text-align: right;
 	padding: 1em 0.5em 0.2em 0;
-	font-size: 1em;
+	font-size: 1em;*/
 }
 
 
