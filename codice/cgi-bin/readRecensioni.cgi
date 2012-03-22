@@ -65,7 +65,7 @@ EOF
 exit;}
 
 #Apro il file xml e cerco la storia
-my $xp = XML::XPath->new(filename =>  '/var/www/public_html/TecnologieWeb/codice/xml/storie.xml');
+my $xp = XML::XPath->new(filename =>  '../xml/storie.xml');
 my $radicestoria = $xp->find("//storia[\@id='$qstring[1]']");
 my $esistonostorie = $xp->find("count(//storia[\@id='$qstring[1]'])");
 
@@ -107,7 +107,7 @@ print<<EOF;
 
 </dl>
 
- <form id="recensioni" action="" method="POST">
+ <form id="recensioni" action="recensioni.cgi" method="POST">
     <fieldset id="tuaRecensione">
      	<legend>Lascia la tua recensione</legend>
         <label for="nome">Nome giocatore:</label>
