@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<?xml-stylesheet type="text/xsl" href="../xslt/avventure.xsl"?>
 <storie xmlns="http://www.storie.com" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:schemaLocation="http://www.storie.com storie.xsd">
 	<storia id="1">
 		<titolo>L'anello</titolo>
@@ -727,5 +726,15 @@ Dentro la cassaforte vedi il libro degli esorcismi, una boccetta di acqua santa 
 				<testoRisposta>Il rituale di Saamaa prevede una serie di accorgimenti per proteggersi da forze o presenze innaturali o malefiche. Alcuni di questi accorgimenti sono il pentacolo e una boccetta di acqua santa. Per proteggersi &#232; necessario disegnare per terra un pentacolo, una stella a cinque punte inscritta in un cerchio. Al centro di questo pentacolo bisogna disporre una boccetta di acqua santa. Entrando nello spazio definito da questo pentacolo si &#232; protetti da forze o presenze malvagie. Una volta individuata la causa dell&#39;infestazione occorre imprigionarla all&#39;interno del pentacolo e, quando la forza malvagia si &#232; manifestata, bisogna annientarla versandole addosso dell&#39;acqua sulfurea. Bisogna fare attenzione: una volta che l&#39;infestazione si &#232; manifestata all&#39;interno del pentacolo si ha a disposizione un solo tentativo per distruggerla, in quanto il pentacolo una seconda volta non sar&#225; in grado di trattenerla. Adesso sei pronto per ritornare a casa Anderson.</testoRisposta>
 			</azione>
 		</stanza>
+		<recensione>
+			<testo>La storia mi &#232; piaciuta molto, l&#39;ho trovata ricca di mistero e, anche se lunga, &#232; stata appassionante e molto piacevole da giocare. &#200; una storia adatta a chi vuole risolvere enigmi ed &#232; attratto da luoghi oscuri.</testo>
+			<utente>Gaio Pallino</utente>
+			<data>2012-03-16</data>
+		</recensione>
+		<recensione>
+			<testo>Storia troppo lunga e noiosa. Anche se c&#39;&#232; un p&#242; di mistero non si &#232; portati a giocarla. Inoltre non la ritengo interessante n&#232; facile da giocare.</testo>
+			<utente>Riccardo Scarso</utente>
+			<data>2011-09-25</data>
+		</recensione>
 	</storia>
 </storie>
