@@ -36,8 +36,8 @@
 			<dt>
 				<xsl:value-of select="e:titolo"/>
 				<ul>
-					<li><a href="storie.cgi?{@id}" >Gioca</a></li>
-					<li><a href="../html/recensioni.html" >Recensioni</a></li>
+					<li><a href="storie.cgi?id={@id}" >Gioca</a></li>
+					<li><a href="../../../../recensioni.cgi?id={@id}" >Recensioni</a></li>
 				</ul>
 			</dt>	
 			<dd><xsl:value-of select="e:descrizione"/></dd>
