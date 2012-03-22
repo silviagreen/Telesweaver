@@ -79,14 +79,35 @@ h1 span {
 .corpo p {
 	padding-left: 5.4em;
 }
-.corpo h2 {
 
-	padding-left: 3.5em;
-}
 .corpo h3 {
 	padding-left: 4.7em;
 }
 
+.storie dt ul{
+	margin:0;
+	padding-left:2%
+		
+}
+
+.storie dt ul li{
+	
+	display:inline;
+	list-style-type: none;
+	font-size:65%;
+	padding-right:1%;
+}
+
+.storie dt{
+	padding:1%;
+	font-size:150%;
+	text-transform:capitalize:
+	
+}
+
+.storie dd{
+	
+}
 
 #piede {
 
