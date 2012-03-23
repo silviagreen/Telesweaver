@@ -1,10 +1,11 @@
 #!/usr/bin/perl
-use XML::LibXSLT;
-use XML::LibXML;
+
 use CGI;
 use CGI::Carp qw(fatalsToBrowser);#serve per visualizzare gli errori sul browser
+#use XML::LibXSLT;
+#use XML::LibXML;
 
-my $query=new CGI();
+ $query=new CGI();
 
 $nomeGiocatore=$query->param('nome');
 $titolo=$query->param('titolo');
@@ -36,33 +37,33 @@ if(!$nomeGiocatore=~/\w/ || !$titolo=~/\w/ || !$testo=~/\w/){
 }
 
 #ok, tutti i dati sono a posto
-my $newNomeGiocatore="";
+$newNomeGiocatore="";
 if($nomeGiocatore){
-	my $newNomeGiocatore="\n<utente>$nomeGiocatore</utente>\n";
+	 $newNomeGiocatore="\n<utente>$nomeGiocatore</utente>\n";
 }
-my $newTitolo="";
+$newTitolo="";
 if($titolo){
-	my $newTitolo="\n<titolo>$titolo</titolo>";
+	 $newTitolo="\n<titolo>$titolo</titolo>";
 }
-my $newTesto="";
+$newTesto="";
 if($testo){
-	my $newTesto="\n<testo>$testo</testo>";
+	 $newTesto="\n<testo>$testo</testo>";
 }
 
-my $newRensione=my $newNomeGiocatore.my $newTitolo.my $newTesto;#frammento da inserire nell'xml
+$newRensione= $newNomeGiocatore.$newTitolo.$newTesto;#frammento da inserire nell'xml
 
 
 #inserimento nel file xml dei nuovi dati
-my $fileXml='../xml/storie.xml';
-my $parser=XML::LibXML->new();
-my $doc=$parser->parse_file($fileXml);
-my $radice=$doc->getDocumentElement;
-my @recensioni=$radice->getElementsByTagName('recensione');
+ $fileXml='../xml/storie.xml';
+ $parser=XML::LibXML->new();
+ $doc=$parser->parse_file($fileXml);
+ $radice=$doc->getDocumentElement;
+ @recensioni=$radice->getElementsByTagName('recensione');
 
-my $newRensioneOk=$parser->parse_balanced_chunk(my $newRensione);
+$newRensioneOk=$parser->parse_balanced_chunk($newRensione);
 
 for($i=0; $i<scalar(@recensioni); $i++){
-	my $recensioni[$i]->appendChild(my $newRensioneOk); #DOVE CAVOLO STA L PROBLEMAAAA!?!?!?!
+	 $recensioni[$i]->appendChild($newRensioneOk); #DOVE CAVOLO STA L PROBLEMAAAA!?!?!?!
 }
 
 #serializzazione
@@ -70,7 +71,7 @@ for($i=0; $i<scalar(@recensioni); $i++){
 print OUT $doc->toString;
 #close OUT;
 
-#my $url="readRecensioni.cgi";
+# $url="readRecensioni.cgi";
 #print "Location:$url\n\n";
 #exit;
 
