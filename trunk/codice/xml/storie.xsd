@@ -77,6 +77,7 @@ targetNamespace="http://www.w3.org/1999/XSL/Transform" xmlns="http://www.w3.org/
 	</xs:simpleType>
 	<xs:complexType name="Trecensione">
 		<xs:sequence>
+			<xs:element name="titolo" type="xs:string"/>
 			<xs:element name="testo" type="xs:string"/>
 			<xs:element name="utente" type="xs:string"/>
 			<xs:element name="data" type="dateTime"/>

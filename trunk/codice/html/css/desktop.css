@@ -71,6 +71,9 @@ h1 span {
 	height: 100%;
 }
 
+#path{
+	border:double;
+}
 .corpo {
 	border: double;
 	padding-bottom: 3em;
@@ -121,6 +124,12 @@ h1 span {
 	padding-right:4%;
 	padding-bottom:2%;
 }
+
+#menuRec{
+	list-style-type:none;
+	padding-right:5%;
+	float:right;
+}
 #piede {
 
 
@@ -137,6 +146,11 @@ h1 span {
 	border: dotted;
 	
 	background-color: green;
+}
+
+#su{
+     float:right;
+     padding-right:5%;
 }
 
 body > div#piede {
