@@ -117,14 +117,14 @@ print<<EOF;
  <form id="recensioni" action="recensioni.cgi" method="POST">
     <fieldset id="tuaRecensione">
      	<legend>Lascia la tua recensione</legend>
-        <label for="nome">Nome giocatore:</label>
+        <label class="label" for="nome">Nome giocatore:</label>
         <input name="nomeGiocatore" id="nome" value="Nome" maxlength="30" />
-        <label for="titolo">Titolo recensione:</label>
+        <label class="label" for="titolo">Titolo recensione:</label>
         <input name="titoloRecensione" id="titolo" value="Titolo" maxlength="50" /></br>
-        <label for="testoRecensione">Testo:</label>
+        <label class="label" for="testoRecensione">Testo:</label>
         <textarea rows="10" cols="50" id="testoRecensione" name="testoRecensione">
         </textarea>
-        <input type="submit" name="invio" value="Prosegui" />
+        <input class="label" type="submit" name="invio" value="Prosegui" />
      </fieldset>	
     </form>
 

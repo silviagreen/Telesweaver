@@ -130,6 +130,15 @@ h1 span {
 	padding-right:5%;
 	float:right;
 }
+
+.label{
+	display:block;
+}
+
+#recensioni{
+	padding:5%;
+}
+
 #piede {
 
 
