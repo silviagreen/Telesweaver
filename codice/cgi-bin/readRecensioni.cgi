@@ -1,4 +1,3 @@
-
 #!/usr/bin/perl
 use XML::LibXML;
 use XML::XPath;
@@ -18,7 +17,7 @@ print<<EOF;
     <meta name="description" content="avventure testuali, storie su cui si può giocare e interagire con il testo" />
     <meta name="author" content="Lapolla Margherita"/>
 	<meta name="language" content="italian it"/>
-     <link type="text/css" rel="stylesheet" href="/public_html/TecnologieWeb/codice/html/css/desktop.css" media="handheld, screen and (min-width:481px), only screen and (min-device-width:481px)" />
+     <link type="text/css" rel="stylesheet" href="../html/css/desktop.css" media="handheld, screen and (min-width:481px), only screen and (min-device-width:481px)" />
 	 <link type="text/css" rel="stylesheet" href="css/Device.css" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)" />
      <link type="text/css" rel="stylesheet" href="css/Print.css" media="print" />
 </head>
@@ -26,14 +25,13 @@ print<<EOF;
 	
         <h1 xml:lang="en"><span>Word Adventure</span></h1>
       <!--  <span class="log"><a href="login.html" xml:lang="en">Login</a> <a href="registrazione.html">Registrati</a></span> -->
-   <div id="container">  
+   <div id="container"> 
+   <div id="path">Ti trovi in: <a href="../xml/storie.xml">Avventure</a> &gt; Recensioni</div> 
     <div id="menu">
     	<ul id="menuLista">
-        	<li id="home"><a href="Home.html" tabindex="1" accesskey="h">Home</a></li>
-            <li id="attivo"><a href="Avventure.html" tabindex="2" accesskey="a">Avventure</a></li>
-            <li id="storia"><a href="" tabindex="3" accesskey="g">Storia</a></li>
-	    <li id="recensioni">Recensioni</li>
-            <li id="mappa"><a href="" tabindex="4" accesskey="m">Mappa</a></li>
+        	<li id="home"><a href="../html/Home.html" tabindex="1" accesskey="h">Home</a></li>
+            <li id="attivo"><a href="../xml/storie.xml" tabindex="2" accesskey="a">Avventure</a></li>
+            <li id="mappa"><a href="" tabindex="3" accesskey="m">Mappa</a></li>
         </ul>
     </div>
 <div class="corpo">	
@@ -48,7 +46,7 @@ my @qstring=split(/=/,$buffer);
 #Se il nome della variabile non è ID, qualcuno sta cercando di modificare la query string!
 if ($qstring[0] ne 'id') {print<<EOF;
 ERRORE! ACCESSO NON AUTORIZZATO!
-    </div>
+ </div>
 
     <div id="piede">
 
@@ -62,7 +60,8 @@ ERRORE! ACCESSO NON AUTORIZZATO!
 </body>
 </html>
 EOF
-exit;}
+exit;
+}
 
 #Apro il file xml e cerco la storia
 my $xp = XML::XPath->new(filename =>  '../xml/storie.xml');
@@ -88,18 +87,26 @@ ERRORE! STORIA INESISTENTE!
 EOF
 exit;
 }
+$titolo=$xp->find('//storia[@id='.$qstring[1].']/titolo')->string_value;
 
 print<<EOF;
+<ul id="menuRec">
+<li><a class="indietro" href="../xml/storie.xml" accessKey="t">Torna alle avventure</a><li>
+<li><a class="indietro" href="#recensioni" accessKey="r">Recensisci la storia</a><li>
+</ul>
+<h2>Recensioni - $titolo</h2>
 
-<h2>Recensioni</h2>
 <dl class="storie">
 EOF
 
 
 foreach my $species ($xp->find('//storia[@id='.$qstring[1].']/recensione')->get_nodelist){
-    print "<dt>".$species->find('utente')->string_value ."</dt>";
-    print "<dd>" . $species->find('testo');
-    print "Posted: ".$species->find('data') ."</dd>";
+    print "<dt>".$species->find('titolo')->string_value ."</dt>";
+    print "<dd>" . $species->find('testo')."</dd>";
+print<<EOF;
+    <a id="su" href="#menuRec">Torna su</a>
+EOF
+    print "<dd>Posted: ".$species->find('data') ." By: ".$species->find('utente')."</dd>";
     print "\n";
 }
 
@@ -136,7 +143,6 @@ print<<EOF;
 </html>
 
 EOF
-
 
 
 

@@ -728,11 +728,13 @@ Dentro la cassaforte vedi il libro degli esorcismi, una boccetta di acqua santa 
 			</azione>
 		</stanza>
 		<recensione>
+			<titolo>Molto Bella</titolo>
 			<testo>La storia mi &#232; piaciuta molto, l&#39;ho trovata ricca di mistero e, anche se lunga, &#232; stata appassionante e molto piacevole da giocare. &#200; una storia adatta a chi vuole risolvere enigmi ed &#232; attratto da luoghi oscuri.</testo>
 			<utente>Gaio Pallino</utente>
 			<data>2012-03-16</data>
 		</recensione>
 		<recensione>
+			<titolo>Scarsa</titolo>
 			<testo>Storia troppo lunga e noiosa. Anche se c&#39;&#232; un p&#242; di mistero non si &#232; portati a giocarla. Inoltre non la ritengo interessante n&#232; facile da giocare.</testo>
 			<utente>Riccardo Scarso</utente>
 			<data>2011-09-25</data>

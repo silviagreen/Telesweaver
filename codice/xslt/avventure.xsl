@@ -21,6 +21,7 @@
         <h1 xml:lang="en"><span> Adventure</span></h1>
         <!--<span class="log"><a href="login.html" xml:lang="en">Login</a> <a href="registrazione.html">Registrati</a></span>-->
   <div id="container">
+   <div id="path">Ti trovi in: Avventure</div>
     <div id="menu">
     	<ul id="menuLista">
         	<li id="home"><a href="../html/Home.html" tabindex="1" accesskey="h">Home</a></li>
@@ -37,10 +38,11 @@
 				<xsl:value-of select="e:titolo"/>
 				<ul>
 					<li><a href="storie.cgi?id={@id}" >Gioca</a></li>
-					<li><a href="../../../../recensioni.cgi?id={@id}" >Recensioni</a></li>
+					<li><a href="../cgi-bin/readRecensioni.cgi?id={@id}" >Recensioni</a></li>
 				</ul>
 			</dt>	
 			<dd><xsl:value-of select="e:descrizione"/></dd>
+			<a id="su" href="#container">Torna su</a>
 		</xsl:for-each>
 	</dl>
    </div>	   
