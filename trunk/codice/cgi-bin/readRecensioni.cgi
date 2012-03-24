@@ -18,9 +18,9 @@ print<<EOF;
     <meta name="description" content="avventure testuali, storie su cui si può giocare e interagire con il testo" />
     <meta name="author" content="Lapolla Margherita"/>
 	<meta name="language" content="italian it"/>
-     <link type="text/css" rel="stylesheet" href="../html/css/desktop.css" media="handheld, screen and (min-width:481px), only screen and (min-device-width:481px)" />
-	 <link type="text/css" rel="stylesheet" href="css/Device.css" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)" />
-     <link type="text/css" rel="stylesheet" href="css/Print.css" media="print" />
+     <link type="text/css" rel="stylesheet" href="../html/css/desktop.css" media="handheld, screen and (min-width:481px), only screen and (min-device-width:481px)" /> 
+	<!-- <link type="text/css" rel="stylesheet" href="css/Device.css" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)" />-->
+    <!-- <link type="text/css" rel="stylesheet" href="css/Print.css" media="print" /> -->
 </head>
 <body>
 	
@@ -92,8 +92,8 @@ $titolo=$xp->find('//storia[@id='.$qstring[1].']/titolo')->string_value;
 
 print<<EOF;
 <ul id="menuRec">
-<li><a class="indietro" href="../xml/storie.xml" accessKey="t">Torna alle avventure</a><li>
-<li><a class="indietro" href="#recensioni" accessKey="r">Recensisci la storia</a><li>
+<li><a class="indietro" href="../xml/storie.xml" accesskey="t">Torna alle avventure</a></li>
+<li><a class="indietro" href="#recensioni" accesskey="r">Recensisci la storia</a></li>
 </ul>
 <h2>Recensioni - $titolo</h2>
 
@@ -105,22 +105,22 @@ foreach my $species ($xp->find('//storia[@id='.$qstring[1].']/recensione')->get_
     print "<dt>".$species->find('titolo')->string_value ."</dt>";
     print "<dd>" . $species->find('testo')."</dd>";
 print<<EOF;
-    <a id="su" href="#menuRec">Torna su</a>
+    
 EOF
-    print "<dd>Posted: ".$species->find('data') ." By: ".$species->find('utente')."</dd>";
+    print "<dd>Posted: ".$species->find('data') ." By: ".$species->find('utente')."<a class=\"su\" href=\"#menuRec\">Torna su</a></dd>";
     print "\n";
 }
 print<<EOF;
 
 </dl>
 
- <form id="recensioni" action="recensioni.cgi" method="POST">
+ <form id="recensioni" action="recensioni.cgi" method="post">
     <fieldset id="tuaRecensione">
      	<legend>Lascia la tua recensione</legend>
         <label class="label" for="nome">Nome giocatore:</label>
-        <input name="nome" id="nome" name="nome" value="Nome" maxlength="30" />
+        <input name="nome" id="nome" value="Nome" maxlength="30" />
         <label class="label" for="titolo">Titolo recensione:</label>
-        <input name="titolo" id="titolo" value="Titolo" maxlength="50" /></br>
+        <input name="titolo" id="titolo" value="Titolo" maxlength="50" />
         <label class="label" for="testoRecensione">Testo:</label>
         <textarea rows="10" cols="50" id="testoRecensione" name="testoRecensione"></textarea>
 	<input name="idStoria" id="idStoria" type="hidden" value="$qstring[1]"/>
