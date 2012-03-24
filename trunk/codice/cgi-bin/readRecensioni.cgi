@@ -2,7 +2,8 @@
 use XML::LibXML;
 use XML::XPath;
 use XML::XPath::XMLParser;
-
+use utf8;
+use encoding("iso-8859-1");
 use CGI::Carp qw(fatalsToBrowser);
 
 print "Content-type: text/html\n\n";

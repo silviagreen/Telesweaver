@@ -5,6 +5,8 @@ use CGI::Carp qw(fatalsToBrowser);#serve per visualizzare gli errori sul browser
 use XML::LibXSLT;
 use XML::LibXML;
 use XML::XPath;
+use utf8;
+use encoding("iso-8859-1");
 use Time::localtime;
 $tm = localtime;
  $query=new CGI();
