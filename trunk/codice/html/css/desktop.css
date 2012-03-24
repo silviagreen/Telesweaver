@@ -23,12 +23,21 @@ h1 span {
 
 
 #menu a{
-	color: white;
+	
 }
 
 #menu {
-	background:url(img/menu.png) top no-repeat;
-	color: black;
+	/*background:url(img/menu3.png) center no-repeat;*/
+/*background:url(img/upsx.png) left top no-repeat,url(img/updx.png) right top no-repeat,url(img/downsx.png) left bottom no-repeat,url(img/downdx.png) right bottom no-repeat,url(img/right.png) right repeat-y,url(img/left.png) left repeat-y, url(img/up2.png) top repeat-x, url(img/down.png) bottom repeat-x,url(img/all.png) repeat ;*/
+	
+background: 
+        url(img/menu1.png) repeat-y right,
+        url(img/menu2.png) repeat-y left,
+        url(img/menu3.png) repeat-x bottom,
+        url(img/menu4.png) repeat-x top,
+        url(img/menu.png) repeat;
+
+	color:black;
 
 	margin-left: 3%;
 	width: 15%;
@@ -40,6 +49,7 @@ h1 span {
 }
 
 #menuLista {
+
 	list-style-type: none;
 	padding: 0;
 	margin-top: 12%;
@@ -47,11 +57,13 @@ h1 span {
 	
 }
 #menuLista li {
+
 	margin:0;
 	display: block;
 	margin-top:10%;
 }
 #mainItem a {
+
 	/*text-align: right;
 	padding: 1em 0.5em 0.2em 0;
 	font-size: 1em;*/
@@ -165,7 +177,7 @@ background:url(img/footer5.png) bottom repeat-x;
 	/*background-color: green;*/
 }
 
-#su{
+.su{
      float:right;
      padding-right:5%;
 }
