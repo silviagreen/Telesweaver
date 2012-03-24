@@ -11,55 +11,73 @@ use Time::localtime;
 $tm = localtime;
  $query=new CGI();
 
-
+require 'forPrinting.pl';
 	
 
 $nomeGiocatore=$query->param('nome');
 $titolo=$query->param('titolo');
 $testo=$query->param('testoRecensione');
 $idStoria=$query->param('idStoria');
-$ok='si';
-$stampato='no';
-
+my $ok='si';
+my $stampato='no';
+print "Content-type: text/html\n\n";
 
 #controlli sui dati inseriti
 
-if(!$nomeGiocatore && !$titolo && !$testo){
-	print "Content-type: text/html\n\n";
-	print "Non hai inserito alcun dato";
-	$stampato='si';
-	$ok='no';
-}
+#if(!$nomeGiocatore && !$titolo && !$testo){
+#$stampato='si';
+#	$ok='no';
+#	print "Content-type: text/html\n\n";
+#	&printTop;
+#	print "<p>Non hai inserito alcun dato</p>";
+#	&printBottom;
+#	$stampato='si';
+#	$ok='no';
+#}
 
-if($ok && (!$nomeGiocatore || !$testo || !$titolo)){
+#if($ok && (!$nomeGiocatore || !$testo || !$titolo)){
 
-	if($stampato eq 'no'){	
-	print "Content-type: text/html\n\n";
-	$stampato='si';
-}
+#	if($stampato eq 'no'){	
+#	print "Content-type: text/html\n\n";
+#	$stampato='si';
+#}
 	
-	print "Mancano alcuni dati";
-	$ok='no';
-}
+#	print "Mancano alcuni dati";
+#	$ok='no';
+#}
 
-if($ok && !$nomeGiocatore){
-	print "Nome giocatore mancante";
+if($ok eq 'si' && !$nomeGiocatore){
+	$ok='no';
+#print "Content-type: text/html\n\n";
+	&printTop;
+	print "<class=\"error\" p>Nome giocatore mancante</p>";
+	&printBottom;
+}
+if($ok eq 'si' && !$titolo){
+#print "Content-type: text/html\n\n";
+	&printTop;
+	print "<class=\"error\" p>Titolo mancante</p>";
+}
+if($ok eq 'si' && !$testo){
+#print "Content-type: text/html\n\n";
+	&printTop;
+	print "<class=\"error\" p>Testo mancante</p>";
+	&printBottom;
 	$ok='no';
 }
-if($ok && !$titolo){
-	print "Titolo mancante";
+if($ok eq'si' && (!$nomeGiocatore=~/\w/ && !$titolo=~/\w/ && !$testo=~/\w/)){$ok='no';
+#print "Content-type: text/html\n\n";
+	&printTop;
+	print "<class=\"error\" p>Formato dei campi non corretto, devono essere tutti stringhe alfanumeriche</p>";
+&printBottom;
+	
 }
-if($ok && !$testo){
-	print "Testo mancante";
-	$ok='no';
-}
-if($ok && (!$nomeGiocatore=~/\w/ && !$titolo=~/\w/ && !$testo=~/\w/)){
-	print "Formato dei campi non corretto, devono essere tutti stringhe alfanumeriche";
-	$ok='no';
-}
-if($ok &&(!$nomeGiocatore=~/\w/ || !$titolo=~/\w/ || !$testo=~/\w/)){
-	print "Formato dei campi non corretto, devono essere tutti stringhe alfanumeriche";
-	$ok='no';
+if($ok eq 'si' &&(!$nomeGiocatore=~/\w/ || !$titolo=~/\w/ || !$testo=~/\w/)){$ok='no';
+#print "Content-type: text/html\n\n";
+	&printTop;
+	print "<class=\"error\" p>Formato dei campi non corretto, devono essere tutti stringhe alfanumeriche</p>";
+&printBottom;
+	
 }
 
 
@@ -82,13 +100,13 @@ if($testo){
 }
 
 if(length(($tm->mon)+1) == 1){
-$month="0".(($tm->mon)+1);}
+my $month="0".(($tm->mon)+1);}
 else {
-$month=(($tm->mon)+1);
+my $month=(($tm->mon)+1);
 }
 
-$date=($tm->year+1900)."-".$month."-".($tm->mday);
-$newRensione= "\n<recensione>".$newTitolo.$newTesto.$newNomeGiocatore."<data>".$date."</data>\n</recensione>\n";#frammento da inserire nell'xml
+my $date=($tm->year+1900)."-".$month."-".($tm->mday);
+my $newRensione= "\n<recensione>".$newTitolo.$newTesto.$newNomeGiocatore."<data>".$date."</data>\n</recensione>\n";#frammento da inserire nell'xml
 
 #print "Content-type: text/html\n\n";
 	#print $newRensione;
@@ -97,17 +115,17 @@ $newRensione= "\n<recensione>".$newTitolo.$newTesto.$newNomeGiocatore."<data>".$
 
  #$xp = XML::XPath->new(filename =>  '../xml/storie.xml');
  #$radiceStoria = $xp->find("//storia[\@id='$idStoria']");
- $fileXml='../xml/storie.xml';
- $parser=XML::LibXML->new();
+my $fileXml='../xml/storie.xml';
+my $parser=XML::LibXML->new();
 
 
 
- $doc=$parser->parse_file($fileXml);
- $radice=$doc->getDocumentElement;
- @storie=$radice->getElementsByTagName('storia');
+my $doc=$parser->parse_file($fileXml);
+my $radice=$doc->getDocumentElement;
+my @storie=$radice->getElementsByTagName('storia');
 
 
-$newRensioneOk=$parser->parse_balanced_chunk($newRensione);
+my $newRensioneOk=$parser->parse_balanced_chunk($newRensione);
 
  $storie[i]->appendChild($newRensioneOk);
 
