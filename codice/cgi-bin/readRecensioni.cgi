@@ -27,7 +27,7 @@ print<<EOF;
 </head>
 <body>
 	
-        <h1 xml:lang="en"><span>Word Adventure</span></h1>
+        <h1 xml:lang="en"><span></span>Word Adventure</h1>
       <!--  <span class="log"><a href="login.html" xml:lang="en">Login</a> <a href="registrazione.html">Registrati</a></span> -->
    <div id="container"> 
    <div id="path">Ti trovi in: <a href="../xml/storie.xml">Avventure</a> &gt; Recensioni</div> 
@@ -107,17 +107,21 @@ EOF
 foreach my $species ($xp->find('//storia[@id='.$qstring[1].']/recensione')->get_nodelist){
     print "<dt>".$species->find('titolo')->string_value ."</dt>";
     print "<dd>" . $species->find('testo')."</dd>";
-print<<EOF;
-    
-EOF
+
     print "<dd>Posted: ".$species->find('data') ." By: ".$species->find('utente')."<a class=\"su\" href=\"#menuRec\">Torna su</a></dd>";
     print "\n";
 }
+
+
+
+
+print '</dl><form id="recensioni" action="recensioni.cgi" method="post">';
+
 print<<EOF;
 
-</dl>
 
- <form id="recensioni" action="recensioni.cgi" method="post">
+
+ 
     <fieldset id="tuaRecensione">
      	<legend>Lascia la tua recensione</legend>
         <label for="nome">Nome giocatore: <span id="errorNomeGiocatore">Inserisci una stringa alfanumerica</span></label>
@@ -127,6 +131,7 @@ print<<EOF;
         <label for="testoRecensione">Testo: <span id="errorTesto">Inserisci caratteri alfanumerici</span></label>
         <textarea rows="10" cols="50" id="testoRecensione" name="testoRecensione" onchange="return controllaTipiRecensione('testoRecensione', 'errorTesto');" >
 	</textarea>
+        <input name="idStoria" id="idStoria" value="$qstring[1]" type="hidden" />
         <input type="submit" name="invio" value="Prosegui" />
      </fieldset>	
     </form>
