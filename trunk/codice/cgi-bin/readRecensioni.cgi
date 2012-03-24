@@ -18,9 +18,12 @@ print<<EOF;
     <meta name="description" content="avventure testuali, storie su cui si può giocare e interagire con il testo" />
     <meta name="author" content="Lapolla Margherita"/>
 	<meta name="language" content="italian it"/>
+<meta http-equiv="Content-Script-Type" content="text/javascript" /> 
      <link type="text/css" rel="stylesheet" href="../html/css/desktop.css" media="handheld, screen and (min-width:481px), only screen and (min-device-width:481px)" /> 
 	<!-- <link type="text/css" rel="stylesheet" href="css/Device.css" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)" />-->
     <!-- <link type="text/css" rel="stylesheet" href="css/Print.css" media="print" /> -->
+ <!--script javascript-->
+	<script type="text/javascript" src="../js/validaRecensioni.js"></script>
 </head>
 <body>
 	
@@ -117,14 +120,14 @@ print<<EOF;
  <form id="recensioni" action="recensioni.cgi" method="post">
     <fieldset id="tuaRecensione">
      	<legend>Lascia la tua recensione</legend>
-        <label class="label" for="nome">Nome giocatore:</label>
-        <input name="nome" id="nome" value="Nome" maxlength="30" />
-        <label class="label" for="titolo">Titolo recensione:</label>
-        <input name="titolo" id="titolo" value="Titolo" maxlength="50" />
-        <label class="label" for="testoRecensione">Testo:</label>
-        <textarea rows="10" cols="50" id="testoRecensione" name="testoRecensione"></textarea>
-	<input name="idStoria" id="idStoria" type="hidden" value="$qstring[1]"/>
-        <input class="label" type="submit" name="invio" value="Prosegui" />
+        <label for="nome">Nome giocatore: <span id="errorNomeGiocatore">Inserisci una stringa alfanumerica</span></label>
+        <input name="nomeGiocatore" id="nome" value="Nome" maxlength="30" onchange="return controllaTipiRecensione('nome', 'errorNomeGiocatore');" />
+        <label for="titolo">Titolo recensione: <span id="errorTitolo">Inserisci una stringa alfanumerica</span></label>
+        <input name="titoloRecensione" id="titolo" value="Titolo" maxlength="50" onchange="return controllaTipiRecensione('titolo', 'errorTitolo');" />
+        <label for="testoRecensione">Testo: <span id="errorTesto">Inserisci caratteri alfanumerici</span></label>
+        <textarea rows="10" cols="50" id="testoRecensione" name="testoRecensione" onchange="return controllaTipiRecensione('testoRecensione', 'errorTesto');" >
+	</textarea>
+        <input type="submit" name="invio" value="Prosegui" />
      </fieldset>	
     </form>
 
