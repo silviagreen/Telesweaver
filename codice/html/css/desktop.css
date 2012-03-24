@@ -3,22 +3,38 @@ html, body {
 	margin: 0;
 	/*background-color: rgb(5,6,71) ;*/
 	background:url(img/sfondo.png) repeat;
-	color: rgb(255,255,255);
+	/*color: rgb(255,255,255);*/
 	height:100%
 }
 h1 {
 	margin:auto;
-	background-image: url(img/Logo.jpg);
+	padding: 0;
+
+position:relative;
+width:615px;
+height:312px;
+font-size:50px;
+
+	/*background-image: url(img/Logo.jpg);
 	width:615px;
 	height:312px;
-	padding: 0;
+	
+*/
+
+
 	
 }
 
 h1 span {
-	display: block;
+	/*display: block;
 	height: 0;
-	overflow: hidden;
+	overflow: hidden;*/
+
+position:absolute;
+top:0;
+width:615px;
+height:312px;
+background-image: url(img/Logo.jpg);
 }
 
 
@@ -91,6 +107,9 @@ background:
 }
 
 #path{
+	background: url(img/nav3.png) no-repeat right,url(img/nav1.png);
+        margin-left: 3%;
+        margin-right:3%;
 	margin-left: 3%;
 	border:double;
 }
@@ -150,12 +169,15 @@ color: black;
 	float:right;
 }
 
-.label{
+label{
 	display:block;
 }
 
+
+
 #recensioni{
 	padding:5%;
+	display: block;
 }
 
 #piede {
