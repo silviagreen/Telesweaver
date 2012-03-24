@@ -18,7 +18,7 @@ print<<EOF;
 </head>
 <body>
 	
-        <h1 xml:lang="en"><span>Word Adventure</span></h1>
+        <h1 xml:lang="en"><span></span>Word Adventure</h1>
       <!--  <span class="log"><a href="login.html" xml:lang="en">Login</a> <a href="registrazione.html">Registrati</a></span> -->
    <div id="container"> 
    <div id="path">Ti trovi in: <a href="../xml/storie.xml">Avventure</a> &gt; Recensioni</div> 

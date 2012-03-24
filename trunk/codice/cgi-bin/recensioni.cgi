@@ -14,12 +14,14 @@ $tm = localtime;
 require 'forPrinting.pl';
 	
 
-$nomeGiocatore=$query->param('nome');
-$titolo=$query->param('titolo');
+
+$nomeGiocatore=$query->param('nomeGiocatore');
+$titolo=$query->param('titoloRecensione');
 $testo=$query->param('testoRecensione');
 $idStoria=$query->param('idStoria');
 my $ok='si';
 my $stampato='no';
+
 
 
 #controlli sui dati inseriti
