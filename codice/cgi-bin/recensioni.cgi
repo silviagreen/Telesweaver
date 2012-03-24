@@ -50,18 +50,18 @@ if(!$nomeGiocatore){
 	
 #print "Content-type: text/html\n\n";
 	
-	print "<class=\"error\" p>Nome giocatore mancante</p>";
+	print "<p id=\"errorTitolo\" >Nome giocatore mancante</p>";
 	
 }
 if(!$titolo){
 #print "Content-type: text/html\n\n";
 	
-	print "<class=\"error\" p>Titolo mancante</p>";
+	print "<p id=\"errorTitolo\" >Titolo mancante</p>";
 }
 if(!$testo){
 #print "Content-type: text/html\n\n";
 	
-	print "<class=\"error\" p>Testo mancante</p>";
+	print "<p id=\"errorTitolo\" >Testo mancante</p>";
 	
 	
 }
@@ -70,14 +70,14 @@ if(!$testo){
 if($ok eq'si' && (!$nomeGiocatore=~/\w/ && !$titolo=~/\w/ && !$testo=~/\w/)){$ok='no';
 #print "Content-type: text/html\n\n";
 	&printTop;
-	print "<class=\"error\" p>Formato dei campi non corretto, devono essere tutti stringhe alfanumeriche</p>";
+	print "<p id=\"errorTitolo\" >Formato dei campi non corretto, devono essere tutti stringhe alfanumeriche</p>";
 &printBottom;
 	
 }
 if($ok eq 'si' &&(!$nomeGiocatore=~/\w/ || !$titolo=~/\w/ || !$testo=~/\w/)){$ok='no';
 #print "Content-type: text/html\n\n";
 	&printTop;
-	print "<class=\"error\" p>Formato dei campi non corretto, devono essere tutti stringhe alfanumeriche</p>";
+	print "<p id=\"errorTitolo\">Formato dei campi non corretto, devono essere tutti stringhe alfanumeriche</p>";
 &printBottom;
 	
 }
