@@ -41,8 +41,8 @@
 					<li><a href="../cgi-bin/readRecensioni.cgi?id={@id}" >Recensioni</a></li>
 				</ul>
 			</dt>	
-			<dd><xsl:value-of select="e:descrizione"/></dd>
-			<a id="su" href="#container">Torna su</a>
+			<dd><xsl:value-of select="e:descrizione"/><a class="su" href="#container">Torna su</a></dd>
+			
 		</xsl:for-each>
 	</dl>
    </div>	   
