@@ -37,7 +37,7 @@
 			<dt>
 				<xsl:value-of select="e:titolo"/>
 				<ul>
-					<li><a href="storie.cgi?id={@id}" >Gioca</a></li>
+					<li><a href="../cgi-bin/storia.cgi?id={@id}" >Gioca</a></li>
 					<li><a href="../cgi-bin/readRecensioni.cgi?id={@id}" >Recensioni</a></li>
 				</ul>
 			</dt>	
