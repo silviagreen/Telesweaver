@@ -109,7 +109,6 @@ EOF
     print "<dd>Posted: ".$species->find('data') ." By: ".$species->find('utente')."</dd>";
     print "\n";
 }
-
 print<<EOF;
 
 </dl>
@@ -118,12 +117,13 @@ print<<EOF;
     <fieldset id="tuaRecensione">
      	<legend>Lascia la tua recensione</legend>
         <label class="label" for="nome">Nome giocatore:</label>
-        <input name="nomeGiocatore" id="nome" value="Nome" maxlength="30" />
+        <input name="nome" id="nome" name="nome" value="Nome" maxlength="30" />
         <label class="label" for="titolo">Titolo recensione:</label>
-        <input name="titoloRecensione" id="titolo" value="Titolo" maxlength="50" /></br>
+        <input name="titolo" id="titolo" value="Titolo" maxlength="50" /></br>
         <label class="label" for="testoRecensione">Testo:</label>
         <textarea rows="10" cols="50" id="testoRecensione" name="testoRecensione">
         </textarea>
+	<input name="idStoria" id="idStoria" type="hidden" value="$qstring[1]"/>
         <input class="label" type="submit" name="invio" value="Prosegui" />
      </fieldset>	
     </form>
