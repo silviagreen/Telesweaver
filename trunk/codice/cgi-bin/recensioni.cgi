@@ -20,7 +20,7 @@ $testo=$query->param('testoRecensione');
 $idStoria=$query->param('idStoria');
 my $ok='si';
 my $stampato='no';
-print "Content-type: text/html\n\n";
+
 
 #controlli sui dati inseriti
 
@@ -44,40 +44,41 @@ if($ok && (!$nomeGiocatore || !$testo || !$titolo)){
 	
 #	print "Mancano alcuni dati";
 #	$ok='no';
-#}
+print "Content-type: text/html\n\n";
 &printTop;$ok='no';
 if(!$nomeGiocatore){
 	
 #print "Content-type: text/html\n\n";
 	
-	print "<p id=\"errorTitolo\" >Nome giocatore mancante</p>";
+	print "<p id=\"errorTitoloo\" >Nome giocatore mancante</p>";
 	
 }
 if(!$titolo){
 #print "Content-type: text/html\n\n";
 	
-	print "<p id=\"errorTitolo\" >Titolo mancante</p>";
+	print "<p id=\"errorTitoloo\" >Titolo mancante</p>";
 }
 if(!$testo){
 #print "Content-type: text/html\n\n";
 	
-	print "<p id=\"errorTitolo\" >Testo mancante</p>";
+	print "<p id=\"errorTitoloo\" >Testo mancante</p>";
 	
 	
 }
 &printBottom;
 }
-if($ok eq'si' && (!$nomeGiocatore=~/\w/ && !$titolo=~/\w/ && !$testo=~/\w/)){$ok='no';
-#print "Content-type: text/html\n\n";
+if($ok eq'si' && (!$nomeGiocatore=~/\w/ || !$titolo=~/\w/ || !$testo=~/\w/)){$ok='no';
+print "Content-type: text/html\n\n";
 	&printTop;
-	print "<p id=\"errorTitolo\" >Formato dei campi non corretto, devono essere tutti stringhe alfanumeriche</p>";
+	print "<p id=\"errorTitoloo\" >Formato dei campi non corretto, devono essere tutti stringhe alfanumeriche</p>";
 &printBottom;
 	
 }
-if($ok eq 'si' &&(!$nomeGiocatore=~/\w/ || !$titolo=~/\w/ || !$testo=~/\w/)){$ok='no';
-#print "Content-type: text/html\n\n";
+if($ok eq 'si' &&($nomeGiocatore=~ /^[^A-Za-z]+$/ || $titolo=~ /^[^A-Za-z]+$/ || $testo=~/^[^A-Za-z]+$/)){#se non contengono lettere
+$ok='no';
+print "Content-type: text/html\n\n";
 	&printTop;
-	print "<p id=\"errorTitolo\">Formato dei campi non corretto, devono essere tutti stringhe alfanumeriche</p>";
+	print "<p id=\"errorTitoloo\">Formato1 dei campi non corretto, devono essere tutti stringhe alfanumeriche</p>";
 &printBottom;
 	
 }
