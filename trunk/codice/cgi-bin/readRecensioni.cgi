@@ -121,8 +121,7 @@ print<<EOF;
         <label class="label" for="titolo">Titolo recensione:</label>
         <input name="titolo" id="titolo" value="Titolo" maxlength="50" /></br>
         <label class="label" for="testoRecensione">Testo:</label>
-        <textarea rows="10" cols="50" id="testoRecensione" name="testoRecensione">
-        </textarea>
+        <textarea rows="10" cols="50" id="testoRecensione" name="testoRecensione"></textarea>
 	<input name="idStoria" id="idStoria" type="hidden" value="$qstring[1]"/>
         <input class="label" type="submit" name="invio" value="Prosegui" />
      </fieldset>	
