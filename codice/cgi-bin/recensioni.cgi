@@ -35,7 +35,7 @@ print "Content-type: text/html\n\n";
 #	$ok='no';
 #}
 
-#if($ok && (!$nomeGiocatore || !$testo || !$titolo)){
+if($ok && (!$nomeGiocatore || !$testo || !$titolo)){
 
 #	if($stampato eq 'no'){	
 #	print "Content-type: text/html\n\n";
@@ -45,25 +45,27 @@ print "Content-type: text/html\n\n";
 #	print "Mancano alcuni dati";
 #	$ok='no';
 #}
-
-if($ok eq 'si' && !$nomeGiocatore){
-	$ok='no';
+&printTop;$ok='no';
+if(!$nomeGiocatore){
+	
 #print "Content-type: text/html\n\n";
-	&printTop;
+	
 	print "<class=\"error\" p>Nome giocatore mancante</p>";
-	&printBottom;
+	
 }
-if($ok eq 'si' && !$titolo){
+if(!$titolo){
 #print "Content-type: text/html\n\n";
-	&printTop;
+	
 	print "<class=\"error\" p>Titolo mancante</p>";
 }
-if($ok eq 'si' && !$testo){
+if(!$testo){
 #print "Content-type: text/html\n\n";
-	&printTop;
+	
 	print "<class=\"error\" p>Testo mancante</p>";
-	&printBottom;
-	$ok='no';
+	
+	
+}
+&printBottom;
 }
 if($ok eq'si' && (!$nomeGiocatore=~/\w/ && !$titolo=~/\w/ && !$testo=~/\w/)){$ok='no';
 #print "Content-type: text/html\n\n";
