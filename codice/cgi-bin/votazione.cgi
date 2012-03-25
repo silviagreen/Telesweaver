@@ -12,7 +12,7 @@ use encoding("iso-8859-1");
 
 require 'forPrinting.pl';
 
-$nome=$query->param('nomeUtente');
+
 $star1=$query->param('star1');
 $star2=$query->param('star2');
 $star3=$query->param('star3');
@@ -22,7 +22,7 @@ $idStoria=$query->param('idStoria');
 my $error="false";
 
 
-if(!$nome){
+if(!$star1 && !$star2 && !$star3 && !$star4 && !$star5){
 $error="true";	
 print "Content-type: text/html\n\n";
 print<<EOF;
@@ -55,9 +55,9 @@ print<<EOF;
     </div>
 <div class="corpo">	
 EOF
-	print "<p class=\"genericError\" >Nome giocatore mancante</p>";
+	print "<p class=\"genericError\" >Inserire una votazione.</p>";
 }
-#controlli sui dati inseriti
+
 
 if($error eq "false"){
 $newStarRating="";
