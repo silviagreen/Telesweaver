@@ -868,11 +868,84 @@ Dentro la cassaforte vedi il libro degli esorcismi, una boccetta di acqua santa 
 					<nome>sopra</nome>
 					<stanzaDestinazione>6</stanzaDestinazione>
 				</direzione>
+			</direzioni>
+		</stanza>
+		<stanza id="6" nome="villaggio del regno stellato">
+			<testoIniziale>Finalmente sei arrivata al villaggio. Ultimamente gli abitanti del villaggio sono un pò in ansia per la scomparsa del principe Lorenzo. Temono che la regina Cuore Di Pietra esista sul serio e che potrà impossessarsi del regno stellato. Cerca di parlare con loro con cautela...vedi subito una saggia vecchietta, ti sembra la persona giusta con cui parlare...</testoIniziale>
+			<direzioni>
 				<direzione>
 					<nome>sotto</nome>
-					<testoRisposta>Il gps ti indica che per ritornare a palazzo devi scendere la salita e proseguire prima verso ovest e poi verso sud.</testoRisposta>
+					<stanzaSbloccata>5</stanzaSbloccata>
+				</direzione>
+				<direzione>
+					<nome>est</nome>
+					<testoRisposta>Ti trovi davanti alla discesa che ti porta nella strada galattica.</testoRisposta>
+				</direzione>
+				<direzione>
+					<nome>ovest</nome>
+					<oggettoNecessario>vestiti</oggettoNecessario>
+					<testoFallimento>Non puoi entrare nella locanda con quei vestiti, Barlow ti riconoscerà sicuramente e non vorrà parlare con te.</testoFallimento>
+					<stanzaDestinazione>7</stanzaDestinazione>
+				</direzione>
+				<direzione>
+					<nome>nord</nome>
+					<stanzaDestinazione>8</stanzaDestinazione>
 				</direzione>
 			</direzioni>
+			<azione id="7">
+				<verbo>scendi</verbo>
+				<oggetto>auto</oggetto>
+				<sblocca>5</sblocca>
+			</azione>
+			<azione id="8">
+				<verbo>entra</verbo>
+				<verbo>sali</verbo>
+				<oggetto>macchina</oggetto>
+				<testoRisposta>Sei salita nell'auto, pronta ritornare a casa. Sotto vedi la discesa che devi scendere per entrare nella strada galattica.</testoRisposta>
+				<sblocca>9</sblocca>
+			</azione>
+			<azione id="9">
+				<sbloccataDa>3</sbloccataDa>
+				<verbo>accendi</verbo>
+				<oggetto>auto</oggetto>
+				<oggettoOttenuto>partita</oggettoOttenuto>
+				<testoFallimento>Non puoi mettere in moto l'auto se prima non sali.</testoFallimento>
+				<testoRisposta>Bene, l'auto è messa in moto, adesso puoi ritornare a casa.</testoRisposta>
+			</azione>
+			<azione id="5">
+				<sbloccataDa>6</sbloccataDa>
+				<verbo>chiedi</verbo>
+				<verbo>domanda</verbo>
+				<oggetto>fiorilandia</oggetto>
+				<secondoOggetto>vecchietta</secondoOggetto>
+				<testoFallimento>Devi essere più precisa</testoFallimento>
+				<testoRisposta>&quot; Buongiorno Principessa Melissa, è un onore per me incontrarla. So dell'antica esistenza di fiorilandia...Deve sapere che tanto tanto tempo fa il regno stellato si estendeva fino a fiorilandia. Un giorno, però, il regno venne dato in eredità a due sorelle che, per non dover scegliere chi doveva essere la sovrana, crearono il regno di fiorilandia. La regina di fiorilandia, Florenza, era una regina amata da tutto il suo popolo, ma un giorno venne colpite da una maledizione orribile. Florenza era una bellissima ragazza, desiderata da tutti i più potenti re. Quando il re Tacito, sovrano del regno Nero la chiese in sposa, lei rifiutò. Il re Tacito allora andò su tutte le furie lanciandole una maledizione. Secondo la maledizione, infatti, se la regina Florenza avesse avuto un figlio, questo sarebbe diventato malvagio portando alla rovina del regno di fiorilandia. La regina Florenza, amava troppo il suo regno e quindi decise di non avere mai figli, ma un giorno nacque una figlia, che Florenza chiamò Florinda. Florenza cercò di darle tutto l'amore possibile, convinta che sua figlia non sarebbe diventata malvagia, ma quando Florina diventò regina non era amata da nessuno e iniziò a prendere decisioni che contrariavano il popolo. La regina fu subito nominata regina Cuor Di Pietra. Non so dirle però dove si trovi il regno di Florilandia...Provi a chiedere a Barlow, il vecchio locandiere, lo trova alla locanda Grezza. &quot;</testoRisposta>
+				<sblocca>6</sblocca>
+			</azione>
+			<azione id="6">
+				<sbloccataDa>5</sbloccataDa>
+				<verbo>chiedi</verbo>
+				<verbo>domanda</verbo>
+				<oggetto>locanda</oggetto>
+				<secondoOggetto>vecchietta</secondoOggetto>
+				<testoFallimento>Devi essere più precisa</testoFallimento>
+				<testoRisposta>&quot; Puoi trovare la locanda girando qui ad ovest, fai attenzione però, Barlow non è di molte parole...non puoi presentarti da lui vestita di tutto punto, cerca di mescolarti con il popolo. A nord trovi un negozio di vestiti. &quot;</testoRisposta>
+			</azione>
+		</stanza>
+		<stanza id="8" nome="negozio di vestiti">
+			<direzioni>
+				<direzione>
+					<nome>sud</nome>
+					<testoRisposta>Ad ovest puoi vedere la locanda Grezza di Barlow, sotto c'è la discesa che porta alla strada Galattica.</testoRisposta>
+				</direzione>
+			</direzioni>
+			<azione id="10">
+				<verbo>compra</verbo>
+				<verbo>acquista</verbo>
+				<oggetto>vestiti</oggetto>
+				<oggettoOttenuto>vestiti</oggettoOttenuto>
+				<testoRisposta>Ora hai dei nuovi vestiti addosso, così ssei pronta per confonderti con la gente del villaggio e potrai chiedere a Barlow la strada per raggiungere Florilandia.</testoRisposta>
+			</azione>
 		</stanza>
 	</storia>
 </storie>
