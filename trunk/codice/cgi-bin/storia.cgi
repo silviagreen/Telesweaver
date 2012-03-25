@@ -10,31 +10,29 @@ Content-type:text/html\n\n
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <head>
-	<title xml:lang="en">Home-WordAdventure</title>
+	<title xml:lang="en">Gioca-WordAdventure</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
     <meta name="keywords" content="avventure testuali, gioco interattivo, colleziona oggetti, testo, storia, game"/>
     <meta name="description" content="avventure testuali, storie su cui si puï¿½ giocare e interagire con il testo" />
     <meta name="author" content="Laura Varagnolo"/>
 	<meta name="language" content="italian it"/>
-     <link type="text/css" rel="stylesheet" href="css/desktop.css" media="handheld, screen and (min-width:481px), only screen and (min-device-width:481px)" />
+     <link type="text/css" rel="stylesheet" href="../html/css/desktop.css" media="handheld, screen and (min-width:481px), only screen and (min-device-width:481px)" />
 	 <link type="text/css" rel="stylesheet" href="css/Device.css" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)" />
      <link type="text/css" rel="stylesheet" href="css/Print.css" media="print" />
 </head>
 <body>
-	<div id="head">
-    	<img id="logo" src="" alt=""/>
-        <h1 xml:lang="en">Word Adventure</h1>
-        <span class="log"><a href="login.html" xml:lang="en">Login</a> <a href="registrazione.html">Registrati</a></span>
-    </div>
+	 <h1 xml:lang="en"><span>Word Adventure</span></h1>
+      <!--  <span class="log"><a href="login.html" xml:lang="en">Login</a> <a href="registrazione.html">Registrati</a></span> -->
+   <div id="container"> 
+   <div id="path">Ti trovi in: <a href="../xml/storie.xml">Avventure</a> &gt; Gioca</div> 
     <div id="menu">
     	<ul id="menuLista">
-        	<li class="mainItem" id="attivo">Home</li>
-            <li class="mainItem" id="avventure"><a href="Avventure.html" tabindex="1" accesskey="a">Avventure</a></li>
-            <li class="mainItem" id="giocatori"><a href="" tabindex="2" accesskey="g">Giocatori</a></li>
-            <li class="mainItem" id="mappa"><a href="" tabindex="3" accesskey="m">Mappa</a></li>
+        	<li id="home"><a href="../html/Home.html" tabindex="1" accesskey="h">Home</a></li>
+            <li id="attivo"><a href="../xml/storie.xml" tabindex="2" accesskey="a">Avventure</a></li>
+            <li id="mappa"><a href="" tabindex="3" accesskey="m">Mappa</a></li>
         </ul>
     </div>
-    <div id="storia">
+<div class="corpo">	
 EOF
 
 #Quale storia sto usando? Lo vedo dalla Query String
@@ -60,7 +58,7 @@ EOF
 exit;}
 
 #Apro il file xml e cerco la storia
-my $xp = XML::XPath->new(filename =>  'codice/xml/storie.xml');
+my $xp = XML::XPath->new(filename =>  '../xml/storie.xml');
 my $radicestoria = $xp->find("//storia[\@id='$qstring[1]']");
 my $esistonostorie = $xp->find("count(//storia[\@id='$qstring[1]'])");
 
@@ -84,59 +82,59 @@ exit;
 }
 
 #Ho controllato tutto: inizio a prendere le variabili dal POST method
-read($STDIN, $buffer, $ENV('CONTENT_LENGTH'));
+read(STDIN, $buffer, $ENV{'CONTENT_LENGTH'});
 my @pairs = split (/&/, $buffer);
+print "$buffer\n<br />\n";
 foreach my $pair (@pairs) {
 	(my $name, my $value) = split(/=/, $pair);
-	my $value =~ tr/+/ /;
-	my $value =~ s/%([a-fA-F0-9][a-fA-F0-9])/pack("C", hex($1))/eg;
-        my $name =~ tr/+/ /;
-        my $name =~ s/%([a-fA-F0-9][a-fA-F0-9])/pack("C", hex($1))/eg;
+	 $value =~ tr/+/ /;
+	 $value =~ s/%([a-fA-F0-9][a-fA-F0-9])/pack("C", hex($1))/eg;
+         $name =~ tr/+/ /;
+         $name =~ s/%([a-fA-F0-9][a-fA-F0-9])/pack("C", hex($1))/eg;
 	if($name ne "azione" && $name ne "stanza" && $name ne "ultimaazionecorretta"){
-		$name=~ tr/^oggetto//;
+		$name=~ tr/^oggetto/ /;
 	}
-	my $input{$name} = $value;
-		
-	}
+	$input{$name} = $value;
 }
-my $numvarpost=@input;
-if($numvarpost==0){
-
+if($input{'invia'}ne'PROSEGUI'){
+	
 	#Siamo all'inizio della storia!
-	my $testoiniziale = $radicestoria->find("/incipit/text()");
+	my $testoiniziale = $xp->find("//storia[\@id='$qstring[1]']/incipit/text()");
 	print "<p>$testoiniziale</p>";
-	my $testostanza = $radicestoria->find("/stanza[\@inizio='true']/testoIniziale/text()");
+	my $testostanza = $xp->find("//storia[\@id='$qstring[1]']/stanza[\@inizio='true']/testoIniziale/text()");
 	print "<p>$testostanza</p>";
+	$stanza = $xp->find("//storia[\@id='$qstring[1]']/stanza[\@inizio='true']/\@id");
 }else{
-
+	
 	#Non siamo all'inizio della storia: dobbiamo controllare quale azione è stata eseguita
 	my @azione = split(/ /,$input{'azione'});
-	
+
 	#L'azione corrisponde ad una direzione? Se sì carico quella stanza
 	my @direzioni=("nord","sud","ovest","est","sopra","sotto");
 	my $trovato=0;
-	foreach my $direzione (@direzione){
+	foreach my $direzione (@direzioni){
 		if($trovato==0 && ($azione[0] eq $direzione || ($azione[0] eq 'vai' && ($azione[1] eq $direzione || $azione[2] eq $direzione)))) {
 			$trovato=1;
-			my $esistedirezione=$radicestoria->find("count(/stanza[\@id='$input['stanza']'/direzioni/nord)");
+			my $esistedirezione=$xp->find("count(//storia[\@id='$qstring[1]']/stanza[\@id=\'$input{'stanza'}\']/direzioni/direzione[nome=\"$direzione\"])");
+			print "$esistedirezione\n";
 			if($esistedirezione==0) {
 			
 				#Non si può andare in questa direzione! Ricarico la stanza precedente
 				print "<p>Non puoi andare in questa direzione.</p>";
-				my $testostanza=$radicestoria->find("/stanza[\@id='$input['stanza']'/testoIniziale/text()");
+				my $testostanza=$radicestoria->find("//storia[\@id='$qstring[1]']/stanza[\@id='$input{'stanza'}'/testoIniziale/text()");
 				print "<p>$testostanza</p>";
 				$errore=1;
 			}else{
 
 				#Devo controllare se serve un oggetto o no!
-				$servonooggetti=$radicestoria->find("/stanza[\@id='$input['stanza']'/direzioni/$direzione\[\@oggettoNecessario]");
-				if($servonooggetti==1){
+				$servonooggetti=$xp->find("count(//storia[\@id='$qstring[1]']/stanza[\@id=\'$input{'stanza'}\']/direzioni/direzione[nome=\"$direzione\" - oggettoNecessario])");
+				if($servonooggetti==0){
 					print "<p>Ti serve un qualche oggetto per andare in quella direzione.</p>";
 					$errore=1;
 				}else{
 					#Direzione lecita! Carico quella stanza.
-					my $idstanza=$radicestoria("/stanza[\@id='$input['stanza']'/direzioni/$direzione/text()");
-					my $testostanza=$radicestoria->find("/stanza[\@id='$idstanza'/testoIniziale/text()");
+					my $idstanza=$xp->find("//storia[\@id='$qstring[1]']/stanza[\@id=\'$input{'stanza'}\']/direzioni/direzione[nome=\"$direzione\"]/stanzaDestinazione/text()");
+					my $testostanza=$xp->find("//storia[\@id='$qstring[1]']/stanza[\@id=\'$idstanza\']/testoIniziale/text()");
 					print "<p>$testostanza</p>";
 					my $stanzacorrente=$idstanza;
 					my $azionecorrente="";
@@ -161,14 +159,14 @@ if($numvarpost==0){
 		$oggettoazione= s/"^l\'"//;
 
 		#Cerco se esiste un'azione che abbia quell'oggetto
-		my $numnodiazione=$nodiazione->find("count(.[oggetto='$oggettoazione']"));
+		my $numnodiazione=$nodiazione->find("count(.[oggetto='$oggettoazione']");
 		if($numnodiazione==0){
 
 			#Non esiste nessuna azione con quel verbo e quell'oggetto
 			print "<p>Azione non consentita (o non ho capito l'azione che volevi eseguire!)</p>";
 			$errore=1;
 		}else{
-			$nodiazione=$nodiazione->find(".[oggetto='$oggettoazione']"));
+			$nodiazione=$nodiazione->find(".[oggetto='$oggettoazione']");
 
 			#Devo verificare se l'azione prevede un secondo oggetto
 			my $nodiazionesecoggetto=$nodiazione->find("count(.[secondoOggetto])");
@@ -234,7 +232,7 @@ if($numvarpost==0){
 			$ottengooggetti=$nodiazione->find("count(./oggettoOttenuto/)");
 			if($ottengooggetti==1){
 				$oggettoottenuto=$nodiazione->find("./oggettoOttenuto/text()");
-				foreach $inputvar (keys $input){
+				foreach $inputvar ($input){
 					if($inputvar==$oggettoottenuto){
 						$input{"$inputvar"}=1;
 					}
@@ -242,8 +240,8 @@ if($numvarpost==0){
 			}
 
 			#Stampo i risultati
-			my $testoazionenuova=$radicestoria->find("/stanza[\@id=$input{'stanza'}/azioni[\@id='$idazione']/testoRisposta/text()";
-			my $testostanza=$radicestoria->find("/stanza[\@id=$input{'stanza'}/testo/text()"
+			my $testoazionenuova=$radicestoria->find("/stanza[\@id=$input{'stanza'}/azioni[\@id='$idazione']/testoRisposta/text()");
+			my $testostanza=$radicestoria->find("/stanza[\@id=$input{'stanza'}/testo/text()");
 			print "<p>$testostanza</p>\n<p>$testoazionevecchia</p>";
 			my$stanzacorrente=$input{'stanza'};
 			my$azionecorrente=$idazione;
@@ -252,18 +250,19 @@ if($numvarpost==0){
 }
 print<<EOF;
 <form action="storia.cgi?id=$qstring[1]" method="post">
-	<input type="text" name="azione" />
+	<label for="azione">Inserisci azione o direzione</label>
+	<input id="azione" type="text" name="azione" />
 	<input type="hidden" name="stanza" value="$stanza" />
 	<input type="hidden" name="ultimaazionecorretta" value="$azionecorrente" />
+	<input type="submit" name="invia" id="invia" value="PROSEGUI" />
 EOF
 
 #Oggetti: dico alla prossima pagina quali possiedo
-my @oggetti=$radicestoria->find("/stanza/azioni/oggettoOttenuto/text()");
+my @oggetti=$xp->find("//storia[\@id='$qstring[1]']/stanza/azione/oggettoOttenuto");
 foreach $oggetto (@oggetti){
 	print "<input type=\"hidden\" name=\"oggetto$oggetto\" value=\"$input{$oggetto}\" />\n";
 }
 print<<EOF;
-	<input type="submit" name="Invia" value="Invia" />
 </form>
     </div>
     
