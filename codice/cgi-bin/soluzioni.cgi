@@ -18,6 +18,7 @@ print<<EOF;
     <meta name="description" content="recensioni delle avventure testuali con cui si può giocare nel sito" />
     <meta name="author" content="Laura Varagnolo"/>
 	<meta name="language" content="italian it"/>
+	<link rel="icon" href="../html/css/img/book.png" type="image/x-icon" />
 <meta http-equiv="Content-Script-Type" content="text/javascript" /> 
      <link type="text/css" rel="stylesheet" href="../html/css/desktop.css" media="handheld, screen and (min-width:481px), only screen and (min-device-width:481px)" /> 
 	<!-- <link type="text/css" rel="stylesheet" href="css/Device.css" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)" />-->
@@ -32,8 +33,8 @@ print<<EOF;
     	<ul id="menuLista">
         	<li><a href="../html/Home.html" tabindex="1">Home</a></li>
             <li><a href="../xml/storie.xml" tabindex="2">Avventure</a></li>
-            <li><a href="manuali.html" tabindex="3">Manuali</a></li>
-	    <li><a href="" tabindex="4">Mappa</a></li>
+            <li><a href="../html/manuali.html" tabindex="3">Manuali</a></li>
+	    <li><a href="../html/mappa.html" tabindex="4">Mappa</a></li>
 	    <li>Soluzioni</li>
         </ul>
     </div>
