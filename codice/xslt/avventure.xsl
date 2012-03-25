@@ -28,7 +28,7 @@
         	<li><a href="../html/Home.html" tabindex="1">Home</a></li>
             <li>Avventure</li>
             <li><a href="../html/manuali.html" tabindex="2">Manuali</a></li>
-	   <li><a href=".../html/mappa.html" tabindex="3">Mappa</a></li>
+	   <li><a href="../html/mappa.html" tabindex="3">Mappa</a></li>
 	   <li><a href="../cgi-bin/lista.cgi" tabindex="4">Soluzioni</a></li>
         </ul>
     </div>
