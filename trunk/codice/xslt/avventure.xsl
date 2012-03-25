@@ -18,7 +18,7 @@
 <body>
 
     	
-        <h1 xml:lang="en"><span></span> Adventure</h1>
+        <h1 xml:lang="en"><span></span> TalesWeaver</h1>
         <!--<span class="log"><a href="login.html" xml:lang="en">Login</a> <a href="registrazione.html">Registrati</a></span>-->
   <div id="container">
    <div id="path">Ti trovi in: Avventure</div>
@@ -27,7 +27,7 @@
         	<li><a href="../html/Home.html" tabindex="1">Home</a></li>
             <li>Avventure</li>
             <li><a href="../html/manuali.html" tabindex="2">Manuali</a></li>
-	   <li><a href="" tabindex="3">Mappa</a></li>
+	   <li><a href=".../html/mappa.html" tabindex="3">Mappa del sito</a></li>
         </ul>
     </div>
  
