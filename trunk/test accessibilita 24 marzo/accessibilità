@@ -8,10 +8,14 @@ Altro strumento che ha permesso di testarne l'accessibilità è la toolbar Web T
 
 Si sono segnalati i cambi di lingua all'interno delle pagine così da ottenere un miglior ascolto con l'utilizzo di screen reader.
 Le dimensioni di div e font sono in percentuale cosi da rendere il layout il più fluido possibile.
-TABINDEX
+Le pagine del sito sono anche completamente fruibili anche da utenti che possono usare solo la tastiera grazie ai tabindex. Il menu, in quanto molto breve, viene sempre scorso all'inizio, ad eccezione delle pagine gioco, dove si è data la precedenza alla form che consente di giocare. 
+Si è inoltre deciso di non utilizzare gli accesskey, in quanto si è ritenuto difficile riuscire a trovare delle lettere libere dalle funzionalità dei browser valide per tutti i browser.
 
+Sono state inserite abbreviazioni e acronimi dove presenti e sagnalati i cambi di lingua per permettere una miglior uso dello screen reader.
+
+I colori dei link a risorse esterne sono stati cambiati (sia per quando sono stati visitati e non, sia per quando ci si passa sopra con il mouse) sempre però rendendoli fruibili anche a tutti quegli utenti che presentano problemi di distinzione dei colori.
 IMMAGINI
-Le uniche immagini che il sito contiene sono il logo e immagini "secondarie" usate per definire il background, dunque non immagini di contenuto. Per questo motivo tutte le immagine sono caricate solamente da css.
+Le uniche immagini che il sito contiene sono il logo, immagini "secondarie" usate per definire il background, dunque non immagini di contenuto, e le immagini che indicano che il codice css e xhtml è stato validato con i validatori forniti dal w3c. Per questo motivo tutte le immagine sono caricate solamente da css, ad eccezzioni delle due immagini relative alla validazione citate prima. Nel loro caso, per renderle comunque accessibili, sono dotate dell'attributo alt.
 Per il logo in particolare è stata usata la tecnica di Image Replacement per preservare non solo la grafica ma anche l'accessibiltà. Tale tecnica prevede di porre dietro l'immagine il titolo scritto in modo do renderlo leggibile agli screen reader e agli utenti che non possono visualizzare le immagini.
 
 h1 {
