@@ -24,6 +24,7 @@ print<<EOF;
     <!-- <link type="text/css" rel="stylesheet" href="css/Print.css" media="print" /> -->
  <!--script javascript-->
 	<script type="text/javascript" src="../js/validaRecensioni.js"></script>
+	<script type="text/javascript" src="../js/svuotaCampi.js"></script>
 </head>
 <body>
 	
@@ -125,12 +126,11 @@ print<<EOF;
     <fieldset id="tuaRecensione">
      	<legend>Lascia la tua recensione</legend>
         <label for="nome">Nome giocatore: <span id="errorNomeGiocatore">Inserisci una stringa alfanumerica</span></label>
-        <input name="nomeGiocatore" id="nome" value="Nome" maxlength="30" onchange="return controllaTipiRecensione('nome', 'errorNomeGiocatore');" />
+        <input name="nomeGiocatore" id="nome" value="Nome" maxlength="30" onclick="svuotaCampi('nome');" onchange="return controllaTipiRecensione('nome', 'errorNomeGiocatore');" />
         <label for="titolo">Titolo recensione: <span id="errorTitolo">Inserisci una stringa alfanumerica</span></label>
-        <input name="titoloRecensione" id="titolo" value="Titolo" maxlength="50" onchange="return controllaTipiRecensione('titolo', 'errorTitolo');" />
+        <input name="titoloRecensione" id="titolo" value="Titolo" maxlength="50" onclick="svuotaCampi('titolo');" onchange="return controllaTipiRecensione('titolo', 'errorTitolo');" />
         <label for="testoRecensione">Testo: <span id="errorTesto">Inserisci caratteri alfanumerici</span></label>
-        <textarea rows="10" cols="50" id="testoRecensione" name="testoRecensione" onchange="return controllaTipiRecensione('testoRecensione', 'errorTesto');" >
-	</textarea>
+        <textarea rows="10" cols="50" id="testoRecensione" name="testoRecensione" onclick="svuotaCampi('testoRecensione');" onchange="return controllaTipiRecensione('testoRecensione', 'errorTesto');" >Testo</textarea>
         <input name="idStoria" id="idStoria" value="$qstring[1]" type="hidden" />
         <input type="submit" name="invio" value="Prosegui" />
      </fieldset>	
