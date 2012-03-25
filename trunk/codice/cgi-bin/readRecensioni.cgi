@@ -120,7 +120,20 @@ print <<EOF;
 EOF
 #fine aggiunte database
 
+my $numVoti=count($xp->find('//storia[@id='.$qstring[1].']/valutazione');#in teoria conta gli elementi
+my $sommaVoti;
+foreach my $val ($xp->find('//storia[@id='.$qstring[1].']/valutazione')->get_nodelist){
+	$sommaVoti+=int($val->find('numero'));
+}
+my $mediaVoti=$sommaVoti/$numVoti;
+
 print<<EOF;
+
+<p>La media delle valutazioni degli utenti per questa storia è: </p>
+EOF
+print "$mediaVoti";
+
+print <<EOF;
 
 	<form id="votazioni" action="votazione.cgi" method="post">
 	<fieldset class="rating">

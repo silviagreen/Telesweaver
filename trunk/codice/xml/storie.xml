@@ -728,13 +728,13 @@ Dentro la cassaforte vedi il libro degli esorcismi, una boccetta di acqua santa 
 			</azione>
 		</stanza>
 		<valutazione>
-			<numero>star4</numero>
+			<numero>4</numero>
 		</valutazione>
 		<valutazione>
-			<numero>star1</numero>
+			<numero>1</numero>
 		</valutazione>
 		<valutazione>
-			<numero>star3</numero>
+			<numero>3</numero>
 		</valutazione>
 		<recensione>
 			<titolo>Molto bella</titolo>
@@ -1129,10 +1129,10 @@ Dentro la cassaforte vedi il libro degli esorcismi, una boccetta di acqua santa 
 			</azione>
 		</stanza>
 		<valutazione>
-			<numero>star5</numero>
+			<numero>5</numero>
 		</valutazione>
 		<valutazione>
-			<numero>star5</numero>
+			<numero>5</numero>
 		</valutazione>
 		<recensione>
 			<titolo>Bellissima</titolo>
