@@ -38,8 +38,26 @@ background-image: url(img/Logo.jpg);
 }
 
 
-#menu a{
-	
+.allbody{
+	margin:5% 10% 0 10%;
+}
+
+.allbody caption{
+	text-align:center;
+	font-variant:small-caps;
+	font-size:2em;
+}
+
+.esterno a:link{
+	color:red;
+}
+
+.esterno a:visited{
+	color:#8b0000;
+}
+
+.esterno a:hover{
+	color:#ff4500;
 }
 
 #menu {
