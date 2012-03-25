@@ -726,6 +726,18 @@ Dentro la cassaforte vedi il libro degli esorcismi, una boccetta di acqua santa 
 				<testoRisposta>Il rituale di Saamaa prevede una serie di accorgimenti per proteggersi da forze o presenze innaturali o malefiche. Alcuni di questi accorgimenti sono il pentacolo e una boccetta di acqua santa. Per proteggersi &#232; necessario disegnare per terra un pentacolo, una stella a cinque punte inscritta in un cerchio. Al centro di questo pentacolo bisogna disporre una boccetta di acqua santa. Entrando nello spazio definito da questo pentacolo si &#232; protetti da forze o presenze malvagie. Una volta individuata la causa dell&#39;infestazione occorre imprigionarla all&#39;interno del pentacolo e, quando la forza malvagia si &#232; manifestata, bisogna annientarla versandole addosso dell&#39;acqua sulfurea. Bisogna fare attenzione: una volta che l&#39;infestazione si &#232; manifestata all&#39;interno del pentacolo si ha a disposizione un solo tentativo per distruggerla, in quanto il pentacolo una seconda volta non sar&#225; in grado di trattenerla. Adesso sei pronto per ritornare a casa Anderson.</testoRisposta>
 			</azione>
 		</stanza>
+		<valutazione>
+			<numero>star4</numero>
+			<utente>Gaio Pallino</utente>
+		</valutazione>
+		<valutazione>
+			<numero>star1</numero>
+			<utente>Riccardo Scarso</utente>
+		</valutazione>
+		<valutazione>
+			<numero>star3</numero>
+			<utente>Gaia Bella</utente>	
+		</valutazione>
 		<recensione>
 			<testo>La storia mi &#232; piaciuta molto, l&#39;ho trovata ricca di mistero e, anche se lunga, &#232; stata appassionante e molto piacevole da giocare. &#200; una storia adatta a chi vuole risolvere enigmi ed &#232; attratto da luoghi oscuri.</testo>
 			<utente>Gaio Pallino</utente>
@@ -772,8 +784,9 @@ Dentro la cassaforte vedi il libro degli esorcismi, una boccetta di acqua santa 
 				<oggetto>permesso</oggetto>
 				<secondoOggetto>regina</secondoOggetto>
 				<oggettoOttenuto>permesso</oggettoOttenuto>
+				<oggettoOttenuto>guardie</oggettoOttenuto>
 				<testoRisposta>&quot; Capisco le tue ragioni figlia mia. A malincuore ti do il permesso di partire alla ricerca del principe Lorenzo. Ti prego però di accettare una scorta di guardie del palazzo reale, che ti aiuteranno quando sarai in difficoltà. Inoltre pretendo di essere aggiornata sulle tue azioni, tramite messaggi o telefonate. Prendi le chiavi della tua auto e ricorda che il futuro del regno stellato sei tu, non deve accaderti niente di male. Se la ricerca di Lorenzo si rivelerà troppo difficoltosa ritorna indietro. &quot; A questo punto puoi procedere nella tua rierca.</testoRisposta>
-				<sblocca>ID DI QUANDO SI SALE IN MACCHINA</sblocca>
+				<sblocca>3</sblocca>
 			</azione>
 			<direzioni>
 				<direzione>
@@ -790,7 +803,7 @@ Dentro la cassaforte vedi il libro degli esorcismi, una boccetta di acqua santa 
 				<direzione>
 					<nome>sud</nome>
 					<oggettoNecessario>permesso</oggettoNecessario>
-					<testoFallimento>Non hai ancora ricevuto i permesso della regina per intraprendere la tua ricerca.</testoFallimento>
+					<testoFallimento>Non hai ancora ricevuto il permesso della regina per intraprendere la tua ricerca.</testoFallimento>
 					<stanzaDestinazione>4</stanzaDestinazione>
 				</direzione>
 				<direzione>
@@ -810,6 +823,14 @@ Dentro la cassaforte vedi il libro degli esorcismi, una boccetta di acqua santa 
 				<testoRisposta>Sei salita nell'auto, pronta per partire. Ti chiedi se stai facendo la cosa giusta, non sai dove andare, non sai dov'è Lorenzo, non sai cosa fare...</testoRisposta>
 				<sblocca>4</sblocca>
 			</azione>
+			<azione id="4">
+				<sbloccataDa>3</sbloccataDa>
+				<verbo>accendi</verbo>
+				<oggetto>auto</oggetto>
+				<oggettoOttenuto>partita</oggettoOttenuto>
+				<testoFallimento>Non puoi mettere in moto l'auto se prima non sali.</testoFallimento>
+				<testoRisposta>Bene, l'auto è messa in moto, adesso puoi partire per la tua avventura.</testoRisposta>
+			</azione>
 			<direzioni>
 				<direzione>
 					<nome>nord</nome>
@@ -820,6 +841,36 @@ Dentro la cassaforte vedi il libro degli esorcismi, una boccetta di acqua santa 
 					<oggettoNecessario>partita</oggettoNecessario>
 					<testoFallimento>Non puoi partire se prima non metti in moto l'auto...</testoFallimento>
 					<stanzaDestinazione>5</stanzaDestinazione>
+				</direzione>
+			</direzioni>
+		</stanza>
+		<stanza id="5" nome="strada galattica">
+			<testoIniziale>La strada è lunga, il gps ti indica che per raggiungere il villaggio devi proseguire sempre a nord,est e sopra la salita per raggiungere il villaggio.</testoIniziale>
+			<direzioni>
+				<direzione>
+					<nome>nord</nome>
+					<testoRisposta>Ricordi le istruzioni del gps per raggiungere il villaggio...est e sud. Dietro di te, a sud, vedi dallo specchietto retrovisore la stanza per ritornare a palazzo.</testoRisposta>
+				</direzione>
+				<direzione>
+					<nome>sud</nome>
+					<testoRisposta>Riesci già a vedere il palazzo...</testoRisposta>
+					<stanzaSbloccata>4</stanzaSbloccata>
+				</direzione>
+				<direzione>
+					<nome>est</nome>
+					<testoRisposta>Hai ancora una salita da fare per raggiungere il villaggio. Ad ovest vedi la strada che ti stal lasciando alle spalle.</testoRisposta>
+				</direzione>
+				<direzione>
+					<nome>ovest</nome>
+					<testoRisposta>La strada è ancora lunga ma sei nella direzione giusta per ritornare a palazzo.</testoRisposta>
+				</direzione>
+				<direzione>
+					<nome>sopra</nome>
+					<stanzaDestinazione>6</stanzaDestinazione>
+				</direzione>
+				<direzione>
+					<nome>sotto</nome>
+					<testoRisposta>Il gps ti indica che per ritornare a palazzo devi scendere la salita e proseguire prima verso ovest e poi verso sud.</testoRisposta>
 				</direzione>
 			</direzioni>
 		</stanza>
