@@ -112,7 +112,7 @@ foreach my $species ($xp->find('//storia[@id='.$qstring[1].']/recensione')->get_
 print "</dl>";
 
 #aggiunte per prelevare le recensioni da database
-print <<EOF
+print <<EOF;
 <h2>Valutazioni - $titolo</h2>
 <dl class="valutazioni">
 
@@ -121,7 +121,7 @@ EOF
 #fine aggiunte database
 
 print<<EOF;
-<h2>Valutazioni - $titolo</h2>
+
 	<form id="votazioni" action="votazione.cgi" method="post">
 	<fieldset class="rating">
 		<legend>Vota la storia</legend>
@@ -157,8 +157,8 @@ print<<EOF;
 
     <div id="piede">
 
-   				<img src="css/img/css.gif" alt="CSS Valid!"/>
-        			<img src="css/img/xhtml10.png" alt="XHTML 1.0 Valid!"/>
+   				<img src="../html/css/img/css.gif" alt="CSS Valid!"/>
+        			<img src="../html/css/img/xhtml10.png" alt="XHTML 1.0 Valid!"/>
 
     </div>
 </body>
