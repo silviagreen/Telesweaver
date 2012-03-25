@@ -1093,7 +1093,56 @@ Dentro la cassaforte vedi il libro degli esorcismi, una boccetta di acqua santa 
 					<nome>sotto</nome>
 					<stanzaDirezione>12</stanzaDirezione>
 				</direzione>
+				<direzione>
+					<nome>nord</nome>
+					<stanzaDestinazione>14</stanzaDestinazione>
+				</direzione>
 			</direzioni>
 		</stanza>
+		<stanza id="14" nome="stanza della regina Cuor Di Pietra" fine="true">
+			<testoIniziale>Nella stanza della regina Cuor Di pietra. A sud vedi la porta dalla quale sei appena entrata che ti condice all'ingresso. Davanti a te Lorenzo è legato, dalla tua posizione riesci a vedere tutto liberamente e senza essere vista. La regina Cuor Di Pietra gli deve aver appena fatto un incantesimo x non farlo parlare perchè dalla sua bocca non esce alcun suono. Vedi lui, che cerca di gridare ma non ci riesce. La regina si sta avvicinando a lui cercando di fargli assumere un filtro d'amore. Ti guardi intorno, devi agire subito altrimenti la regina riuscirà a far innamorare Lorenzo di lei. Vedi che c'è un comodino su cui la regina ha appoggiato la bacchetta magica, ignara che qualcuno potesse rovinare il suo piano.</testoIniziale>
+			<direzioni>
+				<direzione>
+					<nome>sud</nome>
+					<stanzaDestinazione>13</stanzaDestinazione>
+				</direzione>
+			</direzioni>
+			<azione id="20">
+				<verbo>afferra</verbo>
+				<verbo>prendi</verbo>
+				<oggetto>bacchetta</oggetto>
+				<testoRisposta>Nel momento in cui afferri la bacchetta scivola un vaso dal comodino provocando un rumore assordante. La regina, colta alla sprovvista, lascia cadere il filtro che si rompe in mille pezzi. Come se niente fosse la regina tira fuori un'altra bacchetta magica e la punta verso di te. Devi essere pronta, ricordare le parole che ha detto Lorenzo nel messaggio ed agire immediatamente.</testoRisposta>
+				<sblocca>21</sblocca>
+			</azione>
+			<azione id="21">
+				<sbloccataDa>20</sbloccataDa>
+				<verbo>punta</verbo>
+				<oggetto>bacchetta</oggetto>
+				<secondoOggetto>regina</secondoOggetto>
+				<testoRisposta>La regina è sorpresa del tuo gesto. Ti manca pochissimo per sconfiggerla, basta pensare alle parole che aveva scritto Lorenzo nel messaggio...ma devi farlo in fretta o la regina ti sconfiggerà!</testoRisposta>
+				<sblocca>22</sblocca>
+			</azione>
+			<azione id="22">
+				<sbloccataDa>21</sbloccataDa>
+				<verbo>pensa</verbo>
+				<oggetto>bafloba</oggetto>
+				<testoFallimento>Prima devi puntare la bacchetta contro la regina!</testoFallimento>
+				<testoRisposta>Nel momento in cui pensi la parola magica dalla tua bacchetta spunta fuori una luce azzurra, accesa, intensa, accompaganta da tanti fiorellini luccicanti di tutti i colori. La luce si dirige verso la regina. In un primo momento le colpisce gli occhi, poi arriva al cuore. La regina si solleva da terra e viene circondata da un arobaleno. Improvvisamente si accascia a terra e si rialza. La guardi in viso, sembra così bella, armoniosa e gentile. Capisci subito che pensando quella parola hai spezzato la maledizione. La regina ti guarda e dice: &quot; Tu devi essere Melissa...Ho sentito parlare di te, un pò di tempo fa. Purtroppo ricordo tutto, tutto quello che ho fatto di male. D'ora in poi il regno ritornerà ad essere felice ed armonioso come era una volta. Vi prego di perdonarmi, spero che tu e Lorenzo possiate vivere felici e contenti. &quot; Lorenzo ti viene incontro, dopo che la regina Florinda lo slega. Ti abbraccia forte e finalmente riuscite a ritornare a casa insieme. Da questo momento Florilandia è ritornata com'era una volta e tutto vive nella felicità.</testoRisposta>
+			</azione>
+		</stanza>
+		<valutazione>
+			<numero>star5</numero>
+			<utente>Gaia Bella</utente>
+		</valutazione>
+		<valutazione>
+			<numero>star5</numero>
+			<utente>Riccardo Scarso</utente>
+		</valutazione>
+		<recensione>
+			<titolo>Bellissima</titolo>
+			<testo>La storia mi è piaciuta moltissimo, è semplice da giocare e non troppo lunga.</testo>
+			<utente>Gaia Bella</utente>
+			<data>2012-03-25</data>
+		</recensione>
 	</storia>
 </storie>
