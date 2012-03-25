@@ -35,7 +35,7 @@ print<<EOF;
             <li><a href="../xml/storie.xml" tabindex="2">Avventure</a></li>
             <li><a href="../html/manuali.html" tabindex="3">Manuali</a></li>
 	    <li><a href="../html/mappa.html" tabindex="4">Mappa</a></li>
-	    <li>Soluzioni</li>
+	    <li><a href="lista.cgi" tabindex="5">Soluzioni</a></li>
         </ul>
     </div>
 <div class="corpo">
