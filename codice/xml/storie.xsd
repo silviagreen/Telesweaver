@@ -66,12 +66,12 @@ targetNamespace="http://www.w3.org/1999/XSL/Transform" xmlns="http://www.w3.org/
 	</xs:complexType>
 	<xs:simpleType name="Tnumero">
 		<xs:simpleType>
-			<xs:restriction base="xs:string">
-				<xs:enumeration value="star1"/>
-				<xs:enumeration value="star2"/>
-				<xs:enumeration value="star3"/>
-				<xs:enumeration value="star4"/>
-				<xs:enumeration value="star5"/>
+			<xs:restriction base="xs:positiveInteger">
+				<xs:enumeration value="1"/>
+				<xs:enumeration value="2"/>
+				<xs:enumeration value="3"/>
+				<xs:enumeration value="4"/>
+				<xs:enumeration value="5"/>
 			</xs:restriction>
 </xs:simpleType>
 	</xs:simpleType>
