@@ -51,7 +51,7 @@ my @qstring=split(/=/,$buffer);
 #Se il nome della variabile non è ID, qualcuno sta cercando di modificare la query string!
 if ($qstring[0] ne 'id') {
   print<<EOF;
-ERRORE! ACCESSO NON AUTORIZZATO!
+<p class=\"genericError\">ERRORE! ACCESSO NON AUTORIZZATO!</p>
     </div>
 </div>
     <div id="piede">
@@ -73,7 +73,7 @@ my $esistonostorie = $xp->find("count(//storia[\@id='$qstring[1]'])");
 #Se non ci sono storie con quell'ID, restituisco errore
 if ($esistonostorie==0) {
   print<<EOF;
-ERRORE! STORIA INESISTENTE!
+<p class=\"genericError\">ERRORE! STORIA INESISTENTE!</p>
     </div>
 </div>
     <div id="piede">
@@ -181,7 +181,7 @@ if($input{'invia'}ne'PROSEGUI'){
         my $numnodiazione=$xp->find("count(//storia[\@id='$qstring[1]']/stanza[\@id='$input{'stanza'}']/azione[verbo='$azione[0]' and oggetto='$oggettoazione'])");
         if($numnodiazione==0){
         #Non esiste nessuna azione con quel verbo e quell'oggetto
-          print "<p>Azione non consentita (o non ho capito l'azione che volevi eseguire!)</p>";
+          print "<p class=\"genericError\">Azione non consentita (o non ho capito l'azione che volevi eseguire!)</p>";
           $errore=1;
           $stanzacorrente=$input{'stanza'};
         }else{
