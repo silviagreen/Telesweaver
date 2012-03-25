@@ -54,7 +54,7 @@ background:
         url(img/menu.png) repeat;
 
 	color:black;
-
+	margin-top: 2%;
 	margin-left: 3%;
 	width: 15%;
 
@@ -108,10 +108,9 @@ background:
 
 #path{
 	background: url(img/nav3.png) no-repeat right,url(img/nav1.png);
-        margin-left: 3%;
         margin-right:3%;
 	margin-left: 3%;
-	border:double;
+	margin-top: 0.5%;
 }
 .corpo {
 	/*background:url(img/updx.png) right top  no-repeat, url(img/upsx.png) left top  no-repeat,url(img/downdx.png) right bottom  no-repeat,url(img/downsx.png) left bottom  no-repeat,url(img/middle.png) repeat ;*/
