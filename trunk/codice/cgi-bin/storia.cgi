@@ -273,8 +273,8 @@ if($input{'invia'}ne'PROSEGUI'){
       my $azionecorrente=$input{'ultimaazionecorretta'};
     }
     print<<EOF;
-<form action="storia.cgi?id=$qstring[1]" method="post">
-	<fieldset id="tuaRecensione">
+<form id="gioco" action="storia.cgi?id=$qstring[1]" method="post">
+	<fieldset >
 	<legend>Agisci</legend>
 	<label for="azione">Inserisci azione o direzione</label>
 	<input id="azione" type="text" name="azione" tabindex="1"/>
