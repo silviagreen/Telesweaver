@@ -26,7 +26,7 @@
     	<ul id="menuLista">
         	<li><a href="../html/Home.html" tabindex="1">Home</a></li>
             <li>Avventure</li>
-            <li><a href="" tabindex="2">Manuali</a></li>
+            <li><a href="../html/manuali.html" tabindex="2">Manuali</a></li>
 	   <li><a href="" tabindex="3">Mappa</a></li>
         </ul>
     </div>
@@ -51,11 +51,8 @@
    
     
     <div id="piede">
-	 <a href="http://validator.w3.org/check?uri=referer">
-	 <img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
-
-   	 <a href="http://validator.w3.org/check?uri=referer">
-	<img src="http://www.w3.org/Icons/valid-css.gif" alt="Valid CSS 2" height="31" width="88" /></a>   
+					<img src="css/img/css.gif" alt="CSS Valid!"/>
+        			<img src="css/img/xhtml10.png" alt="XHTML 1.0 Valid!"/>
     </div>
 
 </body>
