@@ -44,7 +44,7 @@ print<<EOF;
         <h1 xml:lang="en"><span></span>TalesWeaver</h1>
       <!--  <span class="log"><a href="login.html" xml:lang="en">Login</a> <a href="registrazione.html">Registrati</a></span> -->
    <div id="container"> 
-   <div id="path">Ti trovi in: <a href="../xml/storie.xml">Avventure</a> &gt; Recensioni</div> 
+   <div id="path">Ti trovi in: <a href="../xml/storie.xml">Avventure</a> &gt; <a href="readRecensioni.cgi?id=$idStoria">Recensioni</a></div> 
     <div id="menu">
     	<ul id="menuLista">
         	<li><a href="../html/Home.html" tabindex="1">Home</a></li>
@@ -55,7 +55,7 @@ print<<EOF;
     </div>
 <div class="corpo">	
 EOF
-	print "<p id=\"errorTitoloo\" >Nome giocatore mancante</p>";
+	print "<p class=\"genericError\" >Nome giocatore mancante</p>";
 }
 #controlli sui dati inseriti
 
