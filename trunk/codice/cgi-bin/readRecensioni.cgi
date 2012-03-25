@@ -25,6 +25,15 @@ print<<EOF;
  <!--script javascript-->
 	<script type="text/javascript" src="../js/validaRecensioni.js"></script>
 	<script type="text/javascript" src="../js/svuotaCampi.js"></script>
+	<script type="text/javascript" src="../js/submitForm.js"></script>
+EOF
+$isJs=true;
+print <<EOF;
+	<noscript>
+EOF
+	$isJs=false;
+print <<EOF;		
+	</noscript>
 </head>
 <body>
 	
@@ -117,17 +126,20 @@ print<<EOF;
 	<form id="votazioni" action="votazione.cgi" method="post">
 	<fieldset class="rating">
 		<legend>Vota la storia</legend>
-	    <input type="radio" id="star5" name="star5" value="5" tabindex="4"/><label for="star5" title="5 stelle">5 stelle</label>
-	    <input type="radio" id="star4" name="star4" value="4" tabindex="5"/><label for="star4" title="4 stelle">4 stelle</label>
-	    <input type="radio" id="star3" name="star3" value="3" tabindex="6"/><label for="star3" title="3 stelle">3 stelle</label>
-	    <input type="radio" id="star2" name="star3" value="2" tabindex="7"/><label for="star2" title="2 stelle">2 stelle</label>
-	    <input type="radio" id="star1" name="star1" value="1" tabindex="8"/><label for="star1" title="1 stella">1 stella</label>
-	    <input type="submit" id="submitRating" name="vota" value="Vota" />
+		<label for="nomeUtente">Nome giocatore:</label>
+		<input name="nomeUtente" id="nomeUtente" value="Nome" maxlenght="30" onclick="svuotaCampi('nomeUtente');" />
+	    <input type="radio" id="star5" name="star5" value="5" tabindex="4" onclick="submitForm('star5');" /><label for="star5" title="5 stelle">5 stelle</label>
+	    <input type="radio" id="star4" name="star4" value="4" tabindex="5" onclick="submitForm('star4');" /><label for="star4" title="4 stelle">4 stelle</label>
+	    <input type="radio" id="star3" name="star3" value="3" tabindex="6" onclick="submitForm('star3');" /><label for="star3" title="3 stelle">3 stelle</label>
+	    <input type="radio" id="star2" name="star3" value="2" tabindex="7" onclick="submitForm('star2');" /><label for="star2" title="2 stelle">2 stelle</label>
+	    <input type="radio" id="star1" name="star1" value="1" tabindex="8" onclick="submitForm('star1');" /><label for="star1" title="1 stella">1 stella</label>
+		<input type="submit" id="submitRating" name="vota" value="Vota" />";
 	</fieldset>
 	</form>
 
 EOF
 
+#il bottone è nascosto se js è abilitato, in teoria
 print<<EOF;
 	<form id="recensioni" action="recensioni.cgi" method="post">
     <fieldset id="tuaRecensione">
