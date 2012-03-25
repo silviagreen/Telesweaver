@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<?xml-stylesheet type="text/xsl" href="../xslt/avventure.xsl"?>
 <storie xmlns="http://www.storie.com" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:schemaLocation="http://www.storie.com storie.xsd">
 	<storia id="1">
 		<titolo>L'anello</titolo>
 		<autore>Anonimo</autore>
-		<descrizione>Sei, ora, il detective dell'occulto Carnacky. Sei stato contattato dal sig. Anderson per un caso di 'infestazione'. Nella sua casa avvenivano strane cose: nel cuore di ogni notte la porta di una camera, da lui chiamata 'Camera Grigia', si apriva e sbatteva violentemente nonostante essa fosse chiusa a chiave e la chiave custodita in portineria.
-			Ti trovi ora a Cheyne Walk, di fronte a casa Anderson per risolvere il caso...</descrizione>
-		<incipit>Un'avventura ricca di mistero. Aiuta l'ispettore Carnacky a risolvere il mistero di villa Anderson...Circola voce che in quella villa accadano strane cose la notte. Nel villaggio si pensa che la casa sia infestata da qualche spirito oscuro. Da quando si è sparsa la voce nessuno vuole più far visita alla famiglia Anderson per paura di venire aggredita dallo spirito oscuro. Per questo motivo la famiglia ha convocato il detective Carnacky. Ce la farai assumendo le vesti dell'investigatore dell'occulto a liberare la famiglia da questo spirito e farle riavere una vita normale?</incipit>
+		<descrizione>Un'avventura ricca di mistero. Aiuta l'ispettore Carnacky a risolvere il mistero di villa Anderson...Circola voce che in quella villa accadano strane cose la notte. Nel villaggio si pensa che la casa sia infestata da qualche spirito oscuro. Da quando si è sparsa la voce nessuno vuole più far visita alla famiglia Anderson per paura di venire aggredita dallo spirito oscuro. Per questo motivo la famiglia ha convocato il detective Carnacky. Ce la farai assumendo le vesti dell'investigatore dell'occulto a liberare la famiglia da questo spirito e farle riavere una vita normale?</descrizione>
+		<incipit>Sei, ora, il detective dell'occulto Carnacky. Sei stato contattato dal sig. Anderson per un caso di 'infestazione'. Nella sua casa avvenivano strane cose: nel cuore di ogni notte la porta di una camera, da lui chiamata 'Camera Grigia', si apriva e sbatteva violentemente nonostante essa fosse chiusa a chiave e la chiave custodita in portineria.
+			Ti trovi ora a Cheyne Walk, di fronte a casa Anderson per risolvere il caso...</incipit>
 		<stanza id="1" inizio="true" fine="false" nome="giardino">
 			<testoIniziale>Casa Anderson è una bella casa in stile vittoriano a due piani. Una torre ottogonale svetta al lato est della casa mentre una serie di tetti a spioventi a varie falde ricopre la casa. I muri in mattone sono ricoperti da edera rampicante. Puoi notare a Nord un vialetto di ingresso che conduce ad un portico in legno.
 </testoIniziale>
@@ -728,16 +727,101 @@ Dentro la cassaforte vedi il libro degli esorcismi, una boccetta di acqua santa 
 			</azione>
 		</stanza>
 		<recensione>
-			<titolo>Molto Bella</titolo>
 			<testo>La storia mi &#232; piaciuta molto, l&#39;ho trovata ricca di mistero e, anche se lunga, &#232; stata appassionante e molto piacevole da giocare. &#200; una storia adatta a chi vuole risolvere enigmi ed &#232; attratto da luoghi oscuri.</testo>
 			<utente>Gaio Pallino</utente>
 			<data>2012-03-16</data>
 		</recensione>
 		<recensione>
-			<titolo>Scarsa</titolo>
 			<testo>Storia troppo lunga e noiosa. Anche se c&#39;&#232; un p&#242; di mistero non si &#232; portati a giocarla. Inoltre non la ritengo interessante n&#232; facile da giocare.</testo>
 			<utente>Riccardo Scarso</utente>
 			<data>2011-09-25</data>
 		</recensione>
+	</storia>
+	<storia id="2">
+		<titolo>La principessa Melissa</titolo>
+		<autore>Laura Varagnolo</autore>
+		<descrizione>Una favola in cui le cose vanno un p&#242; al contrario. Melissa &#232; la pricipessa del regno stellato. Ormai per lei &#232; giunta l&#39;ora di sposarsi con il suo principe per condurre il regno al posto di sua madre, la regina Stella. I preparativi per il matrimonio stavano inziando e Melissa non vedeva l&#39;ora di sposare Lorenzo, quando un giorno Lorenzo &#232; scomparso nel nulla...Nel regno gira voce che il suo principe sia stato rapito dalla regina Cuor Di Pietra, regina di Fiorilandia. Melissa sa benissimo che l&#39;esistenza della regina Cuor Di Pietra &#232; solo una leggenda ma non sa come trovare Lorenzo. Dopo aver provato in tutti i modi a contattarlo con il suo smartphone Melissa decide di andare in cerca di lui. La regina Cuor Di Pietra esister&#225; sul serio? Melissa riuscir&#225; a trovare e sposare Lorenzo?</descrizione>
+		<incipit>Sei la principessa melissa ed hai appena deciso di andare a cercare il tuo principe. Ti trovi davanti alla porta della sala del trono in cui si trova tua madre, la regina Stella. Per andare a cercare Lorenzo devi prima chiederle il premesso...</incipit>
+		<stanza id="1" inizio="true" fine="false" nome="corridoio del palazzo reale">
+			<testoIniziale>Di fronte a te c'è il portone, anche se sei una principessa moderna hai comunque ricevuto un'educazione impeccabile. Scendendo le scale puoi accedere all'atrio del palazzo.</testoIniziale>
+			<azione id="1">
+				<verbo>bussa</verbo>
+				<oggetto>porta</oggetto>
+				<testoRisposta>&quot; Entra pure Melissa. &quot; La regina Stella ti fa entrate. A nord vedi l'ingresso della stanza. </testoRisposta>
+				<oggettoOttenuto>accedistanza</oggettoOttenuto>
+			</azione>
+			<direzioni>
+				<direzione>
+					<nome>nord</nome>
+					<oggettoNecessario>accediStanza</oggettoNecessario>
+					<testoFallimento>L'educazione che hai ricevuto ti impone di bussare alla porta prima di entrare in una stanza.</testoFallimento>
+					<stanzaDestinazione>2</stanzaDestinazione>
+				</direzione>
+				<direzione>
+					<nome>sotto</nome>
+					<oggettoNecessario>permesso</oggettoNecessario>
+					<testoFallimento>Non hai il permesso della regina Stella per intraprendere la ricerca del principe Lorenzo.</testoFallimento>
+					<stanzaDestinazione>3</stanzaDestinazione>
+				</direzione>
+			</direzioni>
+		</stanza>
+		<stanza id="2" nome="stanza della regina Stella">
+			<testoIniziale>Sei nella stanza della regina Stella. A sud vedi la porta da cui sei entrata, davanti a te la regina risiede nel suo trono pronta ad ascoltarti.</testoIniziale>
+			<azione id="2">
+				<verbo>chiedi</verbo>
+				<oggetto>permesso</oggetto>
+				<secondoOggetto>regina</secondoOggetto>
+				<oggettoOttenuto>permesso</oggettoOttenuto>
+				<testoRisposta>&quot; Capisco le tue ragioni figlia mia. A malincuore ti do il permesso di partire alla ricerca del principe Lorenzo. Ti prego però di accettare una scorta di guardie del palazzo reale, che ti aiuteranno quando sarai in difficoltà. Inoltre pretendo di essere aggiornata sulle tue azioni, tramite messaggi o telefonate. Prendi le chiavi della tua auto e ricorda che il futuro del regno stellato sei tu, non deve accaderti niente di male. Se la ricerca di Lorenzo si rivelerà troppo difficoltosa ritorna indietro. &quot; A questo punto puoi procedere nella tua rierca.</testoRisposta>
+				<sblocca>ID DI QUANDO SI SALE IN MACCHINA</sblocca>
+			</azione>
+			<direzioni>
+				<direzione>
+					<nome>sud</nome>
+					<oggettoNecessario>permesso</oggettoNecessario>
+					<testoFallimento>Non hai ancora ricevuto i permesso della regina per intraprendere la tua ricerca.</testoFallimento>
+					<stanzaDestinazione>1</stanzaDestinazione>
+				</direzione>
+			</direzioni>
+		</stanza>
+		<stanza id="3" nome="atrio del palazzo">
+			<testoIniziale>Ecco l'atrio del palazzo reale. Un pò spoglio come stanza...Puoi vedere la grande scalinata che porta al secondo piano del palazzo, in cui sono presenti le stanze più importanti del palazzo come la sala del trono. A sud vedi il portone d'ingresso che ti conduce al giardino.</testoIniziale>
+			<direzioni>
+				<direzione>
+					<nome>sud</nome>
+					<oggettoNecessario>permesso</oggettoNecessario>
+					<testoFallimento>Non hai ancora ricevuto i permesso della regina per intraprendere la tua ricerca.</testoFallimento>
+					<stanzaDestinazione>4</stanzaDestinazione>
+				</direzione>
+				<direzione>
+					<nome>sopra</nome>
+					<stanzaDestinazione>1</stanzaDestinazione>
+				</direzione>
+			</direzioni>
+		</stanza>
+		<stanza id="4" nome="giardino del palazzo">
+			<testoIniziale>Il giardino del palazzo è sempre fiorito e profuma di buono. Ecco, in lontananza vedi la tua auto, la tua appariscente porsche rosa glitterata. A nord vedi il portone per entrare nel palazzo reale. A sud vedi la strada galattica, l'unica strada che ti permette di uscire da palazzo per dirigerti verso il villaggio.</testoIniziale>
+			<azione id="3">
+				<sbloccataDa>2</sbloccataDa>
+				<verbo>entra</verbo>
+				<verbo>sali</verbo>
+				<oggetto>macchina</oggetto>
+				<testoFallimento>Non puoi andare via senza aver chiesto il permesso alla regina Stella!</testoFallimento>
+				<testoRisposta>Sei salita nell'auto, pronta per partire. Ti chiedi se stai facendo la cosa giusta, non sai dove andare, non sai dov'è Lorenzo, non sai cosa fare...</testoRisposta>
+				<sblocca>4</sblocca>
+			</azione>
+			<direzioni>
+				<direzione>
+					<nome>nord</nome>
+					<stanzaDestinazione>3</stanzaDestinazione>
+				</direzione>
+				<direzione>
+					<nome>sud</nome>
+					<oggettoNecessario>partita</oggettoNecessario>
+					<testoFallimento>Non puoi partire se prima non metti in moto l'auto...</testoFallimento>
+					<stanzaDestinazione>5</stanzaDestinazione>
+				</direzione>
+			</direzioni>
+		</stanza>
 	</storia>
 </storie>
