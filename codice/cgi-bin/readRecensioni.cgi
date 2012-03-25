@@ -55,10 +55,8 @@ ERRORE! ACCESSO NON AUTORIZZATO!
 
     <div id="piede">
 
-    <a href="http://validator.w3.org/check?uri=referer"><img
-      src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
-
-   <a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-css.gif" alt="Valid CSS 2" height="31" width="88" /></a>
+   				<img src="css/img/css.gif" alt="CSS Valid!"/>
+        			<img src="css/img/xhtml10.png" alt="XHTML 1.0 Valid!"/>
 
     </div>
 </div>
@@ -81,10 +79,8 @@ ERRORE! STORIA INESISTENTE!
 
     <div id="piede">
 
-    <a href="http://validator.w3.org/check?uri=referer"><img
-      src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
-
-   <a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-css.gif" alt="Valid CSS 2" height="31" width="88" /></a>
+  				<img src="css/img/css.gif" alt="CSS Valid!"/>
+        			<img src="css/img/xhtml10.png" alt="XHTML 1.0 Valid!"/>
 
     </div>
 </body>
@@ -118,11 +114,11 @@ foreach my $species ($xp->find('//storia[@id='.$qstring[1].']/recensione')->get_
 print<<EOF;
 	<fieldset class="rating">
 		<legend>Vota la storia</legend>
-	    <input type="radio" id="star5" name="star5" value="5" /><label for="star5" title="5 stelle">5 stelle</label>
-	    <input type="radio" id="star4" name="star4" value="4" /><label for="star4" title="4 stelle">4 stelle</label>
-	    <input type="radio" id="star3" name="star3" value="3" /><label for="star3" title="3 stelle">3 stelle</label>
-	    <input type="radio" id="star2" name="star3" value="2" /><label for="star2" title="2 stelle">2 stelle</label>
-	    <input type="radio" id="star1" name="star1" value="1" /><label for="star1" title="1 stella">1 stella</label>
+	    <input type="radio" id="star5" name="star5" value="5" tabindex="4"/><label for="star5" title="5 stelle">5 stelle</label>
+	    <input type="radio" id="star4" name="star4" value="4" tabindex="5"/><label for="star4" title="4 stelle">4 stelle</label>
+	    <input type="radio" id="star3" name="star3" value="3" tabindex="6"/><label for="star3" title="3 stelle">3 stelle</label>
+	    <input type="radio" id="star2" name="star3" value="2" tabindex="7"/><label for="star2" title="2 stelle">2 stelle</label>
+	    <input type="radio" id="star1" name="star1" value="1" tabindex="8"/><label for="star1" title="1 stella">1 stella</label>
 	    <input type="submit" id="submit" name="vota" value="Vota" />
 	</fieldset>
 
@@ -133,13 +129,13 @@ print<<EOF;
     <fieldset id="tuaRecensione">
      	<legend>Lascia la tua recensione</legend>
         <label for="nome">Nome giocatore: <span id="errorNomeGiocatore">Inserisci una stringa alfanumerica</span></label>
-        <input name="nomeGiocatore" id="nome" value="Nome" maxlength="30" onclick="svuotaCampi('nome');" onchange="return controllaTipiRecensione('nome', 'errorNomeGiocatore');" />
+        <input name="nomeGiocatore" id="nome" value="Nome" maxlength="30" onclick="svuotaCampi('nome');" onchange="return controllaTipiRecensione('nome', 'errorNomeGiocatore');" tabindex="9"/>
         <label for="titolo">Titolo recensione: <span id="errorTitolo">Inserisci una stringa alfanumerica</span></label>
-        <input name="titoloRecensione" id="titolo" value="Titolo" maxlength="50" onclick="svuotaCampi('titolo');" onchange="return controllaTipiRecensione('titolo', 'errorTitolo');" />
+        <input name="titoloRecensione" id="titolo" value="Titolo" maxlength="50" onclick="svuotaCampi('titolo');" onchange="return controllaTipiRecensione('titolo', 'errorTitolo');" tabindex="10"/>
         <label for="testoRecensione">Testo: <span id="errorTesto">Inserisci caratteri alfanumerici</span></label>
-        <textarea rows="10" cols="50" id="testoRecensione" name="testoRecensione" onclick="svuotaCampi('testoRecensione');" onchange="return controllaTipiRecensione('testoRecensione', 'errorTesto');" >Testo</textarea>
+        <textarea rows="10" cols="50" id="testoRecensione" name="testoRecensione" onclick="svuotaCampi('testoRecensione');" onchange="return controllaTipiRecensione('testoRecensione', 'errorTesto');" tabindex="11">Scrivi qui la tua recensione</textarea>
         <input name="idStoria" id="idStoria" value="$qstring[1]" type="hidden" />
-        <input type="submit" name="invio" value="Prosegui" />
+        <input type="submit" name="invio" value="Prosegui" tabindex="12"/>
      </fieldset>	
     </form>
 
@@ -148,10 +144,8 @@ print<<EOF;
 
     <div id="piede">
 
-    <a href="http://validator.w3.org/check?uri=referer"><img
-      src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
-
-   <a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-css.gif" alt="Valid CSS 2" height="31" width="88" /></a>
+   				<img src="css/img/css.gif" alt="CSS Valid!"/>
+        			<img src="css/img/xhtml10.png" alt="XHTML 1.0 Valid!"/>
 
     </div>
 </body>
