@@ -115,8 +115,8 @@ foreach my $species ($xp->find('//storia[@id='.$qstring[1].']/recensione')->get_
 
 
 
-print<<EOF
-	<fieldset class=rating>
+print<<EOF;
+	<fieldset class="rating">
 		<legend>Vota la storia</legend>
 	    <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="5 stelle">5 stelle</label>
 	    <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="4 stelle">4 stelle</label>
@@ -129,10 +129,6 @@ EOF
 print '</dl><form id="recensioni" action="recensioni.cgi" method="post">';
 
 print<<EOF;
-
-
-
- 
     <fieldset id="tuaRecensione">
      	<legend>Lascia la tua recensione</legend>
         <label for="nome">Nome giocatore: <span id="errorNomeGiocatore">Inserisci una stringa alfanumerica</span></label>
