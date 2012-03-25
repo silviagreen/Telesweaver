@@ -51,8 +51,8 @@
    
     
     <div id="piede">
-					<img src="css/img/css.gif" alt="CSS Valid!"/>
-        			<img src="css/img/xhtml10.png" alt="XHTML 1.0 Valid!"/>
+					<img src="../html/css/img/css.gif" alt="CSS Valid!"/>
+        			<img src="../html/css/img/xhtml10.png" alt="XHTML 1.0 Valid!"/>
     </div>
 
 </body>
