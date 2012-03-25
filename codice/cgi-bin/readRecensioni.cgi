@@ -36,7 +36,7 @@ print<<EOF;
         	<li><a href="../html/Home.html" tabindex="1">Home</a></li>
             <li><a href="../xml/storie.xml" tabindex="2">Avventure</a></li>
             <li><a href="manuali.html" tabindex="3">Manuali</a></li>
-	    <li><a href="" tabindex="4">Mappa</a></li>
+	    <li><a href="mappa.html" tabindex="4">Mappa del sito</a></li>
         </ul>
     </div>
 <div class="corpo">	

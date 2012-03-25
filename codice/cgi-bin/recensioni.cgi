@@ -71,8 +71,8 @@ print<<EOF;
     	<ul id="menuLista">
         	<li><a href="../html/Home.html" tabindex="1">Home</a></li>
             <li><a href="../xml/storie.xml" tabindex="2">Avventure</a></li>
-            <li><a href="" tabindex="3">Mappa</a></li>
-	    <li><a href="" tabindex="4">Mappa</a></li>
+            <li><a href=".../html/manuali.html" tabindex="3">Manuali</a></li>
+	    <li><a href="../html/mappa.html" tabindex="4">Mappa del sito</a></li>
         </ul>
     </div>
 <div class="corpo">	
@@ -126,8 +126,8 @@ print "Content-type: text/html\n\n";
     	<ul id="menuLista">
         	<li><a href="../html/Home.html" tabindex="1">Home</a></li>
             <li><a href="../xml/storie.xml" tabindex="2">Avventure</a></li>
-            <li><a href="" tabindex="3">Manuali</a></li>
-	    <li><a href="" tabindex="4">Mappa</a></li>
+<li><a href=".../html/manuali.html" tabindex="3">Manuali</a></li>
+	    <li><a href="../html/mappa.html" tabindex="4">Mappa del sito</a></li>
         </ul>
     </div>
 <div class="corpo">	
@@ -163,8 +163,8 @@ print "Content-type: text/html\n\n";
     	<ul id="menuLista">
         	<li><a href="../html/Home.html" tabindex="1">Home</a></li>
             <li><a href="../xml/storie.xml" tabindex="2">Avventure</a></li>
-            <li><a href="" tabindex="3">Manuali</a></li>
-	    <li><a href="" tabindex="4">Mappa</a></li>
+<li><a href=".../html/manuali.html" tabindex="3">Manuali</a></li>
+	    <li><a href="../html/mappa.html" tabindex="4">Mappa del sito</a></li>
         </ul>
     </div>
 <div class="corpo">	

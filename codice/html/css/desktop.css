@@ -261,7 +261,7 @@ body > div#piede {
 .rating {
     float:left;
 }
-
+/*
 .rating:not(:checked) > input {
     position:absolute;
     top:-9999px;
@@ -280,7 +280,7 @@ body > div#piede {
     color:#ddd;
     text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
 }
-
+*/
 .rating:not(:checked) > label:before {
     content: '★ ';
 }
