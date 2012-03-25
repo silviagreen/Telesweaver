@@ -739,11 +739,13 @@ Dentro la cassaforte vedi il libro degli esorcismi, una boccetta di acqua santa 
 			<utente>Gaia Bella</utente>	
 		</valutazione>
 		<recensione>
+			<titolo>Molto bella</titolo>
 			<testo>La storia mi &#232; piaciuta molto, l&#39;ho trovata ricca di mistero e, anche se lunga, &#232; stata appassionante e molto piacevole da giocare. &#200; una storia adatta a chi vuole risolvere enigmi ed &#232; attratto da luoghi oscuri.</testo>
 			<utente>Gaio Pallino</utente>
 			<data>2012-03-16</data>
 		</recensione>
 		<recensione>
+			<titolo>Brutta</titolo>
 			<testo>Storia troppo lunga e noiosa. Anche se c&#39;&#232; un p&#242; di mistero non si &#232; portati a giocarla. Inoltre non la ritengo interessante n&#232; facile da giocare.</testo>
 			<utente>Riccardo Scarso</utente>
 			<data>2011-09-25</data>
@@ -752,7 +754,7 @@ Dentro la cassaforte vedi il libro degli esorcismi, una boccetta di acqua santa 
 	<storia id="2">
 		<titolo>La principessa Melissa</titolo>
 		<autore>Laura Varagnolo</autore>
-		<descrizione>Una favola in cui le cose vanno un p&#242; al contrario. Melissa &#232; la pricipessa del regno stellato. Ormai per lei &#232; giunta l&#39;ora di sposarsi con il suo principe per condurre il regno al posto di sua madre, la regina Stella. I preparativi per il matrimonio stavano inziando e Melissa non vedeva l&#39;ora di sposare Lorenzo, quando un giorno Lorenzo &#232; scomparso nel nulla...Nel regno gira voce che il suo principe sia stato rapito dalla regina Cuor Di Pietra, regina di Fiorilandia. Melissa sa benissimo che l&#39;esistenza della regina Cuor Di Pietra &#232; solo una leggenda ma non sa come trovare Lorenzo. Dopo aver provato in tutti i modi a contattarlo con il suo smartphone Melissa decide di andare in cerca di lui. La regina Cuor Di Pietra esister&#225; sul serio? Melissa riuscir&#225; a trovare e sposare Lorenzo?</descrizione>
+		<descrizione>Una favola in cui le cose vanno un p&#242; al contrario. Melissa &#232; la pricipessa del regno stellato. Ormai per lei &#232; giunta l&#39;ora di sposarsi con il suo principe per condurre il regno al posto di sua madre, la regina Stella. I preparativi per il matrimonio stavano inziando e Melissa non vedeva l&#39;ora di sposare Lorenzo, quando un giorno Lorenzo &#232; scomparso nel nulla...Nel regno gira voce che il suo principe sia stato rapito dalla regina Cuor Di Pietra, regina di Florilandia. Melissa sa benissimo che l&#39;esistenza della regina Cuor Di Pietra &#232; solo una leggenda ma non sa come trovare Lorenzo. Dopo aver provato in tutti i modi a contattarlo con il suo smartphone Melissa decide di andare in cerca di lui. La regina Cuor Di Pietra esister&#225; sul serio? Melissa riuscir&#225; a trovare e sposare Lorenzo?</descrizione>
 		<incipit>Sei la principessa melissa ed hai appena deciso di andare a cercare il tuo principe. Ti trovi davanti alla porta della sala del trono in cui si trova tua madre, la regina Stella. Per andare a cercare Lorenzo devi prima chiederle il premesso...</incipit>
 		<stanza id="1" inizio="true" fine="false" nome="corridoio del palazzo reale">
 			<testoIniziale>Di fronte a te c'è il portone, anche se sei una principessa moderna hai comunque ricevuto un'educazione impeccabile. Scendendo le scale puoi accedere all'atrio del palazzo.</testoIniziale>
@@ -878,10 +880,6 @@ Dentro la cassaforte vedi il libro degli esorcismi, una boccetta di acqua santa 
 					<stanzaSbloccata>5</stanzaSbloccata>
 				</direzione>
 				<direzione>
-					<nome>est</nome>
-					<testoRisposta>Ti trovi davanti alla discesa che ti porta nella strada galattica.</testoRisposta>
-				</direzione>
-				<direzione>
 					<nome>ovest</nome>
 					<oggettoNecessario>vestiti</oggettoNecessario>
 					<testoFallimento>Non puoi entrare nella locanda con quei vestiti, Barlow ti riconoscerà sicuramente e non vorrà parlare con te.</testoFallimento>
@@ -916,10 +914,10 @@ Dentro la cassaforte vedi il libro degli esorcismi, una boccetta di acqua santa 
 				<sbloccataDa>6</sbloccataDa>
 				<verbo>chiedi</verbo>
 				<verbo>domanda</verbo>
-				<oggetto>fiorilandia</oggetto>
+				<oggetto>Florilandia</oggetto>
 				<secondoOggetto>vecchietta</secondoOggetto>
 				<testoFallimento>Devi essere più precisa</testoFallimento>
-				<testoRisposta>&quot; Buongiorno Principessa Melissa, è un onore per me incontrarla. So dell'antica esistenza di fiorilandia...Deve sapere che tanto tanto tempo fa il regno stellato si estendeva fino a fiorilandia. Un giorno, però, il regno venne dato in eredità a due sorelle che, per non dover scegliere chi doveva essere la sovrana, crearono il regno di fiorilandia. La regina di fiorilandia, Florenza, era una regina amata da tutto il suo popolo, ma un giorno venne colpite da una maledizione orribile. Florenza era una bellissima ragazza, desiderata da tutti i più potenti re. Quando il re Tacito, sovrano del regno Nero la chiese in sposa, lei rifiutò. Il re Tacito allora andò su tutte le furie lanciandole una maledizione. Secondo la maledizione, infatti, se la regina Florenza avesse avuto un figlio, questo sarebbe diventato malvagio portando alla rovina del regno di fiorilandia. La regina Florenza, amava troppo il suo regno e quindi decise di non avere mai figli, ma un giorno nacque una figlia, che Florenza chiamò Florinda. Florenza cercò di darle tutto l'amore possibile, convinta che sua figlia non sarebbe diventata malvagia, ma quando Florina diventò regina non era amata da nessuno e iniziò a prendere decisioni che contrariavano il popolo. La regina fu subito nominata regina Cuor Di Pietra. Non so dirle però dove si trovi il regno di Florilandia...Provi a chiedere a Barlow, il vecchio locandiere, lo trova alla locanda Grezza. &quot;</testoRisposta>
+				<testoRisposta>&quot; Buongiorno Principessa Melissa, è un onore per me incontrarla. So dell'antica esistenza di Florilandia...Deve sapere che tanto tanto tempo fa il regno stellato si estendeva fino a Florilandia. Un giorno, però, il regno venne dato in eredità a due sorelle che, per non dover scegliere chi doveva essere la sovrana, crearono il regno di Florilandia. La regina di Florilandia, Florenza, era una regina amata da tutto il suo popolo, ma un giorno venne colpite da una maledizione orribile. Florenza era una bellissima ragazza, desiderata da tutti i più potenti re. Quando il re Tacito, sovrano del regno Nero la chiese in sposa, lei rifiutò. Il re Tacito allora andò su tutte le furie lanciandole una maledizione. Secondo la maledizione, infatti, se la regina Florenza avesse avuto un figlio, questo sarebbe diventato malvagio portando alla rovina del regno di Florilandia. La regina Florenza, amava troppo il suo regno e quindi decise di non avere mai figli, ma un giorno nacque una figlia, che Florenza chiamò Florinda. Florenza cercò di darle tutto l'amore possibile, convinta che sua figlia non sarebbe diventata malvagia, ma quando Florina diventò regina non era amata da nessuno e iniziò a prendere decisioni che contrariavano il popolo. La regina fu subito nominata regina Cuor Di Pietra. Non so dirle però dove si trovi il regno di Florilandia...Provi a chiedere a Barlow, il vecchio locandiere, lo trova alla locanda Grezza. &quot;</testoRisposta>
 				<sblocca>6</sblocca>
 			</azione>
 			<azione id="6">
@@ -933,10 +931,11 @@ Dentro la cassaforte vedi il libro degli esorcismi, una boccetta di acqua santa 
 			</azione>
 		</stanza>
 		<stanza id="8" nome="negozio di vestiti">
+			<testoIniziale>Eccoti nel negozio di vestiti, a sud puoi vedere il centro del villaggio da cui puoi entrare lenna locanda Grezza. Approfittane per cambiare vestiti ed essere più simile ad un abitante del villaggio.</testoIniziale>
 			<direzioni>
 				<direzione>
 					<nome>sud</nome>
-					<testoRisposta>Ad ovest puoi vedere la locanda Grezza di Barlow, sotto c'è la discesa che porta alla strada Galattica.</testoRisposta>
+					<stanzaDestinazione>6</stanzaDestinazione>
 				</direzione>
 			</direzioni>
 			<azione id="10">
@@ -946,6 +945,155 @@ Dentro la cassaforte vedi il libro degli esorcismi, una boccetta di acqua santa 
 				<oggettoOttenuto>vestiti</oggettoOttenuto>
 				<testoRisposta>Ora hai dei nuovi vestiti addosso, così ssei pronta per confonderti con la gente del villaggio e potrai chiedere a Barlow la strada per raggiungere Florilandia.</testoRisposta>
 			</azione>
+		</stanza>
+		<stanza id="7" nome="locanda Grezza">
+			<testoIniziale>Finalmente sei arrivata alla lcoanda Grezza. Chiedendo a Barlow di Florilandia potrai finalmente sapere dove dirigerti per cercare Lorenzo. Ad est vedi la discesa che ti porterà nella strada Galattica per ritornare a casa.</testoIniziale>
+			<direzioni>
+				<direzione>
+					<nome>est</nome>
+					<stanzaDestinazione>6</stanzaDestinazione>
+				</direzione>
+				<direzione>
+					<nome>nord</nome>
+					<stanzaDestinazione>9</stanzaDestinazione>
+				</direzione>
+			</direzioni>
+			<azione id="11">
+				<verbo>chiedi</verbo>
+				<verbo>domanda</verbo>
+				<oggetto>florilandia</oggetto>
+				<secondoOggetto>barlow</secondoOggetto>
+				<testoRisposta>&quot; Da moltissimi anni non mi capitava che qualcuno mi chiedesse come fare ad arrivara a Florilandia, è strano che tu me lo chieda ora...Se sei proprio sicura di volerti addentrare in quel regno ti dirò come fare. Vedi quella porta? Devi varcarla e procedere a nord. Ti troverai nella strada paludosa. Dopo aver girato ad est entrerai nella palude. Lì troverai una barca, l'unica barca esistente al mondo che ti permetterà di attraversare la palude senza essere risucchiata dall'acido solforico sottostante. Per utilizzare questa barca dovrai pagare molti soldi al guardiano. Una volta attraversata la palude devi proseguire ad ovest e finalmente entrerai a Florilandia. &quot;</testoRisposta>
+				<sblocca>12</sblocca>
+			</azione>
+			<azione id="12">
+				<verbo>apri</verbo>
+				<verbo>varca</verbo>
+				<oggetto>porta</oggetto>
+				<testoRisposta>A nord vedi già la strada della palude. A sud puoi ritornare nella locanda.</testoRisposta>
+			</azione>
+		</stanza>
+		<stanza id="9" nome="strada paludosa">
+			<testoIniziale>La strada paludosa sembrava molto peggio dal nome. C'è soltanto un pò di fango e qualche animale viscido che ti striscia fra i piedi in cerca di nutrimento. Ad est vedi subito il varco per entrare nella palude. Non lasciarti prendere dal panico, la teentazione di girare a sud per ritornare indietro è forte ma Lorenzo aspetta solo te, non lasciarlo nelle grinfie della regina Cuor Di Pietra!</testoIniziale>
+			<direzioni>
+				<direzione>
+					<nome>sud</nome>
+					<stanzaDestinazione>7</stanzaDestinazione>
+				</direzione>
+				<direzione>
+					<nome>est</nome>
+					<stanzaDestinazione>10</stanzaDestinazione>
+				</direzione>
+			</direzioni>
+		</stanza>
+		<stanza id="10" nome="palude">
+			<testoIniziale>Vista la strada che porta alla palude non ti aspettavi un luogo così cupo e raccapricciante. Vedi una piccola strisciolina di terra che porta ad una barca semi distrutta. Tutto attorno c'è una melma verde da cui emana un fumo puzzolente. Inizi ad avviarti verso la stradina quando vedi che una foglia secca si stacca da un albero e mentre si appoggia sulla melma verdastra si scioglie istantaneamente. A nord vedi la barca, l'unico modo per raggiungere florilandia è lì, davanti a te, a nord, alla fine della stradina strettissima. Dietro di te, a sud, vedi la strada per ritornare alla locanda.</testoIniziale>
+			<direzioni>
+				<direzione>
+					<nome>nord</nome>
+					<testoRisposta>Pian piano ti avvicini alla stradina strette stretta facendo molta attenzione a non far cadere nulla di sotto, senti il caldo del fumo che sale dalla palude. Finalmente riesci a raggiungere la barca, vedi di fianco una figura ricurva, ricoperta da una spessa coperta nera. Ti trovi davanti al guardiano della barca, l'unico modo per raggiungere Florilandia è chiedere al guardiano di trasportarti.</testoRisposta>
+				</direzione>
+				<direzione>
+					<nome>ovest</nome>
+					<stanzaDestinazione>9</stanzaDestinazione>
+				</direzione>
+				<direzione>
+					<nome>sopra</nome>
+					<oggettoNecessario>nosmartphone</oggettoNecessario>
+					<testoFallimento>Prima devi dare una ricompensa al guardiano.</testoFallimento>
+					<stanzaDestinazione>11</stanzaDestinazione>
+				</direzione>
+			</direzioni>
+			<azione id="13">
+				<verbo>chiedi</verbo>
+				<verbo>domanda</verbo>
+				<oggetto>passaggio</oggetto>
+				<secondoOggetto>guardiano</secondoOggetto>
+				<testoRisposta>&quot; Sono disposto a darti un passaggio fino all'altra parte della riva, ma non lo farò gratis, devi darmi una ricompensa soddisfacente. &quot;</testoRisposta>
+				<sblocca>14</sblocca>
+			</azione>
+			<azione id="14">
+				<sbloccataDa>13</sbloccataDa>
+				<verbo>dai</verbo>
+				<verbo>porgi</verbo>
+				<verbo>offri</verbo>
+				<oggetto>smartphone</oggetto>
+				<secondoOggetto>guardiano</secondoOggetto>
+				<testoFallimento>&quot; Quello che mi offri non è abbastanza. &quot;</testoFallimento>
+				<testoRisposta>&quot; La ricompensa mi aggrada, sali pure sulla barca. &quot;</testoRisposta>
+				<sblocca>15</sblocca>
+			</azione>
+			<azione id="15">
+				<sbloccataDa>14</sbloccataDa>
+				<verbo>sali</verbo>
+				<oggetto>barca</oggetto>
+				<oggettoOttenuto>nosmartphone</oggettoOttenuto>
+				<testoRisposta>Stai attraversando la palude nella barca. Non c'è alcuna forma di vita e questo ti inquieta molto, l'unica cosa che ti tranquillizza è che stai per rivedere Lorenzo. Ecco, sei scesa dalla barce, salendo la piccola salita sarai finamente arrivata a florilandia.</testoRisposta>
+			</azione>
+		</stanza>
+		<stanza id="11" nome="villaggio Florilandia">
+			<testoIniziale>Il leggendario regno di florilandia esiste sul serio! Certo, non è come ci si aspetterebbe dal nome...Nell'aria regna tristezza, nelle strade non si vede nessuno, tutto è cupo e grigio. Vedi però una persona, una ragazza seduta su una sedia, con la testa bassa e cupa. Forse lei potrebbe dirti dove si trova il palazzo...Ti giri indietro e vedi che un macigno sta bloccando la strada che ti aveva portata fin qui. A sud vedi una stradina, magari prendendo quella riuscirai a ritornare indietro...</testoIniziale>
+			<direzioni>
+				<direzione>
+					<nome>sud</nome>
+					<stanzaDestinazione>9</stanzaDestinazione>
+				</direzione>
+				<direzione>
+					<nome>est</nome>
+					<stanzaDestiazione>12</stanzaDestiazione>
+				</direzione>
+			</direzioni>
+			<azione id="16">
+				<verbo>parla</verbo>
+				<verbo>chiedi</verbo>
+				<verbo>domanda</verbo>
+				<oggetto>palazzo</oggetto>
+				<secondoOggetto>ragazza</secondoOggetto>
+				<testoRisposta>&quot; Sono qui ad aspettare la principessa Melissa. Spero tanto che lei possa sconfiggere la regina Cuir Di Pietra e riportare il regno alla serenità. Dimmi chi sei, solo così potrò aiutarti. &quot;</testoRisposta>
+				<sblocca>17</sblocca>
+			</azione>
+			<azione id="17">
+				<sbloccataDa>16</sbloccataDa>
+				<verbo>presentati</verbo>
+				<testoRisposta>&quot; Dici di essere la principessa Melissa ma come faccio a crederti? Non sei affatto vestita come una principessa. Nessuno sa il nome del principe che deve sposare la princippessa. Io lo conosco perchè mentre passava di qua con la regina Cuor Di Pietra mi ha chiesto aiuto. Se sei sul serio la principessa Melissa dovresti sapere il nome...parlami del principe nominandolo per nome. &quot;</testoRisposta>
+				<sblocca>18</sblocca>
+			</azione>
+			<azione id="18">
+				<sbloccataDa>17</sbloccataDa>
+				<verbo>parla</verbo>
+				<oggetto>lorenzo</oggetto>
+				<secondoOggetto>ragazza</secondoOggetto>
+				<testoFallimento>&quot; Tu non sei la principessa Melissa, convincimi che lo sei se è così. &quot;</testoFallimento>
+				<testoRisposta>&quot; Sono onorata di conoscerla principessa Melissa. Il principe Lorenzo mi ha dato il compito di darle il suo smartphone in cui ha scritto dei messaggi per lei. Ha detto che non è riuscito ad inviare i messaggi e che ci sono delle informazioni molto importanti. Per raggiungere il palazzo reale deve semplicemente seguire la direzione est. &quot;</testoRisposta>
+				<sblocca>19</sblocca>
+			</azione>
+			<azione id="19">
+				<verbo>leggi</verbo>
+				<oggetto>messaggi</oggetto>
+				<testoRisposta>Messaggi di Lorenzo: &quot; Melissa, non so come sia successo, la regina Cuor Di Pietra deve aver fatto un incantesimo al mio smartphone, non riesco a contattarti in nessun modo. Sono stato rapito e mi sta portando al suo palazzo, vuole costringermi a sposarla per poter regnare su Florilandia. Sono riuscito a scoprire che l'unico modo per sconfiggerla è puntare la bacchetta sui suoi occhi pensando la parola bafloba. Sono sicuro che verrai a cercarmi. &quot;</testoRisposta>
+			</azione>
+		</stanza>
+		<stanza id="12" nome="palazzo di Florilandia">
+			<testoIniziale>Finalmente sei giunta al palazzo di Florilandia. La porta è aperta, non vedi nessuno nelle vicinanze. Se sali le scale ti troverai immediatamente all'ingresso.</testoIniziale>
+			<direzioni>
+				<direzione>
+					<nome>ovest</nome>
+					<stanzaDestinazione>11</stanzaDestinazione>
+				</direzione>
+				<direzione>
+					<nome>sopra</nome>
+					<stanzaDestinazione>13</stanzaDestinazione>
+				</direzione>
+			</direzioni>
+		</stanza>
+		<stanza id="13" nome="ingresso">
+			<testoIiziale>L'ingresso è cupo come tutto il resto, senti provenire da nord una voce, è la voce di Lorenzo! Oltre alla sua senti anche la voce della regina Cuor Di Pietra. Sotto vedi le scale che ti hanno condotta all'ingresso.</testoIiziale>
+			<direzioni>
+				<direzione>
+					<nome>sotto</nome>
+					<stanzaDirezione>12</stanzaDirezione>
+				</direzione>
+			</direzioni>
 		</stanza>
 	</storia>
 </storie>
