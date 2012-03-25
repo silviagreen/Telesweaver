@@ -9,26 +9,36 @@ Content-type:text/html\n\n
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <head>
-	<title xml:lang="en">Gioca-WordAdventure</title>
+	<title xml:lang="en">Home-WordAdventure</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
     <meta name="keywords" content="avventure testuali, gioco interattivo, colleziona oggetti, testo, storia, game"/>
     <meta name="description" content="avventure testuali, storie su cui si puï¿½ giocare e interagire con il testo" />
-    <meta name="author" content="Laura Varagnolo"/>
+    <meta name="author" content="Casartelli Nicolas"/>
 	<meta name="language" content="italian it"/>
      <link type="text/css" rel="stylesheet" href="../html/css/desktop.css" media="handheld, screen and (min-width:481px), only screen and (min-device-width:481px)" />
-	 <link type="text/css" rel="stylesheet" href="css/Device.css" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)" />
-     <link type="text/css" rel="stylesheet" href="css/Print.css" media="print" />
+	<!-- <link type="text/css" rel="stylesheet" href="css/Device.css" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)" />
+     <link type="text/css" rel="stylesheet" href="css/Print.css" media="print" /> -->
 </head>
 <body>
-	 <h1 xml:lang="en"><span>Word Adventure</span></h1>
+	 <h1 xml:lang="en"><span id="title"></span>TalesWeaver</h1>
       <!--  <span class="log"><a href="login.html" xml:lang="en">Login</a> <a href="registrazione.html">Registrati</a></span> -->
    <div id="container"> 
    <div id="path">Ti trovi in: <a href="../xml/storie.xml">Avventure</a> &gt; Gioca</div> 
     <div id="menu">
     	<ul id="menuLista">
-        	<li id="home"><a href="../html/Home.html" tabindex="1" accesskey="h">Home</a></li>
-            <li id="attivo"><a href="../xml/storie.xml" tabindex="2" accesskey="a">Avventure</a></li>
-            <li id="mappa"><a href="" tabindex="3" accesskey="m">Mappa</a></li>
+        	<li class="mainItem">
+				<a href="../html/Home.html" tabindex="3">Home</a>
+					</li>
+					<li class="mainItem">
+						<a href="../xml/storie.xml" tabindex="4">Avventure</a>
+					
+					</li>
+					<li class="mainItem">
+						<a href="../html/manuali.html" tabindex="5">Manuali</a>
+					</li>
+					<li class="mainItem">
+						<a href="" tabindex="6">Mappa</a>
+					</li>
         </ul>
     </div>
 <div class="corpo">	
@@ -43,13 +53,10 @@ if ($qstring[0] ne 'id') {
   print<<EOF;
 ERRORE! ACCESSO NON AUTORIZZATO!
     </div>
-
+</div>
     <div id="piede">
-
-    <a href="http://validator.w3.org/check?uri=referer"><img
-      src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
-
-   <a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-css.gif" alt="Valid CSS 2" height="31" width="88" /></a>
+    <img src="../html/css/img/css.gif" alt="CSS Valid!"/>
+    <img src="../html/css/img/xhtml10.png" alt="XHTML 1.0 Valid!"/>
 
     </div>
 </body>
@@ -68,13 +75,12 @@ if ($esistonostorie==0) {
   print<<EOF;
 ERRORE! STORIA INESISTENTE!
     </div>
-
+</div>
     <div id="piede">
 
-    <a href="http://validator.w3.org/check?uri=referer"><img
-      src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
-
-   <a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-css.gif" alt="Valid CSS 2" height="31" width="88" /></a>
+   
+    <img src="../html/css/img/css.gif" alt="CSS Valid!"/>
+    <img src="../html/css/img/xhtml10.png" alt="XHTML 1.0 Valid!"/>
 
     </div>
 </body>
@@ -268,10 +274,13 @@ if($input{'invia'}ne'PROSEGUI'){
     }
     print<<EOF;
 <form action="storia.cgi?id=$qstring[1]" method="post">
+	<fieldset id="tuaRecensione">
+	<legend>Agisci</legend>
 	<label for="azione">Inserisci azione o direzione</label>
-	<input id="azione" type="text" name="azione" />
+	<input id="azione" type="text" name="azione" tabindex="1"/>
 	<input type="hidden" name="stanza" value="$stanzacorrente" />
 	<input type="hidden" name="ultimaazionecorretta" value="$azionecorrente" />
+
 EOF
 
     #Oggetti: dico alla prossima pagina quali possiedo
@@ -292,16 +301,15 @@ EOF
     }
 
     print<<EOF;
-	<input type="submit" name="invia" id="invia" value="PROSEGUI" />
+	<input type="submit" name="invia" id="invia" value="PROSEGUI" tabindex="2"/>
+	</fieldset>
 </form>
     </div>
-    
+  </div>  
     <div id="piede">
 
-    <a href="http://validator.w3.org/check?uri=referer"><img
-      src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
-
-   <a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-css.gif" alt="Valid CSS 2" height="31" width="88" /></a>
+        <img src="../html/css/img/css.gif" alt="CSS Valid!"/>
+    <img src="../html/css/img/xhtml10.png" alt="XHTML 1.0 Valid!"/>
    
     </div>
 </body>
