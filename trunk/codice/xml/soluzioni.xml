@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="../xslt/soluzioni.xsl"?>
+<soluzioni xmlns=xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xs:schemaLocation="http://www.w3.org/1999/XSL/Transform soluzioni.xsd">
+<soluzione>	
+	<storia>1</storia>
+	<testo>nord</testo>
+	<testo>suona campanello</testo>
+	<testo>nord</testo>
+	<testo>chiedi maggiordomo infestazione</testo>
+	<testo>spopra</testo>
+	<testo>apri porta ospiti</testo>
+	<testo>nord</testo>
+	<testo>entra letto</testo>
+	<testo>dormi</testo>
+	<testo>dormi</testo>
+	<testo>esci letto</testo>
+	<testo>sud</testo>
+	<testo>sotto</testo>
+	<testo>chiedi maggiordomo porta</testo>
+	<testo>sud</testo>
+	<testo>sud</testo>
+	<testo>entra auto</testo>
+	<testo>nord</testo>
+	<testo>suona campanello</testo>
+	<testo>sopra</testo>
+	<testo>est</testo>
+	<testo>aspetta</testo>
+	<testo>urla</testo>
+	<testo>sotto</testo>
+	<testo>sud</testo>
+	<testo>sud</testo>
+	<testo>entra auto</testo>
+	<testo>accendi auto</testo>
+	<testo>est</testo>
+	<testo>est</testo>
+	<testo>est</testo>
+	<testo>est</testo>
+	<testo>esci auto</testo>
+	<testo>apri porta chiave</testo>
+	<testo>apri porta</testo>
+	<testo>guarda cappotto</testo>
+	<testo>prendi gessetto</testo>
+	<testo>nord</testo>
+	<testo>ispeziona scrivania</testo>
+	<testo>ispeziona carte</testo>
+	<testo>prendi foglio</testo>
+	<testo>apri cassetto</testo>
+	<testo>prendi lampada</testo>
+	<testo>accendi lampada</testo>
+	<testo>illumina foglio lampada</testo>
+	<testo>ispeziona statua</testo>
+	<testo>gira testa statua</testo>
+	<testo>apri cassaforte</testo>
+	<testo>prendi libro</testo>
+	<testo>prendi boccetta</testo>
+	<testo>prendi bottiglia</testo>
+	<testo>leggi libro</testo>
+	<testo>cerca infestazione libro</testo>
+	<testo>cerca saamaa libro</testo>
+	<testo>cerca pentacolo libro</testo>
+	<testo>sud</testo>
+	<testo>sud</testo>
+	<testo>entra auto</testo>
+	<testo>ovest</testo>
+	<testo>ovest</testo>
+	<testo>ovest</testo>
+	<testo>ovest</testo>
+	<testo>esci auto</testo>
+	<testo>nord</testo>
+	<testo>suona campanello</testo>
+	<testo>nord</testo>
+	<testo>sopra</testo>
+	<testo>apri porta grigia</testo>
+	<testo>est</testo>
+	<testo>disegna pentacolo</testo>
+	<testo>metti boccetta pentacolo</testo>
+	<testo>entra pentacolo</testo>
+	<testo>aspetta</testo>
+	<testo>aspetta</testo>
+	<testo>aspetta</testo>
+	<testo>aspetta</testo>
+	<testo>aspetta</testo>
+	<testo>aspetta</testo>
+	<testo>aspetta</testo>
+	<testo>aspetta</testo>
+	<testo>esci pentacolo</testo>
+	<testo>ispeziona muro</testo>
+	<testo>strappa carta</testo>
+	<testo>apri teca</testo>
+	<testo>ovest</testo>
+	<testo>sotto</testo>
+	<testo>parla maggiordomo teca</testo>
+	<testo>sopra</testo>
+	<testo>est</testo>
+	<testo>guarda teca</testo>
+	<testo>prendi anello</testo>
+	<testo>metti anello pentacolo</testo>
+	<testo>aspetta</testo>
+	<testo>aspetta</testo>
+	<testo>aspetta</testo>
+	<testo>aspetta</testo>
+	<testo>aspetta</testo>
+	<testo>aspetta</testo>
+	<testo>aspetta</testo>
+</soluzione>
+<soluzione>
+	<storia>2</storia>
+	<testo>bussa porta</testo>
+	<testo>nord</testo>
+	<testo>chiedi permesso regina</testo>
+	<testo>sud</testo>
+	<testo>sotto</testo>
+	<testo>sud</testo>
+	<testo>sali macchina</testo>
+	<testo>accendi auto</testo>
+	<testo>sud</testo>
+	<testo>nord</testo>
+	<testo>est</testo>
+	<testo>sopra</testo>
+	<testo>scendi auto</testo>
+	<testo>chiedi florilandia vecchietta</testo>
+	<testo>nord</testo>
+	<testo>compra vestiti</testo>
+	<testo>sud</testo>
+	<testo>est</testo>
+	<testo>chiedi florilandia barlow</testo>
+	<testo>apri porta</testo>
+	<testo>nord</testo>
+	<testo>est</testo>
+	<testo>nord</testo>
+	<testo>chiedi passaggio guardiano</testo>
+	<testo>dai smartphone guardiano</testo>
+	<testo>sali barca</testo>
+	<testo>sopra</testo>
+	<testo>domanda palazzo ragazza</testo>
+	<testo>presentati</testo>
+	<testo>parla lorenzo ragazza</testo>
+	<testo>leggi messaggi</testo>
+	<testo>est</testo>
+	<testo>sopra</testo>
+	<testo>nord</testo>
+	<testo>prendi bacchetta</testo>
+	<testo>punta bacchetta regina</testo>
+	<testo>pensa bafloba</testo>
+</soluzione>
+</soluzioni>
