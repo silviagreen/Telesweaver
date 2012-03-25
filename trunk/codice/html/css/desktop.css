@@ -154,7 +154,11 @@ color: black;
 	padding-left: 5%;
 }
 
-
+#soluzioniTitle{
+	font-size:150%;
+	margin-top:5%;
+	height:30%;
+}
 
 .storie ul{
 	
@@ -190,8 +194,14 @@ label{
 	display:block;
 }
 
+#listaStorie{
+	list-style-type:none;
+	padding-left:10%;
+}
 
-
+#listaStorie li{
+	padding-top:1%;
+}
 #recensioni{
 	padding:5%;
 	display: block;
@@ -204,12 +214,25 @@ label{
 	padding-left:5%;
 	padding-right:5%;
 }
+
+#listaSoluzione{
+	padding-left:15%;
+	padding-top:3%;
+	list-style-type:none;
+}
+
+#tornaSu{
+	padding-left:15%;
+}
+#listaSoluzione li{
+	padding:top:1%;
+}
 #piede {
 
 background:url(img/footer5.png) bottom repeat-x;
 
 	clear: both; /* così footer sta subito sotto il menu*/
-	position: absolute;/* cosi footer sta attaccato al bordo inferiore del browser*/
+	position: fixed;/* cosi footer sta attaccato al bordo inferiore del browser*/
 	bottom: 0;
 	left: 0;
 	width: 100%;

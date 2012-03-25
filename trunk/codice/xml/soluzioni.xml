@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<?xml-stylesheet type="text/xsl" href="../xslt/soluzioni.xsl"?>
-<soluzioni xmlns=xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xs:schemaLocation="http://www.w3.org/1999/XSL/Transform soluzioni.xsd">
+<soluzioni xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xs:schemaLocation="http://www.w3.org/1999/XSL/Transform soluzioni.xsd">
 <soluzione>	
 	<storia>1</storia>
 	<testo>nord</testo>
