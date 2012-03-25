@@ -196,7 +196,10 @@ label{
 	padding:5%;
 	display: block;
 }
-
+#votazioni{
+	padding-left:5%;
+	padding-right:5%;
+}
 #piede {
 
 background:url(img/footer5.png) bottom repeat-x;
