@@ -37,7 +37,7 @@ Content-type:text/html\n\n
 						<a href="../html/manuali.html" tabindex="5">Manuali</a>
 					</li>
 					<li class="mainItem">
-						<a href="/html/mappa.html" tabindex="6">Mappa del sito</a>
+						<a href="../html/mappa.html" tabindex="6">Mappa del sito</a>
 					</li>
         </ul>
     </div>
