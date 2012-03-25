@@ -15,7 +15,8 @@ Content-type:text/html\n\n
     <meta name="description" content="avventure testuali, storie su cui si puï¿½ giocare e interagire con il testo" />
     <meta name="author" content="Casartelli Nicolas"/>
 	<meta name="language" content="italian it"/>
-     <link type="text/css" rel="stylesheet" href="../html/css/desktop.css" media="handheld, screen and (min-width:481px), only screen and (min-device-width:481px)" />
+	<link rel="icon" href="../html/css/img/book.png" type="image/x-icon" />
+     <link type="text/css" rel="stylesheet" href="../html/css/desktop.css" media="screen" />
 	<!-- <link type="text/css" rel="stylesheet" href="css/Device.css" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)" />
      <link type="text/css" rel="stylesheet" href="css/Print.css" media="print" /> -->
 </head>
@@ -37,7 +38,10 @@ Content-type:text/html\n\n
 						<a href="../html/manuali.html" tabindex="5">Manuali</a>
 					</li>
 					<li class="mainItem">
-						<a href="../html/mappa.html" tabindex="6">Mappa del sito</a>
+						<a href="../html/mappa.html" tabindex="6">Mappa</a>
+					</li>
+					<li class="mainItem">
+						<a href="../cgi-bin/lista.cgi" tabindex="7">Soluzioni</a>
 					</li>
         </ul>
     </div>

@@ -63,7 +63,7 @@ background-image: url(img/Logo.jpg);
 #menu {
 	/*background:url(img/menu3.png) center no-repeat;*/
 /*background:url(img/upsx.png) left top no-repeat,url(img/updx.png) right top no-repeat,url(img/downsx.png) left bottom no-repeat,url(img/downdx.png) right bottom no-repeat,url(img/right.png) right repeat-y,url(img/left.png) left repeat-y, url(img/up2.png) top repeat-x, url(img/down.png) bottom repeat-x,url(img/all.png) repeat ;*/
-	
+background-color:#FFFFFF;	
 background: 
         url(img/menu1.png) repeat-y right,
         url(img/menu2.png) repeat-y left,
@@ -125,6 +125,7 @@ background:
 }
 
 #path{
+	background-color:red;
 	background: url(img/nav3.png) no-repeat right,url(img/nav1.png);
         margin-right:3%;
 	margin-left: 3%;
@@ -132,7 +133,7 @@ background:
 }
 .corpo {
 	/*background:url(img/updx.png) right top  no-repeat, url(img/upsx.png) left top  no-repeat,url(img/downdx.png) right bottom  no-repeat,url(img/downsx.png) left bottom  no-repeat,url(img/middle.png) repeat ;*/
-
+background-color:#FFFFFF;	
 background:url(img/upsx.png) left top no-repeat,url(img/updx.png) right top no-repeat,url(img/downsx.png) left bottom no-repeat,url(img/downdx.png) right bottom no-repeat,url(img/right.png) right repeat-y,url(img/left.png) left repeat-y, url(img/up2.png) top repeat-x, url(img/down.png) bottom repeat-x,url(img/all.png) repeat ;
 color: black;
 	/*border: double;*/
