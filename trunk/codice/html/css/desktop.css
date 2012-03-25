@@ -248,6 +248,10 @@ body > div#piede {
 	color: red;
 }
 
+#errorUtente{
+	display:none;
+	color: red;
+}
 +
 
 /*PARTE PER LE STELLINE*/
