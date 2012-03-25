@@ -5,10 +5,10 @@
 <xsl:template match="/">	
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <head>
-	<title>Elenco delle storie</title>
+	<title>Elenco delle storie - TalesWeaver</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
     <meta name="keywords" content="avventure testuali, gioco interattivo, colleziona oggetti, testo, storia, game"/>
-    <meta name="description" content="avventure testuali, storie su cui si pu� giocare e interagire con il testo" />
+    <meta name="description" content="elenco avventure testuali a cui si può giocare" />
     <meta name="author" content="Lapolla Margherita"/>
 	<meta name="language" content="italian it"/>
      <link type="text/css" rel="stylesheet" href="../html/css/desktop.css" media="handheld, screen and (min-width:481px), only screen and (min-device-width:481px)" />
@@ -24,9 +24,10 @@
    <div id="path">Ti trovi in: Avventure</div>
     <div id="menu">
     	<ul id="menuLista">
-        	<li id="home"><a href="../html/Home.html" tabindex="1" accesskey="h">Home</a></li>
-            <li id="attivo">Avventure</li>
-            <li id="mappa"><a href="" tabindex="2" accesskey="m">Mappa</a></li>
+        	<li><a href="../html/Home.html" tabindex="1">Home</a></li>
+            <li>Avventure</li>
+            <li><a href="" tabindex="2">Manuali</a></li>
+	   <li><a href="" tabindex="3">Mappa</a></li>
         </ul>
     </div>
  
