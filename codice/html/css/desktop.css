@@ -259,13 +259,17 @@ body > div#piede {
 	display:none;
 	color: red;
 }
-+
+
+.genericError{
+	color:red;
+	font-variant:small-caps;
+}
 
 /*PARTE PER LE STELLINE*/
 .rating {
     float:left;
-}
-/*
+}/*
+
 .rating:not(:checked) > input {
     position:absolute;
     top:-9999px;
