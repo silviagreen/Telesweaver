@@ -4,20 +4,21 @@ html, body {
 	font-size: 90%;
 	padding: 0;
 	margin: 0;
-	background:url(img/mobile/sfondoMobile.png) repeat;
-	height: 100%;
+	background:url(img/sfondo.png) repeat;
 }
 
 h1 {
-	margin:auto;
+	margin-left:2em;
+	margin-top:1em;
+	margin-bottom:1em;
 	padding: 0;
 
 position:relative;
-width:50px;
+width:0px;
 height:50px;
 font-size:30px;
 color: white;
-text-align:left;
+text-align: center;
 }
 
 h1 span {
@@ -26,7 +27,7 @@ h1 span {
 
 #menu {
 background-color:#FFFFFF;	
-background:url(img/mobile/upsx.png) left top no-repeat,url(img/mobile/updx.png) right top no-repeat,url(img/mobile/downsx.png) left bottom no-repeat,url(img/mobile/downdx.png) right bottom no-repeat,url(img/mobile/right.png) right repeat-y,url(img/mobile/left.png) left repeat-y, url(img/mobile/up2.png) top repeat-x, url(img/mobile/down.png) bottom repeat-x,url(img/mobile/all.png) repeat ;
+background:url(img/upsx.png) left top no-repeat,url(img/updx.png) right top no-repeat,url(img/downsx.png) left bottom no-repeat,url(img/downdx.png) right bottom no-repeat,url(img/right.png) right repeat-y,url(img/left.png) left repeat-y, url(img/up2.png) top repeat-x, url(img/down.png) bottom repeat-x,url(img/all.png) repeat ;
 
 	width: 75%;
 	height: 100%;
@@ -53,16 +54,20 @@ background:url(img/mobile/upsx.png) left top no-repeat,url(img/mobile/updx.png) 
 
 #path{
 	background-color:red;
-	background: url(img/mobile/nav3.png) no-repeat right, url(img/nav1.png);
+	background: url(img/nav3.png) no-repeat right,url(img/nav1.png);
     margin-right:3%;
 	margin-left: 3%;
 	margin-top: 0.5%;
 	width: 80%;
 }
 
+#container{
+	margin-left:1em;
+}
+
 .corpo {
 background-color:#FFFFFF;	
-background:url(img/mobile/upsx.png) left top no-repeat,url(img/mobile/updx.png) right top no-repeat,url(img/mobile/downsxMobile.png) left bottom no-repeat,url(img/mobile/downdx.png) right bottom no-repeat,url(img/mobile/right.png) right repeat-y,url(img/mobile/left.png) left repeat-y, url(img/mobile/up2.png) top repeat-x, url(img/mobile/down.png) bottom repeat-x,url(img/all.png) repeat ;
+background:url(img/upsx.png) left top no-repeat,url(img/updx.png) right top no-repeat,url(img/downsx.png) left bottom no-repeat,url(img/downdx.png) right bottom no-repeat,url(img/right.png) right repeat-y,url(img/left.png) left repeat-y, url(img/up2.png) top repeat-x, url(img/down.png) bottom repeat-x,url(img/all.png) repeat ;
 color: black;
 	/*border: double;*/
 	padding-bottom: 3em;
@@ -89,6 +94,24 @@ background:url(img/footer5.png) bottom repeat-x;
 .corpo h2{
 	padding-top:8%;
 	padding-left:7%;
+}
+
+#tabellaMobile{
+	display:block;
+}
+
+#tabellaMobile dl{
+	padding-left: 2em;
+	padding-bottom: 1em;
+}
+
+#tabellaMobile dt{
+	font-weight:bold;
+	padding-top:1em;
+}
+
+.allbody{
+	display:none;
 }
 
 .storie dt{

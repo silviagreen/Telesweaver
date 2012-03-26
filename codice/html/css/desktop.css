@@ -31,7 +31,6 @@ h1 span {
 	/*display: block;
 	height: 0;
 	overflow: hidden;*/
-
 position:absolute;
 top:0;
 width:615px;
@@ -48,6 +47,10 @@ background-image: url(img/Logo.jpg);
 	text-align:center;
 	font-variant:small-caps;
 	font-size:2em;
+}
+
+#tabellaMobile{
+	display:none;
 }
 
 .esterno a:link{
@@ -118,8 +121,6 @@ background:
 .container{
 	position: relative;
 	min-height: 100%;
- 
-    	
 }
 
 * html .container{
@@ -243,7 +244,6 @@ background:url(img/footer5.png) bottom repeat-x;
 	height: 5%;
 	
 	margin:  auto;
-	
 	
 	/*border: dotted;*/
 	
