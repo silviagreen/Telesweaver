@@ -277,7 +277,7 @@ body > div#piede {
 /*PARTE PER LE STELLINE*/
 .rating {
     float:left;
-}/*
+}
 
 .rating:not(:checked) > input {
     position:absolute;
@@ -297,7 +297,8 @@ body > div#piede {
     color:#ddd;
     text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
 }
-*/
+
+
 .rating:not(:checked) > label:before {
     content: '★ ';
 }
@@ -335,3 +336,18 @@ body > div#piede {
 
 
 /*FINE PARTE STELLINE*/
+
+/*stelle solo elenco*/
+.rating{
+margin-left:7%;
+}
+.rating > span {
+
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+color: gold;
+font-size:200%;
+ text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
