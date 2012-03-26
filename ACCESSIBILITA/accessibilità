@@ -1,0 +1,52 @@
+xml e xsd validati.
+css da validare!!!!
+readRecensioni.cgi: La pagina permette anche il controllo degli errori nel caso il parametro passatogli via get fosse incorretto (mostrando la relativa pagina d'errore). Quando il parametro passato via get è invece corretto, allora oltre a visualizzare le recenioni corrette mostra anche la form per l'inserimento di una nuova recensione.
+
+
+ACCESSIBILITÀ
+Nelle fasi di realizzazione, si è cercato di renderle il sito il più accessibile possibile, rispettando le norme defiinte dal W3C. Il sito è stato controllato con il plugin Total Validator, il quale ha permesso di testare l'accessibilità alle priorità 1,2,3 delle linee guida WCAG2.0 AAA.
+Altro strumento che ha permesso di testarne l'accessibilità è la toolbar Web Toolkit Developer del browser FireFox: le prove svolte con questo strumento hanno consentito di ottenere i risultati illustrati in seguito, tra cui completa usabilità del sito sia in assenza di css e/o immagini e javascript.
+
+Si sono segnalati i cambi di lingua all'interno delle pagine così da ottenere un miglior ascolto con l'utilizzo di screen reader.
+Le dimensioni di div e font sono in percentuale cosi da rendere il layout il più fluido possibile.
+Le pagine del sito sono anche completamente fruibili anche da utenti che possono usare solo la tastiera grazie ai tabindex. Il menu, in quanto molto breve, viene sempre scorso all'inizio, ad eccezione delle pagine gioco, dove si è data la precedenza alla form che consente di giocare. 
+Si è inoltre deciso di non utilizzare gli accesskey, in quanto si è ritenuto difficile riuscire a trovare delle lettere libere dalle funzionalità preimpostate valide per tutti i browser.
+
+Sono state inserite abbreviazioni e acronimi dove presenti e sagnalati i cambi di lingua per permettere una miglior uso dello screen reader.
+
+I colori dei link a risorse esterne sono stati cambiati (sia per quando sono stati visitati e non, sia per quando ci si passa sopra con il mouse) sempre però rendendoli fruibili anche a tutti quegli utenti che presentano problemi di distinzione dei colori.
+
+IMMAGINI
+Il sito contiene solo due dimmagini di contenuto, ovvero le immagini di avvenuta validazione del w3c; le altre sono immagini di layout e per questo sono state caricate da css.Per rendere accessibili le immagini di contenuto, si è aggiunto ad loro tag img l'attributo alt.
+Da notare in particolare la gestione del logo, per il quale è stata usata la tecnica di Image Replacement per preservare non solo la grafica ma anche l'accessibiltà. Tale tecnica prevede di porre dietro l'immagine il titolo scritto in modo do renderlo leggibile agli screen reader e agli utenti che non possono visualizzare le immagini.
+
+h1 {
+margin:auto;
+padding: 0;
+
+position:relative;
+width:615px;
+height:312px;
+font-size:50px;	
+}
+
+h1 span {
+position:absolute;
+top:0;
+width:615px;
+height:312px;
+background-image: url(img/Logo.jpg);
+}
+
+Inoltre il sito rimane completamente fruibile anche senza la presenza delle immagini e/o css. Infatti, come già detto sopra, non ci sono immagini di contesto, non essendo esse necessarie ne per il gioco ne per visualizzare le informazioni relative al gioco. Per tale motivo è stato quindi fondamentale riuscire a consentire questa caratteristica.
+
+COLORI
+I colori utilizzati dal sito consentono a utenti con difficoltà nella distinzione dei colori di fruire di tutte le informazioni e di poter giocare con le storie. Tutti i test del Contrast Analyzer risultano passati con successo (ad eccezione del pulsante di submit, che viene pre-impostato dal browser con tali colori).
+Inoltre sono stati fatti dei test utilizzando Vischeck per simulare il daltonismo, che hanno dimostrato come sia il logo, che le immagini utilizzate nel sito rimangono completamente comprensibili senza creare alcun tipo di problema per gli utenti.
+
+FORM
+Si è cercato di prestare particolare attenzione all'uso e alla navigazione delle form non solo attraverso i tabindex, ma anche facendo in modo che fare click su un controllo di input o sulla rispettiva label implicasse in ogni caso la selezione di quello stesso controllo. Ciò aiuta tutti quegli utenti che hanno particolari difficoltà di puntamento in quanto consente loro di avere minor precisione.
+L'accessibilità dei campi della form viene inoltre mantenuta anche qualora un utente accedesse al sito con javascript disabilitato: infatti sono stati implementati sia controlli via javascript (quelli più immediati), sia via perl. Tali controlli avvertono l'utente che i campi non sono stati compilati o sono stati compitati con valori scorretti.
+
+TABELLA
+All'interno del sito viene utilizzata un'unica tabella per visualizzare le guide fornite all'utente per imparare sia a giocare che a scrivere un'avventura testuale. Per renderla il più accessibile possibile, è stato specificato l'attributo summary contenente una descrizione generale della tabella, per ogni riga e colonna e stato specificato uno scope (row e col rispettivamente) mentre per ogni cella è stato specificato l'header.
