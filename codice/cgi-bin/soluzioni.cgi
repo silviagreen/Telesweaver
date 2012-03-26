@@ -49,7 +49,7 @@ my @qstring=split(/=/,$buffer);
 
 #Se il nome della variabile non è ID, qualcuno sta cercando di modificare la query string!
 if ($qstring[0] ne 'id') {print<<EOF;
-ERRORE! ACCESSO NON AUTORIZZATO!
+<p class=\"genericError\">ERRORE! ACCESSO NON AUTORIZZATO!</p>
  </div>
 
     <div id="piede">
@@ -72,7 +72,7 @@ my $esistonostorie = $xp->find("count(//soluzione[storia='$qstring[1]'])");
 
 if ($esistonostorie==0) {
 	print<<EOF;
-ERRORE! STORIA INESISTENTE!
+<p class=\"genericError\">ERRORE! STORIA INESISTENTE!</p>
     </div>
 </div>
 
@@ -94,7 +94,7 @@ my $esistonostorie2 = $xp2->find("count(//storia[\@id='$qstring[1]'])");
 $titolo=$xp2->find('//storia[@id='.$qstring[1].']/titolo')->string_value;
 
 print<<EOF;
-	<h1 id="soluzioniTitle">Soluzione della storia $titolo</h1>
+	<h1 id="soluzioniTitle">Soluzione della storia "$titolo"</h1>
 
 <ul id="listaSoluzione">
 EOF
