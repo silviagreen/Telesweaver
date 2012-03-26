@@ -9,7 +9,7 @@ use strict;
 use warnings;
 
 print "Content-type: text/html\n\n";
-print "Content-Encoding: utf8\n\n";
+#print "Content-Encoding: utf8\n\n";
 
 print<<EOF;
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -127,21 +127,66 @@ print <<EOF;
 EOF
 #fine aggiunte database
 
-my $numVoti=count("//storia[\@id='$qstring[1]']/valutazione");#in teoria conta gli elementi
+
+my $numVoti=int($xp->find("count(//storia[\@id='$qstring[1]']/valutazione)"));
+
 #in teoria conta gli elementi
 my $sommaVoti;
 foreach my $val ($xp->find('//storia[@id='.$qstring[1].']/valutazione')->get_nodelist){
 	$sommaVoti+=int($val->find('numero'));
 }
-print "somma: ".$sommaVoti." media: ".$numVoti;
-my $mediaVoti=1/4;
-#my $mediaVoti=($sommaVoti\$numVoti);
+#print "somma: ".$sommaVoti." num: ".$numVoti;class="on"
+my $mediaVoti=($sommaVoti/$numVoti);
 
+
+if($mediaVoti < 1 && $mediaVoti > 0){
 print<<EOF;
+<div class="rating">
+La media delle valutazioni degli utenti per questa storia &egrave: 
+<span >★</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+</div>​
 
-<p>La media delle valutazioni degli utenti per questa storia &egrave: </p>
 EOF
-#print "$mediaVoti";
+}  if($mediaVoti < 2 && $mediaVoti > 1){
+print<<EOF;
+<div class="rating">
+La media delle valutazioni degli utenti per questa storia &egrave: 
+<span >★</span><span>★</span><span>☆</span><span>☆</span><span>☆</span>
+</div>​
+
+EOF
+
+}
+ if($mediaVoti < 3 && $mediaVoti > 2){
+print<<EOF;
+<div class="rating">
+La media delle valutazioni degli utenti per questa storia &egrave: 
+<span >★</span><span>★</span><span>★</span><span>☆</span><span>☆</span>
+</div>​
+<
+EOF
+
+}
+ if($mediaVoti < 4 && $mediaVoti > 3){
+print<<EOF;
+<div class="rating">
+La media delle valutazioni degli utenti per questa storia &egrave: 
+<span >★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+</div>​
+
+EOF
+
+}
+ if($mediaVoti < 5 && $mediaVoti > 4){
+print<<EOF;
+<div class="rating">
+La media delle valutazioni degli utenti per questa storia &egrave: 
+<span >★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+</div>​
+
+EOF
+
+}
 
 print <<EOF;
 
