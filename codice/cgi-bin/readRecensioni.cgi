@@ -127,7 +127,7 @@ print <<EOF;
 EOF
 #fine aggiunte database
 
-my $numVoti=$xp->find("count(//storia[\@id='$qstring[1]']/valutazione)");
+my $numVoti=count("//storia[\@id='$qstring[1]']/valutazione");#in teoria conta gli elementi
 #in teoria conta gli elementi
 my $sommaVoti;
 foreach my $val ($xp->find('//storia[@id='.$qstring[1].']/valutazione')->get_nodelist){
@@ -154,8 +154,9 @@ print <<EOF;
 	    <input type="radio" id="star2" name="star3" value="2" tabindex="7" /><label for="star2" title="2 stelle">2 stelle</label>
 	    <input type="radio" id="star1" name="star1" value="1" tabindex="8" /><label for="star1" title="1 stella">1 stella</label>
         <input name="idStoria" id="idStoria" value="$qstring[1]" type="hidden" />
-		<input type="submit" id="submitRating" name="vota" value="Vota" />
+		
 	</fieldset>
+		<input type="submit" id="submitRating" name="vota" value="Vota" />
 	</form>
 
 EOF
