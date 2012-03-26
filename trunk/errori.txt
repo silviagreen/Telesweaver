@@ -1,0 +1,3 @@
+-problema nel passaggio da una stanza all'altra in cui servono oggetti
+-problema con azioni di 3 parole
+-storia Anello: dopo apri porta ospiti e nor non c'è più il testo e non si può fare niente
