@@ -25,7 +25,7 @@ print<<EOF;
 <meta http-equiv="Content-Script-Type" content="text/javascript" /> 
      <link type="text/css" rel="stylesheet" href="../html/css/desktop.css" media="screen" /> 
 	<!-- <link type="text/css" rel="stylesheet" href="css/Device.css" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)" />-->
-    <!-- <link type="text/css" rel="stylesheet" href="css/Print.css" media="print" /> -->
+     <link type="text/css" rel="stylesheet" href="css/ipad.css" media="only screen and (device-width: 768px)" /> 
  <!--script javascript-->
 	<script type="text/javascript" src="../js/validaRecensioni.js"></script>
 	<script type="text/javascript" src="../js/svuotaCampi.js"></script>
