@@ -36,9 +36,14 @@ print<<EOF;
     <meta name="description" content="recensioni delle avventure testuali contenute nel sito" />
     <meta name="author" content="Lapolla Margherita"/>
 	<meta name="language" content="italian it"/>
+<meta http-equiv="Content-Script-Type" content="text/javascript" /> 
 	<link rel="icon" href="../html/css/img/book.png" type="image/x-icon" />
-     <link type="text/css" rel="stylesheet" href="../html/css/desktop.css" media="handheld, screen and (min-width:481px), only screen and (min-device-width:481px)" />
+     
+<link type="text/css" rel="stylesheet" href="../html/css/desktop.css" media="handheld, screen and (min-width:481px), only screen and (min-device-width:481px)" />
 	 <link type="text/css" rel="stylesheet" href="../html/css/mobile.css" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)" />
+ <!--script javascript-->
+	<script type="text/javascript" src="../js/validaRecensioni.js"></script>
+	<script type="text/javascript" src="../js/svuotaCampi.js"></script>
     
 </head>
 <body>
@@ -177,13 +182,13 @@ print<<EOF;
      	<legend>Lascia la tua recensione</legend>
         <label for="nome">Nome giocatore: 
 	</label>
-        <input name="nomeGiocatore" id="nome" value="Nome" maxlength="30" onclick="svuotaCampi('nome');" onchange="return controllaTipiRecensione('nome', 'errorNomeGiocatore');" tabindex="12"/>
-        <label for="titolo">Titolo recensione: 
+        <input name="nomeGiocatore" id="nome" value="Nome" maxlength="30" onclick="svuotaCampi('nome');" onchange="return controllaTipiRecensione('nome', 'errorNomeGiocatore');" tabindex="12"/><span id="errorNomeGiocatore">Il nome del giocatore deve essere alfanumerico.</span>
+        <label for="titolo">Giudizio generale: 
 	</label>
-        <input name="titoloRecensione" id="titolo" value="Titolo" maxlength="50" onclick="svuotaCampi('titolo');" onchange="return controllaTipiRecensione('titolo', 'errorTitolo');" tabindex="13"/>
+        <input name="titoloRecensione" id="titolo" value="Titolo" maxlength="50" onclick="svuotaCampi('titolo');" onchange="return controllaTipiRecensione('titolo', 'errorTitolo');" tabindex="13"/><span id="errorTitolo">Il titolo deve essere alfanumerico.</span>
         <label for="testoRecensione">Testo: 
 </label>
-        <textarea rows="10" cols="50" id="testoRecensione" name="testoRecensione" onclick="svuotaCampi('testoRecensione');" onchange="return 		controllaTipiRecensione('testoRecensione', 'errorTesto');" tabindex="14">Scrivi qui la tua recensione</textarea>
+        <textarea rows="10" cols="50" id="testoRecensione" name="testoRecensione" onclick="svuotaCampi('testoRecensione');" onchange="return 		controllaTipiRecensione('testoRecensione', 'errorTesto');" tabindex="14">Scrivi qui la tua recensione</textarea><span id="errorTesto">Il testo deve essere alfanumerico.</span>
         <input name="idStoria" id="idStoria" value="$idStoria" type="hidden" />
         <input type="submit" name="invio" value="Prosegui" tabindex="15"/>
      </fieldset>	

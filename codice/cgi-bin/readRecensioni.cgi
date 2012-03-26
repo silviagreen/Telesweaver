@@ -120,7 +120,7 @@ print "</dl>";
 
 
 
-
+my $mediaVoti=0;
 my $numVoti=int($xp->find("count(//storia[\@id='$qstring[1]']/valutazione)"));
 
 #in teoria conta gli elementi
@@ -129,10 +129,10 @@ foreach my $val ($xp->find('//storia[@id='.$qstring[1].']/valutazione')->get_nod
 	$sommaVoti+=int($val->find('numero'));
 }
 #print "somma: ".$sommaVoti." num: ".$numVoti;class="on"
-my $mediaVoti=($sommaVoti/$numVoti);
+$mediaVoti=($sommaVoti/$numVoti);
 
 
-if($mediaVoti < 1 && $mediaVoti > 0){
+if($mediaVoti <= 1 && $mediaVoti > 0){
 print<<EOF;
 <div class="rating">
 La media delle valutazioni degli utenti per questa storia &egrave;: 
@@ -140,7 +140,7 @@ La media delle valutazioni degli utenti per questa storia &egrave;:
 </div>​
 
 EOF
-}  if($mediaVoti < 2 && $mediaVoti > 1){
+}  if($mediaVoti <= 2 && $mediaVoti > 1){
 print<<EOF;
 <div class="rating">
 La media delle valutazioni degli utenti per questa storia &egrave;: 
@@ -150,7 +150,7 @@ La media delle valutazioni degli utenti per questa storia &egrave;:
 EOF
 
 }
- if($mediaVoti < 3 && $mediaVoti > 2){
+ if($mediaVoti <= 3 && $mediaVoti > 2){
 print<<EOF;
 <div class="rating">
 La media delle valutazioni degli utenti per questa storia &egrave;: 
@@ -159,7 +159,7 @@ La media delle valutazioni degli utenti per questa storia &egrave;:
 EOF
 
 }
- if($mediaVoti < 4 && $mediaVoti > 3){
+ if($mediaVoti <= 4 && $mediaVoti > 3){
 print<<EOF;
 <div class="rating">
 La media delle valutazioni degli utenti per questa storia &egrave;: 
@@ -169,7 +169,7 @@ La media delle valutazioni degli utenti per questa storia &egrave;:
 EOF
 
 }
- if($mediaVoti < 5 && $mediaVoti > 4){
+ if($mediaVoti <= 5 && $mediaVoti > 4){
 print<<EOF;
 <div class="rating">
 La media delle valutazioni degli utenti per questa storia &egrave;: 
@@ -203,11 +203,11 @@ print<<EOF;
     <fieldset id="tuaRecensione">
      	<legend>Lascia la tua recensione</legend>
         <label for="nome">Nome giocatore:</label>
-        <input name="nomeGiocatore" id="nome" value="Nome" maxlength="30" onclick="svuotaCampi('nome');" onchange="return controllaTipiRecensione('nome', 'errorNomeGiocatore');" tabindex="9"/>
-        <label for="titolo">Titolo recensione:</label>
-        <input name="titoloRecensione" id="titolo" value="Titolo" maxlength="50" onclick="svuotaCampi('titolo');" onchange="return controllaTipiRecensione('titolo', 'errorTitolo');" tabindex="10"/>
+        <input name="nomeGiocatore" id="nome" value="Nome" maxlength="30" onclick="svuotaCampi('nome');" onchange="return controllaTipiRecensione('nome', 'errorNomeGiocatore');" tabindex="9"/><span id="errorNomeGiocatore">Il nome del giocatore deve essere alfanumerico.</span>
+        <label for="titolo">Giudizio generale:</label>
+        <input name="titoloRecensione" id="titolo" value="Titolo" maxlength="50" onclick="svuotaCampi('titolo');" onchange="return controllaTipiRecensione('titolo', 'errorTitolo');" tabindex="10"/><span id="errorTitolo">Il titolo deve essere alfanumerico.</span>
         <label for="testoRecensione">Testo:</label>
-        <textarea rows="10" cols="50" id="testoRecensione" name="testoRecensione" onclick="svuotaCampi('testoRecensione');" onchange="return controllaTipiRecensione('testoRecensione', 'errorTesto');" tabindex="11">Scrivi qui la tua recensione</textarea>
+        <textarea rows="10" cols="50" id="testoRecensione" name="testoRecensione" onclick="svuotaCampi('testoRecensione');" onchange="return controllaTipiRecensione('testoRecensione', 'errorTesto');" tabindex="11">Scrivi qui la tua recensione</textarea><span id="errorTesto">Il testo deve essere alfanumerico.</span>
         <input name="idStoria" id="idStoria" value="$qstring[1]" type="hidden" />
         <input type="submit" name="invio" value="Prosegui" tabindex="12"/>
      </fieldset>	
