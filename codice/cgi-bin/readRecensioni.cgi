@@ -1,19 +1,22 @@
-#!/usr/bin/perl
+#!/usr/bin/perl -w
 use XML::LibXML;
 use XML::XPath;
 use XML::XPath::XMLParser;
-use utf8;
-use encoding("iso-8859-1");
+#use utf8;
+#use encoding("iso-8859-1");
 use CGI::Carp qw(fatalsToBrowser);
+use strict;
+use warnings;
 
 print "Content-type: text/html\n\n";
+print "Content-Encoding: utf8\n\n";
 
 print<<EOF;
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <head>
 	<title>Recensioni - TalesWeaver</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="keywords" content="avventure testuali, gioco interattivo, colleziona oggetti, testo, storia, game, recensioni"/>
     <meta name="description" content="recensioni delle avventure testuali con cui si può giocare nel sito" />
     <meta name="author" content="Lapolla Margherita"/>
@@ -57,8 +60,8 @@ if ($qstring[0] ne 'id') {print<<EOF;
 
     <div id="piede">
 
-   				<img src="css/img/css.gif" alt="CSS Valid!"/>
-        			<img src="css/img/xhtml10.png" alt="XHTML 1.0 Valid!"/>
+   				<img src="../html/css/img/css.gif" alt="CSS Valid!"/>
+        			<img src="../html/css/img/xhtml10.png" alt="XHTML 1.0 Valid!"/>
 
     </div>
 </div>
@@ -90,12 +93,12 @@ if ($esistonostorie==0) {print<<EOF;
 EOF
 exit;
 }
-$titolo=$xp->find('//storia[@id='.$qstring[1].']/titolo')->string_value;
+my $titolo=$xp->find('//storia[@id='.$qstring[1].']/titolo')->string_value;
 
 print<<EOF;
 <ul id="menuRec">
-<li><a class="indietro" href="../xml/storie.xml" accesskey="t">Torna alle avventure</a></li>
-<li><a class="indietro" href="#recensioni" accesskey="r">Recensisci la storia</a></li>
+<li><a class="indietro" href="../xml/storie.xml">Torna alle avventure</a></li>
+<li><a class="indietro" href="#recensioni">Recensisci la storia</a></li>
 </ul>
 <h2>Recensioni - $titolo</h2>
 
@@ -104,8 +107,10 @@ EOF
 
 
 foreach my $species ($xp->find('//storia[@id='.$qstring[1].']/recensione')->get_nodelist){
+	my $testo=$species->find('testo');
+	utf8::encode($testo);
     print "<dt>".$species->find('titolo')->string_value ."</dt>";
-    print "<dd>" . $species->find('testo')."</dd>";
+    print "<dd>" .$testo."</dd>";
 
     print "<dd>Posted: ".$species->find('data') ." By: ".$species->find('utente')."<a class=\"su\" href=\"#menuRec\">Torna su</a></dd>";
     print "\n";
@@ -128,13 +133,15 @@ my $sommaVoti;
 foreach my $val ($xp->find('//storia[@id='.$qstring[1].']/valutazione')->get_nodelist){
 	$sommaVoti+=int($val->find('numero'));
 }
-#my $mediaVoti=$sommaVoti/$numVoti;
+print "somma: ".$sommaVoti." media: ".$numVoti;
+my $mediaVoti=1/4;
+#my $mediaVoti=($sommaVoti\$numVoti);
 
 print<<EOF;
 
 <p>La media delle valutazioni degli utenti per questa storia &egrave: </p>
 EOF
-print "$mediaVoti";
+#print "$mediaVoti";
 
 print <<EOF;
 
