@@ -81,8 +81,8 @@ if ($esistonostorie==0) {print<<EOF;
 
     <div id="piede">
 
-  				<img src="css/img/css.gif" alt="CSS Valid!"/>
-        			<img src="css/img/xhtml10.png" alt="XHTML 1.0 Valid!"/>
+  				<img src="../html/css/img/css.gif" alt="CSS Valid!"/>
+        			<img src="../html/css/img/xhtml10.png" alt="XHTML 1.0 Valid!"/>
 
     </div>
 </body>
@@ -157,11 +157,11 @@ print<<EOF;
 	<form id="recensioni" action="recensioni.cgi" method="post">
     <fieldset id="tuaRecensione">
      	<legend>Lascia la tua recensione</legend>
-        <label for="nome">Nome giocatore: <span id="errorNomeGiocatore">Inserisci una stringa alfanumerica</span></label>
+        <label for="nome">Nome giocatore:</label>
         <input name="nomeGiocatore" id="nome" value="Nome" maxlength="30" onclick="svuotaCampi('nome');" onchange="return controllaTipiRecensione('nome', 'errorNomeGiocatore');" tabindex="9"/>
-        <label for="titolo">Titolo recensione: <span id="errorTitolo">Inserisci una stringa alfanumerica</span></label>
+        <label for="titolo">Titolo recensione:</label>
         <input name="titoloRecensione" id="titolo" value="Titolo" maxlength="50" onclick="svuotaCampi('titolo');" onchange="return controllaTipiRecensione('titolo', 'errorTitolo');" tabindex="10"/>
-        <label for="testoRecensione">Testo: <span id="errorTesto">Inserisci caratteri alfanumerici</span></label>
+        <label for="testoRecensione">Testo:</label>
         <textarea rows="10" cols="50" id="testoRecensione" name="testoRecensione" onclick="svuotaCampi('testoRecensione');" onchange="return controllaTipiRecensione('testoRecensione', 'errorTesto');" tabindex="11">Scrivi qui la tua recensione</textarea>
         <input name="idStoria" id="idStoria" value="$qstring[1]" type="hidden" />
         <input type="submit" name="invio" value="Prosegui" tabindex="12"/>
