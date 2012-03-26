@@ -65,8 +65,8 @@ print<<EOF;
 	<meta name="language" content="italian it"/>
 	<link rel="icon" href="../html/css/img/book.png" type="image/x-icon" />
      <link type="text/css" rel="stylesheet" href="../html/css/desktop.css" media="handheld, screen and (min-width:481px), only screen and (min-device-width:481px)" />
-	 <link type="text/css" rel="stylesheet" href="css/Device.css" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)" />
-     <link type="text/css" rel="stylesheet" href="css/Print.css" media="print" />
+	 <link type="text/css" rel="stylesheet" href="../html/css/mobile.css" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)" />
+
 </head>
 <body>
 	
