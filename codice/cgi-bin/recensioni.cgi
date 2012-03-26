@@ -5,8 +5,8 @@ use CGI::Carp qw(fatalsToBrowser);#serve per visualizzare gli errori sul browser
 use XML::LibXSLT;
 use XML::LibXML;
 use XML::XPath;
-use utf8;
-use encoding("utf-8");
+#use utf8;
+#use encoding("utf-8");
 use Time::localtime;
 $tm = localtime;
  $query=new CGI();
@@ -58,7 +58,7 @@ print<<EOF;
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <head>
 	<title>Recensioni-TalesWeaver</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="keywords" content="recensioni, avventure testuali, gioco interattivo, colleziona oggetti, testo, storia, game"/>
     <meta name="description" content="recensioni delle avventure testuali contenute nel sito" />
     <meta name="author" content="Lapolla Margherita"/>
@@ -229,6 +229,7 @@ if($nomeGiocatore){
 
 $newTitolo="";
 if($titolo){
+	utf8::decode($titolo);
 	 $newTitolo="\n<titolo>$titolo</titolo>\n";
 }
 $newTesto="";
