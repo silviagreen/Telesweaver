@@ -1,0 +1,87 @@
+@charset 'UTF-8';
+html, body {
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size: 90%;
+	padding: 0;
+	margin: 0;
+	background:url(img/sfondo.png) repeat;
+	height: 100%;
+}
+
+h1 {
+	margin:auto;
+	padding: 0;
+
+position:relative;
+width:50px;
+height:50px;
+font-size:30px;
+color: white;
+text-align:left;
+}
+
+h1 span {
+	display: none;
+}
+
+#menu {
+background-color:#FFFFFF;	
+background:url(img/upsx.png) left top no-repeat,url(img/updx.png) right top no-repeat,url(img/downsx.png) left bottom no-repeat,url(img/downdx.png) right bottom no-repeat,url(img/right.png) right repeat-y,url(img/left.png) left repeat-y, url(img/up2.png) top repeat-x, url(img/down.png) bottom repeat-x,url(img/all.png) repeat ;
+
+	width: 75%;
+	height: 100%;
+	min-width:100px;
+	float:none;
+	text-align:left;
+}
+
+#menuLista {
+
+	list-style-type: none;
+	padding: 5%;
+	margin-top: 12%;
+	min-width:50%;
+	
+}
+#menuLista li {
+
+	margin-left:1%;
+	margin-right:2%;
+	display: inline;
+	margin-top:10%;
+}
+
+#path{
+	background-color:red;
+	background: url(img/nav3.png) no-repeat right, url(img/nav1.png);
+    margin-right:3%;
+	margin-left: 3%;
+	margin-top: 0.5%;
+	width: 80%;
+}
+
+.corpo {
+background-color:#FFFFFF;	
+background:url(img/upsx.png) left top no-repeat,url(img/updx.png) right top no-repeat,url(img/downsx.png) left bottom no-repeat,url(img/downdx.png) right bottom no-repeat,url(img/right.png) right repeat-y,url(img/left.png) left repeat-y, url(img/up2.png) top repeat-x, url(img/down.png) bottom repeat-x,url(img/all.png) repeat ;
+color: black;
+	/*border: double;*/
+	padding-bottom: 3em;
+	padding-right: 2em;
+	width:75%;
+	float:none;
+	margin:0;
+}
+
+#piede {
+
+background:url(img/footer5.png) bottom repeat-x;
+
+	clear: both; /* così footer sta subito sotto il menu*/
+	position: fixed;/* cosi footer sta attaccato al bordo inferiore del browser*/
+	bottom: 0;
+	left: 0;
+	width: 80%;
+	height: 5%;
+	
+	margin:  auto;
+}
