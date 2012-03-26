@@ -130,7 +130,7 @@ if($input{'invia'}ne'PROSEGUI'){
   my @direzioni=("nord","sud","ovest","est","sopra","sotto");
   my $trovato=0;
   foreach my $direzione (@direzioni){
-    if($trovato==0 && ($azione[0] eq $direzione || ($azione[0] eq 'vai' && ($azione[1] eq $direzione || $azione[2] eq $direzione)))) {
+    if($trovato==0 && (lc($azione[0]) eq $direzione || (lc($azione[0]) eq 'vai' && (lc($azione[1]) eq $direzione || lc($azione[2]) eq $direzione)))) {
       $trovato=1;
       my $esistedirezione=$xp->find("count(//storia[\@id='$qstring[1]']/stanza[\@id=\'$input{'stanza'}\']/direzioni/direzione[nome=\"$direzione\"])");
       if($esistedirezione==0) {
@@ -173,30 +173,32 @@ if($input{'invia'}ne'PROSEGUI'){
       if($trovato==0){
         #L'azione non era una direzione! Comincio a cercare tra le azioni disponibili.
         #Ora devo ricercare l'oggetto dell'azione, ma prima devo togliere eventuali articoli.
-        if($azione[1]eq"il" || $azione[1]eq"lo" || $azione[1]eq"la" || $azione[1]eq"i" || $azione[1]eq"gli" || $azione[1]eq"le" || $azione[1]eq"un" || $azione[1]eq"una" || $azione[1]eq"uno" || $azione[1]eq"di" || $azione[1]eq"a" || $azione[1]eq"da" || $azione[1]eq"in" || $azione[1]eq"con" || $azione[1]eq"su" || $azione[1]eq"per" || $azione[1]eq"tra" || $azione[1]eq"fra" || $azione[1]eq"sopra" || $azione[1]eq"sotto"){
-          $oggettoazione=$azione[2];
+        if(lc($azione[1])eq"il" || lc($azione[1])eq"lo" || lc($azione[1])eq"la" || lc($azione[1])eq"i" || lc($azione[1])eq"gli" || lc($azione[1])eq"le" || lc($azione[1])eq"un" || lc($azione[1])eq"una" || lc($azione[1])eq"uno" || lc($azione[1])eq"di" || lc($azione[1])eq"a" || lc($azione[1])eq"da" || lc($azione[1])eq"in" || lc($azione[1])eq"con" || lc($azione[1])eq"su" || lc($azione[1])eq"per" || lc($azione[1])eq"tra" || lc($azione[1])eq"fra" || lc($azione[1])eq"sopra" || lc($azione[1])eq"sotto"){
+          $oggettoazione=lc($azione[2]);
           $contatorearrayazione=2;
         }else{
-          $oggettoazione=$azione[1];
+          $oggettoazione=lc($azione[1]);
           $contatorearrayazione=1;
         }
 
         #Cerco se esiste un'azione che abbia quell'oggetto
-        my $numnodiazione=$xp->find("count(//storia[\@id='$qstring[1]']/stanza[\@id='$input{'stanza'}']/azione[verbo='$azione[0]' and oggetto='$oggettoazione'])");
+	$action=lc($azione[0]);
+
+        my $numnodiazione=$xp->find("count(//storia[\@id='$qstring[1]']/stanza[\@id='$input{'stanza'}']/azione[verbo='$action' and oggetto='$oggettoazione'])");
         if($numnodiazione==0){
         #Non esiste nessuna azione con quel verbo e quell'oggetto
-          print "<p class=\"genericError\">Azione non consentita (o non ho capito l'azione che volevi eseguire!)</p>";
+          print "<p class=\"genericError\">Azione non consentita (o non ho capito l'azione che volevi eseguire!) </p>";
           $errore=1;
           $stanzacorrente=$input{'stanza'};
         }else{
-          $nodiazione=$xp->find("//storia[\@id='$qstring[1]']/stanza[\@id='$input{'stanza'}']/azione[verbo='$azione[0]' and oggetto='$oggettoazione']");
+          $nodiazione=$xp->find("//storia[\@id='$qstring[1]']/stanza[\@id='$input{'stanza'}']/azione[verbo='$action' and oggetto='$oggettoazione']");
           #Devo verificare se l'azione prevede un secondo oggetto
-          my $nodiazionesecoggetto=$xp->find("count(//storia[\@id='$qstring[1]']/stanza[\@id='$input{'stanza'}']/azione[verbo='$azione[0]' and oggetto='$oggettoazione' and secondoOggetto])");
+          my $nodiazionesecoggetto=$xp->find("count(//storia[\@id='$qstring[1]']/stanza[\@id='$input{'stanza'}']/azione[verbo='$action' and oggetto='$oggettoazione' and secondoOggetto])");
           if(($nodiazionesecoggetto>0 && $#azione==$contatorearrayazione) || ($nodiazionesecoggetto==0 && $#azione>$contatorearrayazione)){
 
             #Nell'xml c'è un secondo oggetto, ma nella stringa no, oppure nella stringa
             #c'è un secondo oggetto ma nell'xml no: azione rifiutata
-            print "<p>Azione non consentita (o non ho capito l'azione che volevi eseguire!)</p>";
+            print "<p class=\"genericError\">Azione non consentita (o non ho capito l'azione che volevi eseguire!)</p>";
             $errore=1;
             $stanzacorrente=$input{'stanza'};
           }elsif($nodiazionesecoggetto>0 && $#azione>$contatorearrayazione){
@@ -207,7 +209,7 @@ if($input{'invia'}ne'PROSEGUI'){
             my @paroledascartare=("il","lo","la","i","gli","le","di","a","da","in","con","su","per","tra","fra","sopra","sotto");
             my $trovataparola=0;
             foreach $parola (@paroledascartare){
-              if($azione["$contatorearrayazione"]==$parola){
+              if($azione["$contatorearrayazione"] eq $parola){
                 $trovataparola=1;
               }
             }
@@ -217,18 +219,19 @@ if($input{'invia'}ne'PROSEGUI'){
 
             #Ora siamo sicuri che $azione[$contatoreazione] contiene il secondo oggetto:
             #Possiamo confrontarli.
-            my $secondooggetto=$xp->find("count(//storia[\@id='$qstring[1]']/stanza[\@id='$input{'stanza'}']/azione[verbo='$azione[0]' and oggetto='$oggettoazione' and secondoOggetto='$azione[$contatorearrayazione]'])");
+	    $secondo=lc($azione[$contatorearrayazione]);
+            my $secondooggetto=$xp->find("count(//storia[\@id='$qstring[1]']/stanza[\@id='$input{'stanza'}']/azione[verbo='$action' and oggetto='$oggettoazione' and secondoOggetto='$secondo'])");
             if($secondooggetto==0){
 
               #Il secondo oggetto è sbagliato. Messaggio di errore.
-              print "<p>Azione non consentita (o non ho capito l'azione che volevi eseguire!)</p>";
+              print "<p class=\"genericError\">Azione non consentita (o non ho capito l'azione che volevi eseguire!)</p>";
               $errore=1;
               $stanzacorrente=$input{'stanza'};
             }else{
-              $azioneid=$xp->find("//storia[\@id='$qstring[1]']/stanza[\@id='$input{'stanza'}']/azione[verbo='$azione[0]' and oggetto='$oggettoazione' and secondoOggetto='$azione[$contatorearrayazione]']/\@id");
+              $azioneid=$xp->find("//storia[\@id='$qstring[1]']/stanza[\@id='$input{'stanza'}']/azione[verbo='$action' and oggetto='$oggettoazione' and secondoOggetto='$azione[$contatorearrayazione]']/\@id");
             }
           }else{
-            $azioneid=$xp->find("//storia[\@id='$qstring[1]']/stanza[\@id='$input{'stanza'}']/azione[verbo='$azione[0]' and oggetto='$oggettoazione']/\@id");
+            $azioneid=$xp->find("//storia[\@id='$qstring[1]']/stanza[\@id='$input{'stanza'}']/azione[verbo='$action' and oggetto='$oggettoazione']/\@id");
           }
         }
         if(!defined($errore)){
@@ -238,7 +241,7 @@ if($input{'invia'}ne'PROSEGUI'){
             my $azionecheblocca=$xp->find("//storia[\@id='$qstring[1]']/stanza[\@id='$input{'stanza'}']/azione[\@id='$azioneid']/sbloccataDa");
             if("$azionecheblocca" ne "$input{'ultimaazionecorretta'}"){
               #Non posso eseguire l'azione! Messaggio di errore.
-              print "<p>Azione non consentita (o non ho capito l'azione che volevi eseguire!)</p>";
+              print "<p class=\"genericError\">Azione non consentita (o non ho capito l'azione che volevi eseguire!) </p>";
               $errore=1;
             }
           }
