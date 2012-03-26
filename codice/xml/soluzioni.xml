@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<soluzioni xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xs:schemaLocation="http://www.w3.org/1999/XSL/Transform soluzioni.xsd">
+<soluzioni xmlns="http://www.storie.com" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:schemaLocation="http://www.storie.com soluzioni.xsd">
 <soluzione>	
 	<storia>1</storia>
 	<testo>nord</testo>
 	<testo>suona campanello</testo>
 	<testo>nord</testo>
 	<testo>chiedi maggiordomo infestazione</testo>
-	<testo>spopra</testo>
+	<testo>sopra</testo>
 	<testo>apri porta ospiti</testo>
 	<testo>nord</testo>
 	<testo>entra letto</testo>
