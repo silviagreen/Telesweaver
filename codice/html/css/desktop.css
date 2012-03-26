@@ -279,7 +279,7 @@ body > div#piede {
     float:left;
 }
 
-.rating:not(:checked) > input {
+.rating:not(:checked) > input[type="radio"] {
     position:absolute;
     top:-9999px;
     clip:rect(0,0,0,0);

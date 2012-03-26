@@ -18,7 +18,7 @@ print<<EOF;
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <head>
 	<title>Soluzioni - TalesWeaver</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="keywords" content="avventure testuali, gioco interattivo, colleziona oggetti, testo, storia, game, recensioni"/>
     <meta name="description" content="recensioni delle avventure testuali con cui si può giocare nel sito" />
     <meta name="author" content="Laura Varagnolo"/>
@@ -27,8 +27,8 @@ print<<EOF;
 <meta http-equiv="Content-Script-Type" content="text/javascript" /> 
 	<link rel="icon" href="../html/css/img/book.png" type="image/x-icon" />
      <link type="text/css" rel="stylesheet" href="../html/css/desktop.css" media="screen" /> 
-	<!-- <link type="text/css" rel="stylesheet" href="css/Device.css" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)" />-->
-    <!-- <link type="text/css" rel="stylesheet" href="css/Print.css" media="print" /> -->
+	<link type="text/css" rel="stylesheet" href="../html/css/mobile.css" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)" />
+    
 </head>
 <body>
 	
