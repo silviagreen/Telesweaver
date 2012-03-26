@@ -198,10 +198,10 @@ print <<EOF;
 	    <input type="radio" id="star3" name="star3" value="3" tabindex="6" /><label for="star3" title="3 stelle">3 stelle</label>
 	    <input type="radio" id="star2" name="star3" value="2" tabindex="7" /><label for="star2" title="2 stelle">2 stelle</label>
 	    <input type="radio" id="star1" name="star1" value="1" tabindex="8" /><label for="star1" title="1 stella">1 stella</label>
-        <input name="idStoria" id="idStoria" value="$qstring[1]" type="hidden" />
-		
-	</fieldset>
+        <input name="idStory" id="idStory" value="$qstring[1]" type="hidden" />
 		<input type="submit" id="submitRating" name="vota" value="Vota" />
+	</fieldset>
+		
 	</form>
 
 EOF
