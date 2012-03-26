@@ -140,7 +140,7 @@ foreach my $val ($xp->find('//storia[@id='.$idStoria.']/valutazione')->get_nodel
 my $mediaVoti=($sommaVoti/$numVoti);
 
 
-if($mediaVoti < 1 && $mediaVoti > 0){
+if($mediaVoti <= 1 && $mediaVoti > 0){
 print<<EOF;
 <div class="rating">
 La media delle valutazioni degli utenti per questa storia &egrave;: 
@@ -148,7 +148,7 @@ La media delle valutazioni degli utenti per questa storia &egrave;:
 </div>​
 
 EOF
-}  if($mediaVoti < 2 && $mediaVoti > 1){
+}  if($mediaVoti <= 2 && $mediaVoti > 1){
 print<<EOF;
 <div class="rating">
 La media delle valutazioni degli utenti per questa storia &egrave;: 
@@ -158,7 +158,7 @@ La media delle valutazioni degli utenti per questa storia &egrave;:
 EOF
 
 }
- if($mediaVoti < 3 && $mediaVoti > 2){
+ if($mediaVoti <= 3 && $mediaVoti > 2){
 print<<EOF;
 <div class="rating">
 La media delle valutazioni degli utenti per questa storia &egrave;: 
@@ -167,7 +167,7 @@ La media delle valutazioni degli utenti per questa storia &egrave;:
 EOF
 
 }
- if($mediaVoti < 4 && $mediaVoti > 3){
+ if($mediaVoti <= 4 && $mediaVoti > 3){
 print<<EOF;
 <div class="rating">
 La media delle valutazioni degli utenti per questa storia &egrave;: 
@@ -177,7 +177,7 @@ La media delle valutazioni degli utenti per questa storia &egrave;:
 EOF
 
 }
- if($mediaVoti < 5 && $mediaVoti > 4){
+ if($mediaVoti <= 5 && $mediaVoti > 4){
 print<<EOF;
 <div class="rating">
 La media delle valutazioni degli utenti per questa storia &egrave;: 
