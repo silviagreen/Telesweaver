@@ -18,7 +18,7 @@ require 'forPrinting.pl';
 $nomeGiocatore=$query->param('nomeGiocatore');
 $titolo=$query->param('titoloRecensione');
 $testo=$query->param('testoRecensione');
-$idStoria=$query->param('idStory');
+$idStoria=$query->param('idStoria');
 my $ok='si';
 my $stampato='no';
 
@@ -53,6 +53,7 @@ $ok='no';
 
 if($ok eq 'no'){
 print "Content-type: text/html\n\n";
+
 print<<EOF;
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
@@ -63,9 +64,14 @@ print<<EOF;
     <meta name="description" content="recensioni delle avventure testuali contenute nel sito" />
     <meta name="author" content="Lapolla Margherita"/>
 	<meta name="language" content="italian it"/>
-	<link rel="icon" href="../html/css/img/book.png" type="image/x-icon" />
+	
+<link rel="icon" href="../html/css/img/book.png" type="image/x-icon" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" /> 
      <link type="text/css" rel="stylesheet" href="../html/css/desktop.css" media="handheld, screen and (min-width:481px), only screen and (min-device-width:481px)" />
 	 <link type="text/css" rel="stylesheet" href="../html/css/mobile.css" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)" />
+ <!--script javascript-->
+	<script type="text/javascript" src="../js/validaRecensioni.js"></script>
+	<script type="text/javascript" src="../js/svuotaCampi.js"></script>
 
 </head>
 <body>
@@ -86,6 +92,7 @@ print<<EOF;
 EOF
 
 #allora devo ristampare la pagina delle recensioni con le form
+print $idStoria;
 my $xp = XML::XPath->new(filename =>  '../xml/storie.xml');
 $titoloStoria=$xp->find('//storia['.$idStoria.']/titolo')->string_value;
 print<<EOF;
@@ -192,7 +199,7 @@ print <<EOF;
 	    <input type="radio" id="star3" name="star3" value="3" tabindex="6" /><label for="star3" title="3 stelle">3 stelle</label>
 	    <input type="radio" id="star2" name="star3" value="2" tabindex="7" /><label for="star2" title="2 stelle">2 stelle</label>
 	    <input type="radio" id="star1" name="star1" value="1" tabindex="8" /><label for="star1" title="1 stella">1 stella</label>
-        <input name="idStory" id="idStory" value="$idStory" type="hidden" />
+        <input name="idStory" id="idStory" value="$idStoria" type="hidden" />
 		<input type="submit" id="submitRating" name="vota" value="Vota" />
 	</fieldset>
 	</form>
@@ -220,8 +227,8 @@ EOF
 }
 print<<EOF;
 	</label>
-        <input name="nomeGiocatore" id="nome" value="Nome" maxlength="30" onclick="svuotaCampi('nome');" onchange="return controllaTipiRecensione('nome', 'errorNomeGiocatore');" tabindex="9"/>
-        <label for="titolo">Titolo recensione: 
+        <input name="nomeGiocatore" id="nome" value="Nome" maxlength="30" onclick="svuotaCampi('nome');" onchange="return controllaTipiRecensione('nome', 'errorNomeGiocatore');" tabindex="9"/><span id="errorNomeGiocatore">Il nome del giocatore deve essere alfanumerico.</span>
+        <label for="titolo">Giudizio generale: 
 EOF
 
 if(!$titolo){
@@ -241,7 +248,7 @@ EOF
 }
 print<<EOF;
 	</label>
-        <input name="titoloRecensione" id="titolo" value="Titolo" maxlength="50" onclick="svuotaCampi('titolo');" onchange="return controllaTipiRecensione('titolo', 'errorTitolo');" tabindex="10"/>
+        <input name="titoloRecensione" id="titolo" value="Titolo" maxlength="50" onclick="svuotaCampi('titolo');" onchange="return controllaTipiRecensione('titolo', 'errorTitolo');" tabindex="10"/><span id="errorTitolo">Il titolo deve essere alfanumerico.</span>
         <label for="testoRecensione">Testo: 
 EOF
 
@@ -260,7 +267,7 @@ EOF
 print<<EOF;
 </label>
         <textarea rows="10" cols="50" id="testoRecensione" name="testoRecensione" onclick="svuotaCampi('testoRecensione');" onchange="return 		controllaTipiRecensione('testoRecensione', 'errorTesto');" tabindex="11">Scrivi qui la tua recensione</textarea>
-        <input name="idStoria" id="idStoria" value="$idStoria" type="hidden" />
+        <input name="idStoria" id="idStoria" value="$idStoria" type="hidden" /><span id="errorTesto">Il testo deve essere alfanumerico.</span>
         <input type="submit" name="invio" value="Prosegui" tabindex="12"/>
      </fieldset>	
     </form>

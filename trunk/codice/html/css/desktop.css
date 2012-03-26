@@ -267,7 +267,26 @@ body > div#piede {
 	height: 100%;
 	overflow: auto;
 }
+#errorTitolo{
+	color:red;
+	font-variant:small-caps;
+	font-weight: bold;
+	display:none;
+}
 
+#errorNomeGiocatore{
+	color:red;
+	font-variant:small-caps;
+	font-weight: bold;
+	display:none;
+}
+
+#errorTesto{
+	color:red;
+	font-variant:small-caps;
+	font-weight: bold;
+	display:none;
+}
 .genericError{
 	color:red;
 	font-variant:small-caps;
