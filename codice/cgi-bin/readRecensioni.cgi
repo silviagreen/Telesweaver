@@ -122,16 +122,17 @@ print <<EOF;
 EOF
 #fine aggiunte database
 
-my $numVoti=count($xp->find('//storia[@id='.$qstring[1].']/valutazione');#in teoria conta gli elementi
+my $numVoti=$xp->find("count(//storia[\@id='$qstring[1]']/valutazione)");
+#in teoria conta gli elementi
 my $sommaVoti;
 foreach my $val ($xp->find('//storia[@id='.$qstring[1].']/valutazione')->get_nodelist){
 	$sommaVoti+=int($val->find('numero'));
 }
-my $mediaVoti=$sommaVoti/$numVoti;
+#my $mediaVoti=$sommaVoti/$numVoti;
 
 print<<EOF;
 
-<p>La media delle valutazioni degli utenti per questa storia è: </p>
+<p>La media delle valutazioni degli utenti per questa storia &egrave: </p>
 EOF
 print "$mediaVoti";
 
@@ -171,17 +172,11 @@ print<<EOF;
 </div>
 
     <div id="piede">
-<<<<<<< .mine
-								<img src="../html/css/img/css.gif" alt="CSS Valid!"/>
-        			<img src="../html/css/img/xhtml10.png" alt="XHTML 1.0 Valid!"/>
-			</div>
-=======
-
-   				<img src="../html/css/img/css.gif" alt="CSS Valid!"/>
+		<img src="../html/css/img/css.gif" alt="CSS Valid!"/>
         			<img src="../html/css/img/xhtml10.png" alt="XHTML 1.0 Valid!"/>
 
     </div>
->>>>>>> .r154
+
 </body>
 </html>
 
