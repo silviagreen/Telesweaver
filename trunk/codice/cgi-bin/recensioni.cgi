@@ -18,7 +18,7 @@ require 'forPrinting.pl';
 $nomeGiocatore=$query->param('nomeGiocatore');
 $titolo=$query->param('titoloRecensione');
 $testo=$query->param('testoRecensione');
-$idStoria=$query->param('idStoria');
+$idStoria=$query->param('idStory');
 my $ok='si';
 my $stampato='no';
 
@@ -90,8 +90,8 @@ my $xp = XML::XPath->new(filename =>  '../xml/storie.xml');
 $titoloStoria=$xp->find('//storia['.$idStoria.']/titolo')->string_value;
 print<<EOF;
 <ul id="menuRec">
-<li><a class="indietro" href="../xml/storie.xml" accesskey="t">Torna alle avventure</a></li>
-<li><a class="indietro" href="#recensioni" accesskey="r">Recensisci la storia</a></li>
+<li><a class="indietro" href="../xml/storie.xml" >Torna alle avventure</a></li>
+<li><a class="indietro" href="#recensioni">Recensisci la storia</a></li>
 </ul>
 <h2>Recensioni - $titoloStoria</h2>
 
@@ -100,8 +100,10 @@ EOF
 
 
 foreach my $species ($xp->find('//storia[@id='.$idStoria.']/recensione')->get_nodelist){
+my $testo=$species->find('testo');
+	utf8::encode($testo);
     print "<dt>".$species->find('titolo')->string_value ."</dt>";
-    print "<dd>" . $species->find('testo')."</dd>";
+    print "<dd>" . $testo."</dd>";
 
     print "<dd>Posted: ".$species->find('data') ." By: ".$species->find('utente')."<a class=\"su\" href=\"#menuRec\">Torna su</a></dd>";
     print "\n";
@@ -118,19 +120,67 @@ print <<EOF;
 EOF
 #fine aggiunte database
 
-my $numVoti=$xp->find("count(//storia[\@id='$idStoria']/valutazione)");
+
+
+my $numVoti=int($xp->find("count(//storia[\@id='$idStoria']/valutazione)"));
+
 #in teoria conta gli elementi
 my $sommaVoti;
 foreach my $val ($xp->find('//storia[@id='.$idStoria.']/valutazione')->get_nodelist){
 	$sommaVoti+=int($val->find('numero'));
 }
-#my $mediaVoti=$sommaVoti/$numVoti;
+#print "somma: ".$sommaVoti." num: ".$numVoti;class="on"
+my $mediaVoti=($sommaVoti/$numVoti);
 
+
+if($mediaVoti < 1 && $mediaVoti > 0){
 print<<EOF;
+<div class="rating">
+La media delle valutazioni degli utenti per questa storia &egrave;: 
+<span >★</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+</div>​
 
-<p>La media delle valutazioni degli utenti per questa storia &egrave: </p>
 EOF
-print "$mediaVoti";
+}  if($mediaVoti < 2 && $mediaVoti > 1){
+print<<EOF;
+<div class="rating">
+La media delle valutazioni degli utenti per questa storia &egrave;: 
+<span >★</span><span>★</span><span>☆</span><span>☆</span><span>☆</span>
+</div>​
+
+EOF
+
+}
+ if($mediaVoti < 3 && $mediaVoti > 2){
+print<<EOF;
+<div class="rating">
+La media delle valutazioni degli utenti per questa storia &egrave;: 
+<span >★</span><span>★</span><span>★</span><span>☆</span><span>☆</span>
+</div>​
+EOF
+
+}
+ if($mediaVoti < 4 && $mediaVoti > 3){
+print<<EOF;
+<div class="rating">
+La media delle valutazioni degli utenti per questa storia &egrave;: 
+<span >★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+</div>​
+
+EOF
+
+}
+ if($mediaVoti < 5 && $mediaVoti > 4){
+print<<EOF;
+<div class="rating">
+La media delle valutazioni degli utenti per questa storia &egrave;: 
+<span >★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+</div>​
+
+EOF
+
+}
+
 
 print <<EOF;
 
@@ -142,7 +192,7 @@ print <<EOF;
 	    <input type="radio" id="star3" name="star3" value="3" tabindex="6" /><label for="star3" title="3 stelle">3 stelle</label>
 	    <input type="radio" id="star2" name="star3" value="2" tabindex="7" /><label for="star2" title="2 stelle">2 stelle</label>
 	    <input type="radio" id="star1" name="star1" value="1" tabindex="8" /><label for="star1" title="1 stella">1 stella</label>
-        <input name="idStoria" id="idStoria" value="$idStoria" type="hidden" />
+        <input name="idStory" id="idStory" value="$idStory" type="hidden" />
 		<input type="submit" id="submitRating" name="vota" value="Vota" />
 	</fieldset>
 	</form>
@@ -159,13 +209,13 @@ EOF
 
 if(!$nomeGiocatore){
 print<<EOF;
-	<span id="errorNomeGiocatore">Il campo Giocatore deve essere compilato con il tuo nome!</span>
+	<span class="genericError">Il campo Giocatore deve essere compilato con il tuo nome!</span>
 EOF
 }
 #se il nome del giocatore non contiene nemmeno una lettera
 if($nomeGiocatore=~ /^[^A-Za-z]+$/ || !$nomeGiocatore=~/\w/){
 print<<EOF;
-	<span id="errorNomeGiocatore">Devi inserire una stringa alfanumerica. Sono obbligatorie delle lettere.</span>
+	<span class="genericError">Devi inserire una stringa alfanumerica. Sono obbligatorie delle lettere.</span>
 EOF
 }
 print<<EOF;
@@ -177,7 +227,7 @@ EOF
 if(!$titolo){
 print<<EOF
 
-<span id="errorTitolo">Il campo Titolo deve essere compilato!</span>
+<span class="genericError">Il campo Titolo deve essere compilato!</span>
 
 EOF
 }
@@ -185,7 +235,7 @@ EOF
 if($titolo=~ /^[^A-Za-z]+$/ || !$titolo=~/\w/){
 print<<EOF;
 
-<span id="errorTitolo">Il campo Titolo deve contenere una stringa alfanumerica. Sono obbligatorie delle lettere.</span>
+<span class="genericError">Il campo Titolo deve contenere una stringa alfanumerica. Sono obbligatorie delle lettere.</span>
 
 EOF
 }
@@ -197,13 +247,13 @@ EOF
 
 if(!$testo){
 print<<EOF;
-	<span id="errorTesto">Devi inserire un testo per la recensione! il testo dev'essere di tipo alfanumerico.</span>
+	<span class="genericError">Devi inserire un testo per la recensione! il testo dev'essere di tipo alfanumerico.</span>
 EOF
 }
 
 if($testo=~ /^[^A-Za-z]+$/ || !$testo=~/\w/){
 print<<EOF;
-	<span id="errorTesto">Il campo Testo deve contenere caratteri alfanumerici. Sono obbligatorie delle lettere.</span>
+	<span class="genericError">Il campo Testo deve contenere caratteri alfanumerici. Sono obbligatorie delle lettere.</span>
 EOF
 }
 
@@ -237,10 +287,11 @@ if($testo){
 	 $newTesto="\n<testo>$testo</testo>\n";
 }
 
-if(length(($tm->mon)+1) == 1){
-my $month="0".(($tm->mon)+1);}
+my $month="";
+if(length(($tm->mon)+1) eq 1){
+ $month="0".(($tm->mon)+1);}
 else {
-my $month=(($tm->mon)+1);
+ $month=(($tm->mon)+1);
 }
 
 my $date=($tm->year+1900)."-".$month."-".($tm->mday);
@@ -264,8 +315,8 @@ my @storie=$radice->getElementsByTagName('storia');
 
 
 my $newRensioneOk=$parser->parse_balanced_chunk($newRensione);
-
- $storie[i]->appendChild($newRensioneOk);
+my $k=idStoria-1;
+ $storie[i+$k]->appendChild($newRensioneOk);
 
 
 #serializzazione

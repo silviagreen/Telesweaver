@@ -63,8 +63,8 @@ my $xp = XML::XPath->new(filename =>  '../xml/storie.xml');
 $titoloStoria=$xp->find('//storia['.$idStoria.']/titolo')->string_value;
 print<<EOF;
 <ul id="menuRec">
-<li><a class="indietro" href="../xml/storie.xml" accesskey="t">Torna alle avventure</a></li>
-<li><a class="indietro" href="#recensioni" accesskey="r">Recensisci la storia</a></li>
+<li><a class="indietro" href="../xml/storie.xml" >Torna alle avventure</a></li>
+<li><a class="indietro" href="#recensioni" >Recensisci la storia</a></li>
 </ul>
 <h2>Recensioni - $titoloStoria</h2>
 
@@ -93,19 +93,65 @@ print <<EOF;
 EOF
 #fine aggiunte database
 
-my $numVoti=$xp->find("count(//storia[\@id='$idStoria']/valutazione)");
+my $numVoti=int($xp->find("count(//storia[\@id='$idStoria']/valutazione)"));
+
 #in teoria conta gli elementi
 my $sommaVoti;
 foreach my $val ($xp->find('//storia[@id='.$idStoria.']/valutazione')->get_nodelist){
 	$sommaVoti+=int($val->find('numero'));
 }
-#my $mediaVoti=$sommaVoti/$numVoti;
+#print "somma: ".$sommaVoti." num: ".$numVoti;class="on"
+my $mediaVoti=($sommaVoti/$numVoti);
 
+
+if($mediaVoti < 1 && $mediaVoti > 0){
 print<<EOF;
+<div class="rating">
+La media delle valutazioni degli utenti per questa storia &egrave;: 
+<span >★</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+</div>​
 
-<p>La media delle valutazioni degli utenti per questa storia &egrave: </p>
 EOF
-print "$mediaVoti";
+}  if($mediaVoti < 2 && $mediaVoti > 1){
+print<<EOF;
+<div class="rating">
+La media delle valutazioni degli utenti per questa storia &egrave;: 
+<span >★</span><span>★</span><span>☆</span><span>☆</span><span>☆</span>
+</div>​
+
+EOF
+
+}
+ if($mediaVoti < 3 && $mediaVoti > 2){
+print<<EOF;
+<div class="rating">
+La media delle valutazioni degli utenti per questa storia &egrave;: 
+<span >★</span><span>★</span><span>★</span><span>☆</span><span>☆</span>
+</div>​
+EOF
+
+}
+ if($mediaVoti < 4 && $mediaVoti > 3){
+print<<EOF;
+<div class="rating">
+La media delle valutazioni degli utenti per questa storia &egrave;: 
+<span >★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+</div>​
+
+EOF
+
+}
+ if($mediaVoti < 5 && $mediaVoti > 4){
+print<<EOF;
+<div class="rating">
+La media delle valutazioni degli utenti per questa storia &egrave;: 
+<span >★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+</div>​
+
+EOF
+
+}
+
 
 print <<EOF;
 
@@ -113,13 +159,13 @@ print <<EOF;
 	<span class="genericError">Devi inserire una votazione. Per votare clicca sulla stella. 1 &egrave il voto minimo, 5 il massimo.</span>
 	<fieldset class="rating">
 		<legend>Vota la storia</legend>
-	    <input type="radio" id="star5" name="star5" value="5" tabindex="4" /><label for="star5" title="5 stelle">5 stelle</label>
-	    <input type="radio" id="star4" name="star4" value="4" tabindex="5" /><label for="star4" title="4 stelle">4 stelle</label>
-	    <input type="radio" id="star3" name="star3" value="3" tabindex="6" /><label for="star3" title="3 stelle">3 stelle</label>
-	    <input type="radio" id="star2" name="star3" value="2" tabindex="7" /><label for="star2" title="2 stelle">2 stelle</label>
-	    <input type="radio" id="star1" name="star1" value="1" tabindex="8" /><label for="star1" title="1 stella">1 stella</label>
-        <input name="idStoria" id="idStoria" value="$idStoria" type="hidden" />
-		<input type="submit" id="submitRating" name="vota" value="Vota" />
+	    <input type="radio" id="star5" name="star5" value="5" tabindex="6" /><label for="star5" title="5 stelle">5 stelle</label>
+	    <input type="radio" id="star4" name="star4" value="4" tabindex="7" /><label for="star4" title="4 stelle">4 stelle</label>
+	    <input type="radio" id="star3" name="star3" value="3" tabindex="8" /><label for="star3" title="3 stelle">3 stelle</label>
+	    <input type="radio" id="star2" name="star3" value="2" tabindex="9" /><label for="star2" title="2 stelle">2 stelle</label>
+	    <input type="radio" id="star1" name="star1" value="1" tabindex="10" /><label for="star1" title="1 stella">1 stella</label>
+        <input name="idStory" id="idStory" value="$idStoria" type="hidden" />
+		<input type="submit" id="submitRating" name="vota" value="Vota" tabindex="11"/>
 	</fieldset>
 	</form>
 
@@ -131,15 +177,15 @@ print<<EOF;
      	<legend>Lascia la tua recensione</legend>
         <label for="nome">Nome giocatore: 
 	</label>
-        <input name="nomeGiocatore" id="nome" value="Nome" maxlength="30" onclick="svuotaCampi('nome');" onchange="return controllaTipiRecensione('nome', 'errorNomeGiocatore');" tabindex="9"/>
+        <input name="nomeGiocatore" id="nome" value="Nome" maxlength="30" onclick="svuotaCampi('nome');" onchange="return controllaTipiRecensione('nome', 'errorNomeGiocatore');" tabindex="12"/>
         <label for="titolo">Titolo recensione: 
 	</label>
-        <input name="titoloRecensione" id="titolo" value="Titolo" maxlength="50" onclick="svuotaCampi('titolo');" onchange="return controllaTipiRecensione('titolo', 'errorTitolo');" tabindex="10"/>
+        <input name="titoloRecensione" id="titolo" value="Titolo" maxlength="50" onclick="svuotaCampi('titolo');" onchange="return controllaTipiRecensione('titolo', 'errorTitolo');" tabindex="13"/>
         <label for="testoRecensione">Testo: 
 </label>
-        <textarea rows="10" cols="50" id="testoRecensione" name="testoRecensione" onclick="svuotaCampi('testoRecensione');" onchange="return 		controllaTipiRecensione('testoRecensione', 'errorTesto');" tabindex="11">Scrivi qui la tua recensione</textarea>
+        <textarea rows="10" cols="50" id="testoRecensione" name="testoRecensione" onclick="svuotaCampi('testoRecensione');" onchange="return 		controllaTipiRecensione('testoRecensione', 'errorTesto');" tabindex="14">Scrivi qui la tua recensione</textarea>
         <input name="idStoria" id="idStoria" value="$idStoria" type="hidden" />
-        <input type="submit" name="invio" value="Prosegui" tabindex="12"/>
+        <input type="submit" name="invio" value="Prosegui" tabindex="15"/>
      </fieldset>	
     </form>
 
@@ -163,7 +209,7 @@ if($star4){
 	$newStarRating="\n<numero>".$star4."</numero>\n";
 }
 if($star5){
-	$newStarRating="\n<numero>".$star1."</numero>\n";
+	$newStarRating="\n<numero>".$star5."</numero>\n";
 }
  			
 $newUserStarRating="\n<valutazione>".$newStarRating."</valutazione>\n";
@@ -186,8 +232,8 @@ my @storie=$radice->getElementsByTagName('storia');
 
 
 my $newStarRatingOk=$parser->parse_balanced_chunk($newUserStarRating);
-
- $storie[i]->appendChild($newStarRatingOk);
+my $k=idStoria-1;
+ $storie[i+$k]->appendChild($newStarRatingOk);
 
 
 #serializzazione

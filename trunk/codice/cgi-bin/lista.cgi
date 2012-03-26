@@ -46,7 +46,7 @@ print<<EOF;
     </div>
 <div class="corpo">
 	<h1 id="soluzioniTitle">Soluzioni delle Avventure</h1>
-	<p>In questa sezione potrai trovare la soluzione di ogni storia. Le soluzioni possono non portare ad una soluzione vera e propria ma essere dei semplici indirizzamenti per aiutare ad arrivare alla soluzione. Si consiglia di leggere le soluzioni solamente se ci si trova in difficolt&agrave con il proseguimento del gioco.</p>
+	<p>In questa sezione potrai trovare la soluzione di ogni storia. Le soluzioni possono non portare ad una soluzione vera e propria ma essere dei semplici indirizzamenti per aiutare ad arrivare alla soluzione. Si consiglia di leggere le soluzioni solamente se ci si trova in difficolt&agrave; con il proseguimento del gioco.</p>
 EOF
 
 if ($esistonostorie==0) {

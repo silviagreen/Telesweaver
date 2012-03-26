@@ -24,7 +24,7 @@ print<<EOF;
 	<link rel="icon" href="../html/css/img/book.png" type="image/x-icon" />
 <meta http-equiv="Content-Script-Type" content="text/javascript" /> 
      <link type="text/css" rel="stylesheet" href="../html/css/desktop.css" media="screen" /> 
-	 <link type="text/css" rel="stylesheet" href="../html/css/mobile.css" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)" />-
+	 <link type="text/css" rel="stylesheet" href="../html/css/mobile.css" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)" />
    
  <!--script javascript-->
 	<script type="text/javascript" src="../js/validaRecensioni.js"></script>
@@ -118,14 +118,7 @@ foreach my $species ($xp->find('//storia[@id='.$qstring[1].']/recensione')->get_
 
 print "</dl>";
 
-#aggiunte per prelevare le recensioni da database
-print <<EOF;
-<h2>Valutazioni - $titolo</h2>
-<dl class="valutazioni">
 
-</dl>
-EOF
-#fine aggiunte database
 
 
 my $numVoti=int($xp->find("count(//storia[\@id='$qstring[1]']/valutazione)"));
@@ -142,7 +135,7 @@ my $mediaVoti=($sommaVoti/$numVoti);
 if($mediaVoti < 1 && $mediaVoti > 0){
 print<<EOF;
 <div class="rating">
-La media delle valutazioni degli utenti per questa storia &egrave: 
+La media delle valutazioni degli utenti per questa storia &egrave;: 
 <span >★</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
 </div>​
 
@@ -150,7 +143,7 @@ EOF
 }  if($mediaVoti < 2 && $mediaVoti > 1){
 print<<EOF;
 <div class="rating">
-La media delle valutazioni degli utenti per questa storia &egrave: 
+La media delle valutazioni degli utenti per questa storia &egrave;: 
 <span >★</span><span>★</span><span>☆</span><span>☆</span><span>☆</span>
 </div>​
 
@@ -160,17 +153,16 @@ EOF
  if($mediaVoti < 3 && $mediaVoti > 2){
 print<<EOF;
 <div class="rating">
-La media delle valutazioni degli utenti per questa storia &egrave: 
+La media delle valutazioni degli utenti per questa storia &egrave;: 
 <span >★</span><span>★</span><span>★</span><span>☆</span><span>☆</span>
 </div>​
-<
 EOF
 
 }
  if($mediaVoti < 4 && $mediaVoti > 3){
 print<<EOF;
 <div class="rating">
-La media delle valutazioni degli utenti per questa storia &egrave: 
+La media delle valutazioni degli utenti per questa storia &egrave;: 
 <span >★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
 </div>​
 
@@ -180,7 +172,7 @@ EOF
  if($mediaVoti < 5 && $mediaVoti > 4){
 print<<EOF;
 <div class="rating">
-La media delle valutazioni degli utenti per questa storia &egrave: 
+La media delle valutazioni degli utenti per questa storia &egrave;: 
 <span >★</span><span>★</span><span>★</span><span>★</span><span>★</span>
 </div>​
 

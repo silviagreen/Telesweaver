@@ -17,7 +17,7 @@ Content-type:text/html\n\n
 	<meta name="language" content="italian it"/>
 	<link rel="icon" href="../html/css/img/book.png" type="image/x-icon" />
      <link type="text/css" rel="stylesheet" href="../html/css/desktop.css" media="screen" />
-	<!-- <link type="text/css" rel="stylesheet" href="../html/css/mobile.css" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)" />
+ <link type="text/css" rel="stylesheet" href="../html/css/mobile.css" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)" />
    
 </head>
 <body>
