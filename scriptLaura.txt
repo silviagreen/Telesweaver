@@ -1,0 +1,8 @@
+LISTA.CGI
+Lo script viene richiamato nel momento in cui l'utente seleziona la voce del menù "Soluzioni". Lo script forma una pagina html che mostra all'utente la lista di storie presenti nel sito. Per ogni storia viene presentata una soluzione o delle direzioni e azioni guida alle soluzioni. Cliccando sulla storia di cui si vuole si vuole vedere la soluzione si verrà indirizzati ad un altro script che permetterà la visualizzazione della soluzione. Lo script passa allo script richiamato (soluzioni.cgi) l'id della storia scelta.
+
+SOLUZIONI.CGI
+Lo script permette di visualizzare una lista di direzioni o azioni che rappresentano la soluzione del gioco. Lo script riceve come parametro get l'id della storia scelta dall'utente e recupera la lista di direzioni e azioni9 da compiere dal file soluzioni.xml facendole così visualizzare all'utente.
+
+
+
